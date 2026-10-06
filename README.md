@@ -99,11 +99,15 @@ interchanging manuscript and legacy numbers.
 | [extensions/](extensions/) | Abelian character, E/F geometry and four DHZ invariant-ring checks |
 | [verification/](verification/) | Runtime checks, strict output validation, cross-case checks and the resumable execution plan |
 
-A complete-intersection presentation does not itself prove that a crepant
-resolution exists. Group-data checks, full Cox generation and geometric
-endpoint checks have distinct scopes. The geometric deductions also use the
-theorems stated in the manuscript. The finite minimum-cover check concerns
-the fourteen recorded families of applications.
+For the four nonabelian counterexamples to the Dais–Henk–Ziegler conjecture
+(cases 45, 65, 66 and 105), the programs check both the complete-intersection
+presentations and the full Cox-ring generation and geometric endpoint
+calculations. The proof that these quotients have no projective crepant
+resolution combines these computations with the criteria in Sieve I of the
+manuscript. More generally, the verification follows the arguments in the
+paper: exact group and ring computations are combined with the stated
+geometric theorems. The finite minimum-cover check concerns the fourteen
+recorded families of applications.
 
 GitHub Actions tests the portable profile, checkpoint reuse, runtime selection
 and small fresh Sage/GAP calculations. Its badges do not assert completion of
