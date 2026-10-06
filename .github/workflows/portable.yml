@@ -1,0 +1,19 @@
+name: Portable exact checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  portable:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test portability and runner contracts
+        run: python3 -m unittest discover -s tests -v
+      - name: Reconstruct the catalogues, sieve cover and CE-03/CE-07
+        run: python3 reproduce.py --profile portable --run-dir "$RUNNER_TEMP/sl4-portable"
+      - name: Verify checkpoint reuse
+        run: python3 reproduce.py --resume "$RUNNER_TEMP/sl4-portable"

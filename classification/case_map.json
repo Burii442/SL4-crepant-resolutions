@@ -1,0 +1,854 @@
+{
+  "schema_version": 1,
+  "scope": "Expected correspondence between the 106 manuscript cases and the classical CrystCat classes; the comparison program recomputes and checks the groups independently.",
+  "correspondence": [
+    {
+      "manuscript_case": 1,
+      "crystcat_system": 1,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 1,
+      "crystcat_zclasses": 1,
+      "order": 1
+    },
+    {
+      "manuscript_case": 2,
+      "crystcat_system": 1,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 2,
+      "crystcat_zclasses": 1,
+      "order": 2
+    },
+    {
+      "manuscript_case": 3,
+      "crystcat_system": 3,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 6,
+      "crystcat_zclasses": 3,
+      "order": 2
+    },
+    {
+      "manuscript_case": 4,
+      "crystcat_system": 11,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 37,
+      "crystcat_zclasses": 1,
+      "order": 3
+    },
+    {
+      "manuscript_case": 5,
+      "crystcat_system": 8,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 24,
+      "crystcat_zclasses": 2,
+      "order": 3
+    },
+    {
+      "manuscript_case": 6,
+      "crystcat_system": 10,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 36,
+      "crystcat_zclasses": 1,
+      "order": 4
+    },
+    {
+      "manuscript_case": 7,
+      "crystcat_system": 3,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 7,
+      "crystcat_zclasses": 3,
+      "order": 4
+    },
+    {
+      "manuscript_case": 8,
+      "crystcat_system": 5,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 12,
+      "crystcat_zclasses": 13,
+      "order": 4
+    },
+    {
+      "manuscript_case": 9,
+      "crystcat_system": 7,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 18,
+      "crystcat_zclasses": 2,
+      "order": 4
+    },
+    {
+      "manuscript_case": 10,
+      "crystcat_system": 7,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 17,
+      "crystcat_zclasses": 2,
+      "order": 4
+    },
+    {
+      "manuscript_case": 11,
+      "crystcat_system": 11,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 38,
+      "crystcat_zclasses": 1,
+      "order": 6
+    },
+    {
+      "manuscript_case": 12,
+      "crystcat_system": 8,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 25,
+      "crystcat_zclasses": 2,
+      "order": 6
+    },
+    {
+      "manuscript_case": 13,
+      "crystcat_system": 14,
+      "crystcat_qclass": 3,
+      "crystcat_global_qclass": 56,
+      "crystcat_zclasses": 8,
+      "order": 6
+    },
+    {
+      "manuscript_case": 14,
+      "crystcat_system": 17,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 77,
+      "crystcat_zclasses": 3,
+      "order": 6
+    },
+    {
+      "manuscript_case": 15,
+      "crystcat_system": 22,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 116,
+      "crystcat_zclasses": 2,
+      "order": 9
+    },
+    {
+      "manuscript_case": 16,
+      "crystcat_system": 32,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 191,
+      "crystcat_zclasses": 2,
+      "order": 8
+    },
+    {
+      "manuscript_case": 17,
+      "crystcat_system": 5,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 13,
+      "crystcat_zclasses": 9,
+      "order": 8
+    },
+    {
+      "manuscript_case": 18,
+      "crystcat_system": 18,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 79,
+      "crystcat_zclasses": 3,
+      "order": 8
+    },
+    {
+      "manuscript_case": 19,
+      "crystcat_system": 16,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 76,
+      "crystcat_zclasses": 3,
+      "order": 8
+    },
+    {
+      "manuscript_case": 20,
+      "crystcat_system": 7,
+      "crystcat_qclass": 3,
+      "crystcat_global_qclass": 19,
+      "crystcat_zclasses": 2,
+      "order": 8
+    },
+    {
+      "manuscript_case": 21,
+      "crystcat_system": 26,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 154,
+      "crystcat_zclasses": 1,
+      "order": 8
+    },
+    {
+      "manuscript_case": 22,
+      "crystcat_system": 13,
+      "crystcat_qclass": 4,
+      "crystcat_global_qclass": 47,
+      "crystcat_zclasses": 6,
+      "order": 8
+    },
+    {
+      "manuscript_case": 23,
+      "crystcat_system": 13,
+      "crystcat_qclass": 3,
+      "crystcat_global_qclass": 46,
+      "crystcat_zclasses": 6,
+      "order": 8
+    },
+    {
+      "manuscript_case": 24,
+      "crystcat_system": 24,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 138,
+      "crystcat_zclasses": 6,
+      "order": 12
+    },
+    {
+      "manuscript_case": 25,
+      "crystcat_system": 28,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 160,
+      "crystcat_zclasses": 1,
+      "order": 12
+    },
+    {
+      "manuscript_case": 26,
+      "crystcat_system": 14,
+      "crystcat_qclass": 5,
+      "crystcat_global_qclass": 58,
+      "crystcat_zclasses": 4,
+      "order": 12
+    },
+    {
+      "manuscript_case": 27,
+      "crystcat_system": 17,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 78,
+      "crystcat_zclasses": 2,
+      "order": 12
+    },
+    {
+      "manuscript_case": 28,
+      "crystcat_system": 22,
+      "crystcat_qclass": 5,
+      "crystcat_global_qclass": 120,
+      "crystcat_zclasses": 5,
+      "order": 18
+    },
+    {
+      "manuscript_case": 29,
+      "crystcat_system": 22,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 117,
+      "crystcat_zclasses": 2,
+      "order": 18
+    },
+    {
+      "manuscript_case": 30,
+      "crystcat_system": 32,
+      "crystcat_qclass": 4,
+      "crystcat_global_qclass": 194,
+      "crystcat_zclasses": 2,
+      "order": 16
+    },
+    {
+      "manuscript_case": 31,
+      "crystcat_system": 18,
+      "crystcat_qclass": 4,
+      "crystcat_global_qclass": 82,
+      "crystcat_zclasses": 5,
+      "order": 16
+    },
+    {
+      "manuscript_case": 32,
+      "crystcat_system": 19,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 85,
+      "crystcat_zclasses": 2,
+      "order": 16
+    },
+    {
+      "manuscript_case": 33,
+      "crystcat_system": 13,
+      "crystcat_qclass": 9,
+      "crystcat_global_qclass": 52,
+      "crystcat_zclasses": 5,
+      "order": 16
+    },
+    {
+      "manuscript_case": 34,
+      "crystcat_system": 32,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 192,
+      "crystcat_zclasses": 2,
+      "order": 16
+    },
+    {
+      "manuscript_case": 35,
+      "crystcat_system": 26,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 155,
+      "crystcat_zclasses": 1,
+      "order": 16
+    },
+    {
+      "manuscript_case": 36,
+      "crystcat_system": 32,
+      "crystcat_qclass": 3,
+      "crystcat_global_qclass": 193,
+      "crystcat_zclasses": 2,
+      "order": 16
+    },
+    {
+      "manuscript_case": 37,
+      "crystcat_system": 33,
+      "crystcat_qclass": 3,
+      "crystcat_global_qclass": 214,
+      "crystcat_zclasses": 1,
+      "order": 24
+    },
+    {
+      "manuscript_case": 38,
+      "crystcat_system": 32,
+      "crystcat_qclass": 5,
+      "crystcat_global_qclass": 195,
+      "crystcat_zclasses": 3,
+      "order": 24
+    },
+    {
+      "manuscript_case": 39,
+      "crystcat_system": 33,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 212,
+      "crystcat_zclasses": 1,
+      "order": 24
+    },
+    {
+      "manuscript_case": 40,
+      "crystcat_system": 25,
+      "crystcat_qclass": 3,
+      "crystcat_global_qclass": 145,
+      "crystcat_zclasses": 5,
+      "order": 24
+    },
+    {
+      "manuscript_case": 41,
+      "crystcat_system": 25,
+      "crystcat_qclass": 4,
+      "crystcat_global_qclass": 146,
+      "crystcat_zclasses": 5,
+      "order": 24
+    },
+    {
+      "manuscript_case": 42,
+      "crystcat_system": 24,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 139,
+      "crystcat_zclasses": 6,
+      "order": 24
+    },
+    {
+      "manuscript_case": 43,
+      "crystcat_system": 28,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 161,
+      "crystcat_zclasses": 1,
+      "order": 24
+    },
+    {
+      "manuscript_case": 44,
+      "crystcat_system": 33,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 213,
+      "crystcat_zclasses": 1,
+      "order": 24
+    },
+    {
+      "manuscript_case": 45,
+      "crystcat_system": 22,
+      "crystcat_qclass": 7,
+      "crystcat_global_qclass": 122,
+      "crystcat_zclasses": 3,
+      "order": 36
+    },
+    {
+      "manuscript_case": 46,
+      "crystcat_system": 32,
+      "crystcat_qclass": 10,
+      "crystcat_global_qclass": 200,
+      "crystcat_zclasses": 2,
+      "order": 32
+    },
+    {
+      "manuscript_case": 47,
+      "crystcat_system": 19,
+      "crystcat_qclass": 5,
+      "crystcat_global_qclass": 88,
+      "crystcat_zclasses": 2,
+      "order": 32
+    },
+    {
+      "manuscript_case": 48,
+      "crystcat_system": 32,
+      "crystcat_qclass": 7,
+      "crystcat_global_qclass": 197,
+      "crystcat_zclasses": 2,
+      "order": 32
+    },
+    {
+      "manuscript_case": 49,
+      "crystcat_system": 32,
+      "crystcat_qclass": 8,
+      "crystcat_global_qclass": 198,
+      "crystcat_zclasses": 2,
+      "order": 32
+    },
+    {
+      "manuscript_case": 50,
+      "crystcat_system": 32,
+      "crystcat_qclass": 6,
+      "crystcat_global_qclass": 196,
+      "crystcat_zclasses": 2,
+      "order": 32
+    },
+    {
+      "manuscript_case": 51,
+      "crystcat_system": 33,
+      "crystcat_qclass": 5,
+      "crystcat_global_qclass": 216,
+      "crystcat_zclasses": 1,
+      "order": 48
+    },
+    {
+      "manuscript_case": 52,
+      "crystcat_system": 25,
+      "crystcat_qclass": 6,
+      "crystcat_global_qclass": 148,
+      "crystcat_zclasses": 5,
+      "order": 48
+    },
+    {
+      "manuscript_case": 53,
+      "crystcat_system": 33,
+      "crystcat_qclass": 6,
+      "crystcat_global_qclass": 217,
+      "crystcat_zclasses": 1,
+      "order": 48
+    },
+    {
+      "manuscript_case": 54,
+      "crystcat_system": 33,
+      "crystcat_qclass": 4,
+      "crystcat_global_qclass": 215,
+      "crystcat_zclasses": 1,
+      "order": 48
+    },
+    {
+      "manuscript_case": 55,
+      "crystcat_system": 32,
+      "crystcat_qclass": 11,
+      "crystcat_global_qclass": 201,
+      "crystcat_zclasses": 3,
+      "order": 48
+    },
+    {
+      "manuscript_case": 56,
+      "crystcat_system": 33,
+      "crystcat_qclass": 7,
+      "crystcat_global_qclass": 218,
+      "crystcat_zclasses": 1,
+      "order": 72
+    },
+    {
+      "manuscript_case": 57,
+      "crystcat_system": 32,
+      "crystcat_qclass": 12,
+      "crystcat_global_qclass": 202,
+      "crystcat_zclasses": 2,
+      "order": 64
+    },
+    {
+      "manuscript_case": 58,
+      "crystcat_system": 32,
+      "crystcat_qclass": 16,
+      "crystcat_global_qclass": 206,
+      "crystcat_zclasses": 3,
+      "order": 96
+    },
+    {
+      "manuscript_case": 59,
+      "crystcat_system": 33,
+      "crystcat_qclass": 8,
+      "crystcat_global_qclass": 219,
+      "crystcat_zclasses": 1,
+      "order": 96
+    },
+    {
+      "manuscript_case": 60,
+      "crystcat_system": 33,
+      "crystcat_qclass": 9,
+      "crystcat_global_qclass": 220,
+      "crystcat_zclasses": 1,
+      "order": 96
+    },
+    {
+      "manuscript_case": 61,
+      "crystcat_system": 33,
+      "crystcat_qclass": 10,
+      "crystcat_global_qclass": 221,
+      "crystcat_zclasses": 1,
+      "order": 96
+    },
+    {
+      "manuscript_case": 62,
+      "crystcat_system": 33,
+      "crystcat_qclass": 11,
+      "crystcat_global_qclass": 222,
+      "crystcat_zclasses": 1,
+      "order": 144
+    },
+    {
+      "manuscript_case": 63,
+      "crystcat_system": 32,
+      "crystcat_qclass": 20,
+      "crystcat_global_qclass": 210,
+      "crystcat_zclasses": 3,
+      "order": 192
+    },
+    {
+      "manuscript_case": 64,
+      "crystcat_system": 33,
+      "crystcat_qclass": 12,
+      "crystcat_global_qclass": 223,
+      "crystcat_zclasses": 1,
+      "order": 192
+    },
+    {
+      "manuscript_case": 65,
+      "crystcat_system": 33,
+      "crystcat_qclass": 13,
+      "crystcat_global_qclass": 224,
+      "crystcat_zclasses": 1,
+      "order": 288
+    },
+    {
+      "manuscript_case": 66,
+      "crystcat_system": 33,
+      "crystcat_qclass": 15,
+      "crystcat_global_qclass": 226,
+      "crystcat_zclasses": 1,
+      "order": 576
+    },
+    {
+      "manuscript_case": 67,
+      "crystcat_system": 9,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 29,
+      "crystcat_zclasses": 1,
+      "order": 6
+    },
+    {
+      "manuscript_case": 68,
+      "crystcat_system": 9,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 30,
+      "crystcat_zclasses": 1,
+      "order": 6
+    },
+    {
+      "manuscript_case": 69,
+      "crystcat_system": 21,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 112,
+      "crystcat_zclasses": 2,
+      "order": 6
+    },
+    {
+      "manuscript_case": 70,
+      "crystcat_system": 30,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 171,
+      "crystcat_zclasses": 1,
+      "order": 12
+    },
+    {
+      "manuscript_case": 71,
+      "crystcat_system": 21,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 113,
+      "crystcat_zclasses": 2,
+      "order": 12
+    },
+    {
+      "manuscript_case": 72,
+      "crystcat_system": 9,
+      "crystcat_qclass": 3,
+      "crystcat_global_qclass": 31,
+      "crystcat_zclasses": 1,
+      "order": 12
+    },
+    {
+      "manuscript_case": 73,
+      "crystcat_system": 15,
+      "crystcat_qclass": 4,
+      "crystcat_global_qclass": 67,
+      "crystcat_zclasses": 2,
+      "order": 12
+    },
+    {
+      "manuscript_case": 74,
+      "crystcat_system": 15,
+      "crystcat_qclass": 5,
+      "crystcat_global_qclass": 68,
+      "crystcat_zclasses": 4,
+      "order": 12
+    },
+    {
+      "manuscript_case": 75,
+      "crystcat_system": 21,
+      "crystcat_qclass": 3,
+      "crystcat_global_qclass": 114,
+      "crystcat_zclasses": 4,
+      "order": 12
+    },
+    {
+      "manuscript_case": 76,
+      "crystcat_system": 23,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 127,
+      "crystcat_zclasses": 1,
+      "order": 18
+    },
+    {
+      "manuscript_case": 77,
+      "crystcat_system": 29,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 162,
+      "crystcat_zclasses": 3,
+      "order": 18
+    },
+    {
+      "manuscript_case": 78,
+      "crystcat_system": 30,
+      "crystcat_qclass": 4,
+      "crystcat_global_qclass": 174,
+      "crystcat_zclasses": 2,
+      "order": 24
+    },
+    {
+      "manuscript_case": 79,
+      "crystcat_system": 15,
+      "crystcat_qclass": 11,
+      "crystcat_global_qclass": 74,
+      "crystcat_zclasses": 2,
+      "order": 24
+    },
+    {
+      "manuscript_case": 80,
+      "crystcat_system": 21,
+      "crystcat_qclass": 4,
+      "crystcat_global_qclass": 115,
+      "crystcat_zclasses": 2,
+      "order": 24
+    },
+    {
+      "manuscript_case": 81,
+      "crystcat_system": 30,
+      "crystcat_qclass": 3,
+      "crystcat_global_qclass": 173,
+      "crystcat_zclasses": 1,
+      "order": 24
+    },
+    {
+      "manuscript_case": 82,
+      "crystcat_system": 30,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 172,
+      "crystcat_zclasses": 1,
+      "order": 24
+    },
+    {
+      "manuscript_case": 83,
+      "crystcat_system": 23,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 128,
+      "crystcat_zclasses": 1,
+      "order": 36
+    },
+    {
+      "manuscript_case": 84,
+      "crystcat_system": 29,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 163,
+      "crystcat_zclasses": 2,
+      "order": 36
+    },
+    {
+      "manuscript_case": 85,
+      "crystcat_system": 30,
+      "crystcat_qclass": 5,
+      "crystcat_global_qclass": 175,
+      "crystcat_zclasses": 1,
+      "order": 36
+    },
+    {
+      "manuscript_case": 86,
+      "crystcat_system": 29,
+      "crystcat_qclass": 3,
+      "crystcat_global_qclass": 164,
+      "crystcat_zclasses": 5,
+      "order": 36
+    },
+    {
+      "manuscript_case": 87,
+      "crystcat_system": 23,
+      "crystcat_qclass": 5,
+      "crystcat_global_qclass": 131,
+      "crystcat_zclasses": 2,
+      "order": 36
+    },
+    {
+      "manuscript_case": 88,
+      "crystcat_system": 30,
+      "crystcat_qclass": 6,
+      "crystcat_global_qclass": 176,
+      "crystcat_zclasses": 1,
+      "order": 48
+    },
+    {
+      "manuscript_case": 89,
+      "crystcat_system": 29,
+      "crystcat_qclass": 5,
+      "crystcat_global_qclass": 166,
+      "crystcat_zclasses": 2,
+      "order": 72
+    },
+    {
+      "manuscript_case": 90,
+      "crystcat_system": 23,
+      "crystcat_qclass": 8,
+      "crystcat_global_qclass": 134,
+      "crystcat_zclasses": 1,
+      "order": 72
+    },
+    {
+      "manuscript_case": 91,
+      "crystcat_system": 30,
+      "crystcat_qclass": 9,
+      "crystcat_global_qclass": 179,
+      "crystcat_zclasses": 1,
+      "order": 72
+    },
+    {
+      "manuscript_case": 92,
+      "crystcat_system": 30,
+      "crystcat_qclass": 7,
+      "crystcat_global_qclass": 177,
+      "crystcat_zclasses": 1,
+      "order": 72
+    },
+    {
+      "manuscript_case": 93,
+      "crystcat_system": 30,
+      "crystcat_qclass": 8,
+      "crystcat_global_qclass": 178,
+      "crystcat_zclasses": 1,
+      "order": 72
+    },
+    {
+      "manuscript_case": 94,
+      "crystcat_system": 30,
+      "crystcat_qclass": 10,
+      "crystcat_global_qclass": 180,
+      "crystcat_zclasses": 1,
+      "order": 144
+    },
+    {
+      "manuscript_case": 95,
+      "crystcat_system": 27,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 156,
+      "crystcat_zclasses": 1,
+      "order": 5
+    },
+    {
+      "manuscript_case": 96,
+      "crystcat_system": 27,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 157,
+      "crystcat_zclasses": 1,
+      "order": 10
+    },
+    {
+      "manuscript_case": 97,
+      "crystcat_system": 27,
+      "crystcat_qclass": 3,
+      "crystcat_global_qclass": 158,
+      "crystcat_zclasses": 2,
+      "order": 10
+    },
+    {
+      "manuscript_case": 98,
+      "crystcat_system": 27,
+      "crystcat_qclass": 4,
+      "crystcat_global_qclass": 159,
+      "crystcat_zclasses": 1,
+      "order": 20
+    },
+    {
+      "manuscript_case": 99,
+      "crystcat_system": 31,
+      "crystcat_qclass": 3,
+      "crystcat_global_qclass": 186,
+      "crystcat_zclasses": 2,
+      "order": 60
+    },
+    {
+      "manuscript_case": 100,
+      "crystcat_system": 31,
+      "crystcat_qclass": 6,
+      "crystcat_global_qclass": 189,
+      "crystcat_zclasses": 2,
+      "order": 120
+    },
+    {
+      "manuscript_case": 101,
+      "crystcat_system": 20,
+      "crystcat_qclass": 1,
+      "crystcat_global_qclass": 90,
+      "crystcat_zclasses": 1,
+      "order": 12
+    },
+    {
+      "manuscript_case": 102,
+      "crystcat_system": 20,
+      "crystcat_qclass": 2,
+      "crystcat_global_qclass": 91,
+      "crystcat_zclasses": 1,
+      "order": 12
+    },
+    {
+      "manuscript_case": 103,
+      "crystcat_system": 20,
+      "crystcat_qclass": 5,
+      "crystcat_global_qclass": 94,
+      "crystcat_zclasses": 1,
+      "order": 24
+    },
+    {
+      "manuscript_case": 104,
+      "crystcat_system": 20,
+      "crystcat_qclass": 7,
+      "crystcat_global_qclass": 96,
+      "crystcat_zclasses": 2,
+      "order": 24
+    },
+    {
+      "manuscript_case": 105,
+      "crystcat_system": 20,
+      "crystcat_qclass": 11,
+      "crystcat_global_qclass": 100,
+      "crystcat_zclasses": 2,
+      "order": 24
+    },
+    {
+      "manuscript_case": 106,
+      "crystcat_system": 20,
+      "crystcat_qclass": 19,
+      "crystcat_global_qclass": 108,
+      "crystcat_zclasses": 1,
+      "order": 48
+    }
+  ]
+}

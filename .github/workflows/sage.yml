@@ -1,0 +1,28 @@
+name: Sage container smoke checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Sage 10.9 image and check required runtimes
+        run: docker build --platform linux/amd64 --tag sl4-sage:ci .
+      - name: Run fresh, bounded smoke checks without network access
+        timeout-minutes: 10
+        run: |
+          mkdir -p "$RUNNER_TEMP/sl4-sage-results"
+          chmod 0777 "$RUNNER_TEMP/sl4-sage-results"
+          docker run --rm --network none --platform linux/amd64 \
+            --volume "$RUNNER_TEMP/sl4-sage-results:/results" \
+            --entrypoint /usr/bin/sage sl4-sage:ci \
+            -python /opt/sl4/tools/smoke_sage.py --output-dir /results/smoke
+      # Reports remain temporary runner files; no results/artifacts are uploaded.

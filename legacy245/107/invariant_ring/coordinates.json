@@ -1,0 +1,7 @@
+{
+  "a": "u1",
+  "b": "u2",
+  "c": "u3",
+  "f": "u4",
+  "z": "A nonzero scalar multiple of 2*A*u5+B, where the relation is A*u5^2+B*u5+C."
+}

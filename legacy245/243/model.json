@@ -1,0 +1,141 @@
+{
+  "case": 243,
+  "representation": "U",
+  "coordinate_order": [
+    "u1",
+    "u2",
+    "u3",
+    "u4",
+    "u5",
+    "u6",
+    "e1",
+    "e2",
+    "e3",
+    "e4"
+  ],
+  "invariant_generator_count": 6,
+  "junior_count": 4,
+  "dimension": 8,
+  "coefficient_field": "QQ",
+  "cyclotomic_minpoly": "zeta^4 - zeta^2 + 1",
+  "equations": [
+    "-4*u2^2*e2 - u1^2*e4 + u4^2",
+    "4*u3^3*e1 - u6^2*e2 - 27*u5^2*e4"
+  ],
+  "relation_count": 2,
+  "valuation_grading": [
+    [
+      0,
+      0,
+      -3,
+      0,
+      -3,
+      -3,
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      -1,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      2,
+      0,
+      0
+    ],
+    [
+      -2,
+      -2,
+      0,
+      -2,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0
+    ],
+    [
+      -1,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      2
+    ]
+  ],
+  "primitive_grading": [
+    [
+      0,
+      0,
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      -1,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      2,
+      0,
+      0
+    ],
+    [
+      -1,
+      -1,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      -1,
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      2
+    ]
+  ],
+  "invariant_polynomial_degrees": [
+    2,
+    2,
+    2,
+    2,
+    3,
+    3
+  ],
+  "definition": "u_j = F_j product_l(t_l^(-nu_l(F_j))); e_l = t_l^(r_l). Columns use exactly coordinate_order; no implicit permutation.",
+  "source_model": "ASL4_MUVAK_CONTINUATION_2026_09_06/243_full_cox.json",
+  "source_input": "ASL4_MUVAK_CONTINUATION_2026_09_06/243_general_input.json",
+  "source_sha256": {
+    "ASL4_MUVAK_CONTINUATION_2026_09_06/243_full_cox.json": "ed190da98b2062022a677d7fba8046992f03053a1f2df661e51d73909f24171e",
+    "ASL4_MUVAK_CONTINUATION_2026_09_06/243_general_input.json": "c2b27cc5c1695b693dfbf21411984f42b34fb62ec9486e84c9f8cc052c12d078"
+  }
+}

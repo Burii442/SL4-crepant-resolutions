@@ -1,0 +1,215 @@
+// Exact chart substitutions and deterministically selected Jacobian minors.
+ring U=0,(a,b,c,d,f,g,h,i,j),dp;
+map reduceChart=PullRing,
+  g^2+c*j,a,b,1,(g^2+c*j)*f-a*g,c,d,f,b*g+2*a*j,g,
+  2*d*f-b*h,h,i,j,-3*b^2+2*f*i+2*d*j;
+ideal reducedChart=reduceChart(chartI);
+ideal reducedChartSimplified=simplify(reducedChart,2);
+ideal reducedChartStd=std(reducedChart);
+ideal reducedChartMstd=mstd(reducedChartStd)[2];
+
+setring PullRing;
+map inverseChart4=U,t2,t3,t6,t7,t8,t10,t12,t13,t14;
+ideal chartCoordinates=t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,e;
+setring U;
+ideal chartRoundTrip=reduceChart(chartCoordinates);
+setring PullRing;
+ideal chartBack=inverseChart4(chartRoundTrip);
+ideal chartDifferences;
+for(int xyz=1;xyz<=15;xyz++){chartDifferences[xyz]=chartCoordinates[xyz]-chartBack[xyz];}
+"CHART4_ALL15_INVERSE_COORDINATES";size(simplify(reduce(chartDifferences,std(chartI)),2));
+setring U;
+"reduced chart variables"; nvars(basering);
+"reduced chart standard-basis size"; size(reducedChartStd);
+"reduced chart simplified input size"; size(reducedChartSimplified);
+"reduced chart mstd basis size"; size(reducedChartMstd);
+"reduced chart dimension (expected 4)"; dim(reducedChartStd);
+"reduced chart leading relations"; reducedChartStd[1..12];
+ideal firstTwelve=reducedChartStd[1..12];
+ideal remainderTwelve=reduce(reducedChartStd,std(firstTwelve));
+"remainder after first 12"; size(simplify(remainderTwelve,2));
+ideal firstTwenty=reducedChartStd[1..20];
+ideal remainderTwenty=reduce(reducedChartStd,std(firstTwenty));
+"remainder after first 20"; size(simplify(remainderTwenty,2));
+ideal tangentEquations=jet(reducedChartStd,1);
+"linear tangent equations at the origin"; simplify(tangentEquations,2);
+"Zariski tangent dimension at the origin"; dim(std(tangentEquations));
+matrix reducedJacobian=jacob(reducedChartStd);
+
+ring LocalTests=0,(aa,bb,cc,dd,ff,gg,hh,ii,jj),dp;
+map shiftC=U,aa,bb,cc+1,dd,ff,gg,hh,ii,jj;
+ideal localC=shiftC(reducedChartStd);
+ideal tangentC=jet(localC,1);
+map shiftG=U,aa,bb,cc,dd,ff,gg+1,hh,ii,jj;
+ideal localG=shiftG(reducedChartStd);
+ideal tangentG=jet(localG,1);
+map shiftJ=U,aa,bb,cc,dd,ff,gg,hh,ii,jj+1;
+ideal localJ=shiftJ(reducedChartStd);
+ideal tangentJ=jet(localJ,1);
+map evalC=U,0,0,1,0,0,0,0,0,0;
+matrix jacobianAtC=evalC(reducedJacobian);
+map evalJ=U,0,0,0,0,0,0,0,0,1;
+matrix jacobianAtJ=evalJ(reducedJacobian);
+map evalO=U,0,0,0,0,0,0,0,0,0;
+matrix jacobianAtO=evalO(reducedJacobian);
+"SIMPLE BOUNDARY POINTS ON THE t4 CHART";
+"c=1: point lies on chart"; size(simplify(jet(localC,0),2))==0;
+"c=1: tangent dimension"; dim(std(tangentC));
+"c=1: Jacobian matrix rank"; rank(jacobianAtC);
+"j=1: point lies on chart"; size(simplify(jet(localJ,0),2))==0;
+"j=1: tangent dimension"; dim(std(tangentJ));
+"j=1: Jacobian matrix rank"; rank(jacobianAtJ);
+"origin: Jacobian matrix rank"; rank(jacobianAtO);
+
+// A fast exact smoothness search on the only possible bad fibre e=0.  Any
+// singular point annihilates every codimension-five Jacobian minor.  Hence a
+// unit ideal obtained from even a selected subset of minors certifies
+// smoothness.  The selected minors are constructed over Q; reduction modulo
+// a large prime is only a fast precheck before the same certificate is
+// verified in characteristic zero.
+setring U;
+poly exceptionalFiberQ=-3*b2+2*f*i+2*d*j;
+matrix Jq=jacob(reducedChartStd);
+ideal selectedMinorsQ;
+
+// This minor is nonzero at c=1.  Its row/column certificate was read from
+// the exact Jacobian over Q; retaining it makes the randomized search
+// deterministic on the c-axis component that sparse sampling can miss.
+intvec cRows=1,2,3,11,25;
+intvec cColumns=1,2,4,8,9;
+matrix cSubmatrix[5][5];
+for(int cRow=1;cRow<=5;cRow=cRow+1){
+  for(int cColumn=1;cColumn<=5;cColumn=cColumn+1){
+    cSubmatrix[cRow,cColumn]=Jq[cRows[cRow],cColumns[cColumn]];
+  }
+}
+selectedMinorsQ[1]=det(cSubmatrix);
+
+// Analogous exact pivots at j=1 and at the origin cover the second axis
+// and the intersection of the two residual coordinate strata.
+intvec jRows=11,17,24,25,37;
+intvec jColumns=1,2,4,7,8;
+matrix jSubmatrix[5][5];
+for(int jRow=1;jRow<=5;jRow=jRow+1){
+  for(int jColumn=1;jColumn<=5;jColumn=jColumn+1){
+    jSubmatrix[jRow,jColumn]=Jq[jRows[jRow],jColumns[jColumn]];
+  }
+}
+selectedMinorsQ[2]=det(jSubmatrix);
+
+intvec oRows=11,24,25,26,37;
+intvec oColumns=1,2,4,7,8;
+matrix oSubmatrix[5][5];
+for(int oRow=1;oRow<=5;oRow=oRow+1){
+  for(int oColumn=1;oColumn<=5;oColumn=oColumn+1){
+    oSubmatrix[oRow,oColumn]=Jq[oRows[oRow],oColumns[oColumn]];
+  }
+}
+selectedMinorsQ[3]=det(oSubmatrix);
+system("--random",1701);
+for (int kk=1;kk<=500;kk=kk+1){
+  intvec selectedRows=random(1,nrows(Jq));
+  while(size(selectedRows)<5){
+    int candidateRow=random(1,nrows(Jq));
+    int duplicateRow=0;
+    for(int scanRow=1;scanRow<=size(selectedRows);scanRow=scanRow+1){
+      if(selectedRows[scanRow]==candidateRow){duplicateRow=1;}
+    }
+    if(duplicateRow==0){selectedRows=selectedRows,candidateRow;}
+  }
+  intvec selectedColumns=random(1,ncols(Jq));
+  while(size(selectedColumns)<5){
+    int candidateColumn=random(1,ncols(Jq));
+    int duplicateColumn=0;
+    for(int scanColumn=1;scanColumn<=size(selectedColumns);scanColumn=scanColumn+1){
+      if(selectedColumns[scanColumn]==candidateColumn){duplicateColumn=1;}
+    }
+    if(duplicateColumn==0){selectedColumns=selectedColumns,candidateColumn;}
+  }
+  matrix selectedSubmatrix[5][5];
+  for(int subRow=1;subRow<=5;subRow=subRow+1){
+    for(int subColumn=1;subColumn<=5;subColumn=subColumn+1){
+      selectedSubmatrix[subRow,subColumn]
+        =Jq[selectedRows[subRow],selectedColumns[subColumn]];
+    }
+  }
+  selectedMinorsQ[kk+3]=det(selectedSubmatrix);
+}
+
+ring Up=32003,(a,b,c,d,f,g,h,i,j),dp;
+map modp=U,a,b,c,d,f,g,h,i,j;
+ideal Ip=modp(reducedChartStd);
+poly exceptionalFiber=modp(exceptionalFiberQ);
+ideal selectedMinors=modp(selectedMinorsQ);
+ideal selectedSmoothnessTest=Ip,exceptionalFiber,selectedMinors;
+ideal selectedSmoothnessStd=std(selectedSmoothnessTest);
+"FINITE-MINOR SMOOTHNESS CERTIFICATE FOR t4";
+"selected minors"; size(simplify(selectedMinors,2));
+"unit ideal modulo 32003"; selectedSmoothnessStd==1;
+"selected-minor locus dimension"; dim(selectedSmoothnessStd);
+"selected-minor standard-basis size"; size(selectedSmoothnessStd);
+setring U;
+ideal exactSmoothnessTest=reducedChartStd,exceptionalFiberQ,selectedMinorsQ;
+ideal exactSmoothnessStd=std(exactSmoothnessTest);
+"unit ideal over Q"; exactSmoothnessStd==1;
+ideal exactWholeChartTest=reducedChartStd,selectedMinorsQ;
+ideal exactWholeChartStd=std(exactWholeChartTest);
+"selected minors certify the whole t4 chart over Q"; exactWholeChartStd==1;
+
+// The normalizer x_a -> x_{2a} exchanges t4 with t6, t8 with t10, and
+// t12 with t14.  It therefore suffices to inspect t4, t8 and t12.  Obtain
+// compact presentations of the latter two charts by exact substitution.
+setring PullRing;
+ideal chart8=std(IX+ideal(t8-1));
+list chart8Reduction=elimpart(interred(chart8));
+ideal cert8=std(chart8Reduction[1]+chart8Reduction[3]);
+"CHART8_ELIMINATION_FORWARD";size(simplify(reduce(chart8,cert8),2));
+"CHART8_ELIMINATION_REVERSE";size(simplify(reduce(cert8,std(chart8)),2));
+map retract8=PullRing,chart8Reduction[5];
+"CHART8_RETRACTION";size(simplify(reduce(retract8(chart8),std(chart8Reduction[1])),2));
+"CHART8_DIMENSION";dim(std(chart8));
+
+"t8 SUBSTITUTION REDUCTION";
+"substituted variables"; chart8Reduction[2];
+"remaining variables"; chart8Reduction[4];
+ideal chart8ReducedInPullRing=chart8Reduction[1];
+poly chart8ExceptionalEquation=chart8Reduction[5][15];
+
+ideal chart12=std(IX+ideal(t12-1));
+list chart12Reduction=elimpart(interred(chart12));
+ideal cert12=std(chart12Reduction[1]+chart12Reduction[3]);
+"CHART12_ELIMINATION_FORWARD";size(simplify(reduce(chart12,cert12),2));
+"CHART12_ELIMINATION_REVERSE";size(simplify(reduce(cert12,std(chart12)),2));
+map retract12=PullRing,chart12Reduction[5];
+"CHART12_RETRACTION";size(simplify(reduce(retract12(chart12),std(chart12Reduction[1])),2));
+"CHART12_DIMENSION";dim(std(chart12));
+
+"t12 SUBSTITUTION REDUCTION";
+"substituted variables"; chart12Reduction[2];
+"remaining variables"; chart12Reduction[4];
+"reduced equations"; simplify(chart12Reduction[1],2);
+"CHART12_POLYNOMIAL";size(simplify(chart12Reduction[1],2));
+
+ring V8=0,(a,b,c,d,g,h,i),dp;
+map reduceChart8=PullRing,0,a,b,c,0,d,0,0,0,g,h,i,0,0,0;
+ideal chart8Reduced=reduceChart8(chart8ReducedInPullRing);
+ideal chart8ReducedStd=std(chart8Reduced);
+ideal chart8ReducedMstd=mstd(chart8ReducedStd)[2];
+poly chart8Exceptional=reduceChart8(chart8ExceptionalEquation);
+"t8 COMPACT CHART";
+"variables"; nvars(basering);
+"dimension"; dim(chart8ReducedStd);
+"standard-basis size"; size(chart8ReducedStd);
+"mstd basis size"; size(chart8ReducedMstd);
+"mstd equations"; chart8ReducedMstd;
+"exceptional equation"; chart8Exceptional;
+list chart8SingularLocus=slocus(chart8ReducedMstd);
+ideal chart8SingularIdeal=chart8SingularLocus[1];
+ideal chart8ExceptionalSingularStd=std(chart8SingularIdeal+chart8Exceptional);
+"singular-locus ideal size"; size(chart8SingularIdeal);
+"singular-locus dimension"; dim(std(chart8SingularIdeal));
+"CHART8_WHOLE_SMOOTH";(std(chart8SingularIdeal)==1);
+"singular locus on exceptional fibre empty"; chart8ExceptionalSingularStd==1;
+
+
+"ENDPOINT231_DONE";quit;

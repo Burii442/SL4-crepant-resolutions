@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript when using these computations."
+type: software
+title: "Computations for Crepant resolutions of four-dimensional finite quotients"
+authors:
+  - family-names: Burek
+    given-names: Dominik
+  - family-names: Cynk
+    given-names: Sławomir
+version: "0.2.0"
+date-released: "2026-10-06"
+repository-code: "https://github.com/Burii442/SL4-crepant-resolutions"
+url: "https://github.com/Burii442/SL4-crepant-resolutions"

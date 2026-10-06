@@ -1,0 +1,59 @@
+[
+  {
+    "chart": 0,
+    "rows": [
+      1,
+      2,
+      3,
+      6,
+      7
+    ],
+    "columns": [
+      "q",
+      "r",
+      "y1",
+      "y4",
+      "v"
+    ],
+    "determinant": "360*y1**4",
+    "central_conditions": "{p: 0, q: 0, r: 0, h: 0, v: 0, y3: 0, y4: 0}"
+  },
+  {
+    "chart": 1,
+    "rows": [
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "columns": [
+      "q",
+      "r",
+      "y0",
+      "y4",
+      "v"
+    ],
+    "determinant": "405000*y0",
+    "central_conditions": "{p: 0, q: 0, r: 0, h: 0, v: 0, y3: 0, y4: 0}"
+  },
+  {
+    "chart": 2,
+    "rows": [
+      1,
+      2,
+      3,
+      6,
+      8
+    ],
+    "columns": [
+      "p",
+      "q",
+      "r",
+      "h",
+      "v"
+    ],
+    "determinant": "15187500",
+    "central_conditions": "{p: 0, q: 0, r: 0, h: 0, v: 0, y3: 0, y4: 0}"
+  }
+]

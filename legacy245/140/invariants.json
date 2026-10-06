@@ -1,0 +1,235 @@
+{
+  "case": 140,
+  "coordinate_definition": "u_j = F_j product_l(t_l^(-nu_l(F_j))); e_l = t_l^(r_l). Columns use exactly coordinate_order; no implicit permutation.",
+  "generator_polynomials": [
+    "x1^2 + x1*x2 + x2^2",
+    "x3^2 + x3*x4 + x4^2",
+    "2*x1^3 + 3*x1^2*x2 - 3*x1*x2^2 - 2*x2^3",
+    "2*x3^3 + 3*x3^2*x4 - 3*x3*x4^2 - 2*x4^3",
+    "x1^2*x2 + x1*x2^2",
+    "x3^2*x4 + x3*x4^2"
+  ],
+  "valuation_matrix": [
+    [
+      3,
+      0,
+      3,
+      0,
+      3,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      3,
+      0,
+      3,
+      0,
+      3
+    ]
+  ],
+  "junior_orders": [
+    3,
+    2,
+    2,
+    3
+  ],
+  "cyclotomic_minpoly": "zeta^2 - zeta + 1",
+  "junior_initial_generators": [
+    [
+      "3*x3*x4",
+      "x1^2 + x1*x2 + x2^2",
+      "(-6*zeta + 3)*x3^3",
+      "2*x1^3 + 3*x1^2*x2 - 3*x1*x2^2 - 2*x2^3",
+      "-x3^3",
+      "x1^2*x2 + x1*x2^2"
+    ],
+    [
+      "3*x1^2",
+      "3*x2^2",
+      "-18*x1^2*x3",
+      "-18*x2^2*x4",
+      "2*x1^3",
+      "2*x2^3"
+    ],
+    [
+      "x1^2",
+      "x2^2",
+      "2*x1^3",
+      "2*x2^3",
+      "-2*x1^2*x3",
+      "-2*x2^2*x4"
+    ],
+    [
+      "x1^2 + x1*x2 + x2^2",
+      "3*x3*x4",
+      "2*x1^3 + 3*x1^2*x2 - 3*x1*x2^2 - 2*x2^3",
+      "(-6*zeta + 3)*x3^3",
+      "x1^2*x2 + x1*x2^2",
+      "-x3^3"
+    ]
+  ],
+  "polynomial_degrees": [
+    2,
+    2,
+    3,
+    3,
+    3,
+    3
+  ],
+  "finite_degree_orders": [
+    2,
+    2
+  ],
+  "finite_degree_matrix": [
+    [
+      0,
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "base_relations": [
+    "4*u2^3 - u4^2 - 27*u6^2",
+    "4*u1^3 - u3^2 - 27*u5^2"
+  ],
+  "source_input": "ASL4_MUVAK_CONTINUATION_2026_09_06/140_general_input.json",
+  "polynomial_coordinate_order": [
+    "x1",
+    "x2",
+    "x3",
+    "x4"
+  ],
+  "junior_representatives_in_coordinates": [
+    [
+      [
+        -1,
+        -1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        -1,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        -1
+      ]
+    ],
+    [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        -1
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  ],
+  "junior_matrix_source": "output/data/asl4_open_group_geometry.csv, row 140"
+}

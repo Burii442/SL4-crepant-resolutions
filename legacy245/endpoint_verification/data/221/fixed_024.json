@@ -1,0 +1,208 @@
+{
+  "support_index": 24,
+  "support": [
+    1,
+    2,
+    4,
+    5,
+    14,
+    15,
+    17,
+    22,
+    25,
+    26,
+    28,
+    31
+  ],
+  "gauge": [
+    1,
+    2,
+    4,
+    26,
+    28,
+    31
+  ],
+  "gauge_determinant": 1,
+  "free_coordinates": [
+    5,
+    14,
+    15,
+    17,
+    22,
+    25
+  ],
+  "ring_variables": [
+    "u5",
+    "u14",
+    "u15",
+    "u17",
+    "u22",
+    "u25",
+    "zzloc"
+  ],
+  "cox_sha256": "bb82eb976201c1e11634c57e7fdb54c50b76b77fbc02e373e03240bcecbf3439",
+  "supports_sha256": "18f2546e76bf94e6e3a3deaa9553b23b195ee3321a63b03d2f78c6dbd6d3f2db",
+  "helper_sha256": "857191da9a0d39e5866fc279b91daea1e6b3ed126e79aace7a53217cb26f014a",
+  "required_jacobian_rank": 21,
+  "stratum_groebner_basis": [
+    "u22^4*zzloc - 64*u25^3*zzloc - 192*u17*u22*zzloc - 48*u22^2*zzloc - 448*u25^2*zzloc + 4*u17*u22 - 1536*u17*zzloc - 704*u22*zzloc - 32*u17 - 16*u22 + 16*u25 - 3072*zzloc",
+    "u25^4*zzloc - 1/4*u22^3*zzloc + 4*u25^3*zzloc - u22^2*zzloc + 16*u25^2*zzloc + 48*u17*zzloc + 8*u22*zzloc - u17 + u25 + 96*zzloc + 2",
+    "u17*u22^2*zzloc + 1/2*u22^3*zzloc + 4*u25^3*zzloc + 16*u17*u22*zzloc + 6*u22^2*zzloc + 32*u25^2*zzloc + 112*u17*zzloc + 56*u22*zzloc + 2*u17 - 2*u25 + 224*zzloc",
+    "u17^2 - u25^2 - u22 - 4",
+    "u17*u25 - u25^2 - 2*u17 + 2*u25 - 4",
+    "u22*u25 - 4*u17 - 2*u22 - 8",
+    "u5 + u17 - u25 + 2",
+    "u14 + 1/4*u17",
+    "u15 + 1/4*u25"
+  ],
+  "pivots": [
+    {
+      "row": 163,
+      "column": 28,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 159,
+      "column": 9,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 131,
+      "column": 4,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 127,
+      "column": 8,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 92,
+      "column": 11,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 82,
+      "column": 20,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 18,
+      "column": 19,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 8,
+      "column": 0,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 79,
+      "column": 29,
+      "pivot": "-2",
+      "inverse": "-1/2",
+      "inverse_verified": true
+    },
+    {
+      "row": 135,
+      "column": 7,
+      "pivot": "-32",
+      "inverse": "-1/32",
+      "inverse_verified": true
+    },
+    {
+      "row": 95,
+      "column": 23,
+      "pivot": "-4",
+      "inverse": "-1/4",
+      "inverse_verified": true
+    },
+    {
+      "row": 13,
+      "column": 6,
+      "pivot": "-4",
+      "inverse": "-1/4",
+      "inverse_verified": true
+    },
+    {
+      "row": 69,
+      "column": 22,
+      "pivot": "1",
+      "inverse": "1",
+      "inverse_verified": true
+    },
+    {
+      "row": 39,
+      "column": 21,
+      "pivot": "1",
+      "inverse": "1",
+      "inverse_verified": true
+    },
+    {
+      "row": 34,
+      "column": 2,
+      "pivot": "1",
+      "inverse": "1",
+      "inverse_verified": true
+    },
+    {
+      "row": 11,
+      "column": 12,
+      "pivot": "1",
+      "inverse": "1",
+      "inverse_verified": true
+    },
+    {
+      "row": 8,
+      "column": 5,
+      "pivot": "1",
+      "inverse": "1",
+      "inverse_verified": true
+    },
+    {
+      "row": 5,
+      "column": 18,
+      "pivot": "1",
+      "inverse": "1",
+      "inverse_verified": true
+    },
+    {
+      "row": 0,
+      "column": 10,
+      "pivot": "1",
+      "inverse": "1",
+      "inverse_verified": true
+    },
+    {
+      "row": 6,
+      "column": 16,
+      "pivot": "2",
+      "inverse": "1/2",
+      "inverse_verified": true
+    },
+    {
+      "row": 21,
+      "column": 13,
+      "pivot": "-16*u22",
+      "inverse": "1/512*u22^3*zzloc - 1/64*u25^3*zzloc + 1/64*u17*u22*zzloc + 1/128*u22^2*zzloc - 1/32*u25^2*zzloc - 1/8*u17*zzloc + 1/128*u17 - 1/128*u25 - 1/4*zzloc - 1/64",
+      "inverse_verified": true
+    }
+  ],
+  "stratum_dimension": 1
+}

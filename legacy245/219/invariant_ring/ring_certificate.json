@@ -1,0 +1,40 @@
+{
+  "index": 219,
+  "actual_group_order": 36,
+  "generators": [
+    "x3^2 - x3*x4 + x4^2",
+    "x1^2 - x1*x2 + x2^2",
+    "2*x3^3 - 3*x3^2*x4 - 3*x3*x4^2 + 2*x4^3",
+    "2*x1^6 - 6*x1^5*x2 + 15*x1^4*x2^2 - 20*x1^3*x2^3 + 15*x1^2*x2^4 - 6*x1*x2^5 + 2*x2^6",
+    "x1^5*x2*x3^2*x4 - 5/2*x1^4*x2^2*x3^2*x4 + 5/2*x1^2*x2^4*x3^2*x4 - x1*x2^5*x3^2*x4 - x1^5*x2*x3*x4^2 + 5/2*x1^4*x2^2*x3*x4^2 - 5/2*x1^2*x2^4*x3*x4^2 + x1*x2^5*x3*x4^2"
+  ],
+  "weights": [
+    2,
+    2,
+    3,
+    6,
+    9
+  ],
+  "minimal_relations": [
+    "176*u1^3*u2^6 - 44*u2^6*u3^2 - 160*u1^3*u2^3*u4 + 40*u2^3*u3^2*u4 + 36*u1^3*u4^2 - 9*u3^2*u4^2 + 324*u5^2"
+  ],
+  "relation_degrees": [
+    18
+  ],
+  "molien": "(t^6 - t^3 + 1)/(t^10 - 2*t^8 - 2*t^7 + t^6 + 4*t^5 + t^4 - 2*t^3 - 2*t^2 + 1)",
+  "hilbert_ci": "(t^6 - t^3 + 1)/(t^10 - 2*t^8 - 2*t^7 + t^6 + 4*t^5 + t^4 - 2*t^3 - 2*t^2 + 1)",
+  "independent_graph_kernel": [
+    "u1^3*u2^6 - 1/4*u2^6*u3^2 - 10/11*u1^3*u2^3*u4 + 5/22*u2^3*u3^2*u4 + 9/44*u1^3*u4^2 - 9/176*u3^2*u4^2 + 81/44*u5^2"
+  ],
+  "branch_discriminant": "-228096*u1^3*u2^6 + 57024*u2^6*u3^2 + 207360*u1^3*u2^3*u4 - 51840*u2^3*u3^2*u4 - 46656*u1^3*u4^2 + 11664*u3^2*u4^2",
+  "branch_factorization": "(1296) * (-4*u1^3 + u3^2) * (-22*u2^3 + 9*u4) * (-2*u2^3 + u4)",
+  "actual_invariance": true,
+  "full_ring_by_exact_hilbert_equality": true,
+  "complete_intersection": true,
+  "source_hashes": {
+    "input_matrices.json": "3fe90f78a367bd1afb77d02583595595fc6c6f8368e4f6a302715e73c1a96f30",
+    "compute_invariants.sing": "81b3d4388c57d8a3b05a74f3be3e0b6cbb905e06cc40ed6d61130aaf09bc9f97",
+    "generators.txt": "11d1ab82567e3cecb6611f27a237969c39d4d46540c5a552174aa9e02bd30907",
+    "relations.txt": "5825eca11812b0b0f455c84742c0b3a459fac6e5b7f2e1fea81c0e99df1d7e4e"
+  }
+}

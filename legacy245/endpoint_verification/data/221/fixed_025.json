@@ -1,0 +1,48 @@
+{
+  "support_index": 25,
+  "support": [
+    1,
+    2,
+    4,
+    5,
+    15,
+    17,
+    22,
+    25,
+    26,
+    28,
+    31
+  ],
+  "gauge": [
+    1,
+    2,
+    4,
+    26,
+    28,
+    31
+  ],
+  "gauge_determinant": 1,
+  "free_coordinates": [
+    5,
+    15,
+    17,
+    22,
+    25
+  ],
+  "ring_variables": [
+    "u5",
+    "u15",
+    "u17",
+    "u22",
+    "u25",
+    "zzloc"
+  ],
+  "cox_sha256": "bb82eb976201c1e11634c57e7fdb54c50b76b77fbc02e373e03240bcecbf3439",
+  "supports_sha256": "18f2546e76bf94e6e3a3deaa9553b23b195ee3321a63b03d2f78c6dbd6d3f2db",
+  "helper_sha256": "857191da9a0d39e5866fc279b91daea1e6b3ed126e79aace7a53217cb26f014a",
+  "required_jacobian_rank": 21,
+  "stratum_groebner_basis": [
+    "1"
+  ],
+  "pivots": []
+}

@@ -1,0 +1,11 @@
+{
+  "portable_inputs": {
+    "families.json": "da40463924dfc103610d85dba013f4009ee8a6b1cd67152146fba55dfde143f9",
+    "catalogue_projection.json": "1931100c9dd120c9c46de2cab324dcc8fb90d49c1f66863b96e3bde85b76d131",
+    "original_applications.csv": "1673eeaa235ada167ffb4d0f3aac517e430e0054af4c726333bfd3b3d8c3bf02",
+    "manuscript_assignments.json": "20687698c51e0d9dcd698f17591b5fe40b3748157bb993040bec073032c7b8a0",
+    "recorded_applications.csv": "151c540a71485638f911464b7bf5b75b63386516b7e338a3569d6ea5102ace4e"
+  },
+  "transformation": "Project every recorded decisive application from the 245 original indices to the 106 complex-conjugacy classes, merge duplicates of the same family/case/outcome, and relabel the ten retained families A--J. Preserve the original index sources for every projected row.",
+  "scope": "The verifier checks this finite incidence relation and its minimum covers. It does not certify the geometric proofs of the recorded applications or the completeness of the group classification."
+}

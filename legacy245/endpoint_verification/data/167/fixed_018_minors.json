@@ -1,0 +1,17 @@
+{
+  "source_sha256": "3198447b4336051c91f8907513158573e2f027ad9632c2947f419ca9090386e0",
+  "required_residual_rank": 1,
+  "normalized_minors": [
+    "u18^2 + 1/2*u18",
+    "u18^2 + 1/2*u18 + 1/12"
+  ],
+  "unit_ideal_identity_coefficients": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "-12",
+    "12"
+  ],
+  "identity_checked_as_exact_polynomial": true
+}

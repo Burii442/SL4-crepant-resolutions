@@ -1,0 +1,25 @@
+{
+  "source_certificate": "ASL4_OPEN_ATTACK_2026_09_11/cox221/pruned2_25/fixed_strata/fixed_020.json",
+  "source_sha256": "c24730bc0ca2126c71b1ada92a47e84517883ad02ec4e71a9b5cfec043f48ab3",
+  "helper_sha256": "75b8f955d9d7fca25f0a43501ed33f99cbc66c7798771fd160d611717e481145",
+  "required_residual_rank": 1,
+  "residual_rows": 31,
+  "residual_columns": [
+    13,
+    14,
+    16
+  ],
+  "minor_choices_tried": 2,
+  "normalized_minors": [
+    "u5*u22 - 4*u5 + 4*u22",
+    "u5*u22 + 1/2*u22^2 + 2*u22"
+  ],
+  "unit_ideal_identity_coefficients": [
+    "-1",
+    "-3/2",
+    "-3/112*u22 + 2*zzloc + 15/28",
+    "-3/448*u5*u22 - 3/896*u22^2 + 1/2*u5*zzloc + 1/4*u22*zzloc + 15/112*u5 + 9/224*u22 + 3/8",
+    "3/448*u5*u22 - 1/2*u5*zzloc - 15/112*u5 + 3/112*u22 + zzloc - 27/56"
+  ],
+  "identity_verified": true
+}

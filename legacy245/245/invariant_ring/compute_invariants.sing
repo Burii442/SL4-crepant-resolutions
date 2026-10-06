@@ -1,0 +1,18 @@
+LIB "finvar.lib";
+ring R=0,(x1,x2,x3,x4),dp;
+matrix A1[4][4]=1,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,1;
+matrix A2[4][4]=-1,0,0,0,0,-1,0,0,0,0,1,0,0,0,0,1;
+matrix A3[4][4]=1,0,0,0,0,1,0,0,0,0,-1,0,0,0,0,-1;
+matrix A4[4][4]=1,0,0,0,0,1,0,0,0,0,0,1,0,0,-1,0;
+matrix A5[4][4]=0,-1,0,0,1,-1,0,0,0,0,1,0,0,0,0,1;
+matrix P,S,IS=invariant_ring(A1,A2,A3,A4,A5,intvec(0,0,0));
+matrix F=concat(P,IS);
+write("generators.txt","COUNT",ncols(F));
+for(int j=1;j<=ncols(F);j++){write("generators.txt",string(F[1,j]));}
+list L=rel_orbit_variety(ideal(0),F);
+def Q=L[1];setring Q;
+option(redSB);ideal J=std(G);
+write("relations.txt","COUNT",size(J));
+for(int k=1;k<=size(J);k++){write("relations.txt",string(J[k]));}
+"COMPLETE_GRAPH_KERNEL_FINISHED";
+quit;

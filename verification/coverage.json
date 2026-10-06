@@ -1,0 +1,398 @@
+{
+  "schema": 1,
+  "scope": "Complete 77-step legacy registry, bundled into 14 common stages and 21 ordered binding/Cox/endpoint stages. Five explicitly labelled common stages are compact/Kummer extras.",
+  "common_tasks": [
+    {
+      "id": "criteria",
+      "script": "legacy245/verify_criteria.py",
+      "arguments": [],
+      "scope": "Coverage and consistency of recorded criterion incidences",
+      "legacy_extra": false
+    },
+    {
+      "id": "criteria-geometry",
+      "script": "legacy245/criteria_geometry/run.py",
+      "arguments": [
+        "--output-dir",
+        "{out}/result"
+      ],
+      "scope": "26 cotangent checks, 25 D/H/I intertwiners, the equivariant fan, and eight tower group identifications",
+      "legacy_extra": false
+    },
+    {
+      "id": "catalogue",
+      "script": "legacy245/verify_catalogue.py",
+      "arguments": [
+        "--output",
+        "{out}/catalogue.json"
+      ],
+      "scope": "All 245 matrix closures and group data; exact criteria A/B/C",
+      "legacy_extra": false
+    },
+    {
+      "id": "representatives",
+      "script": "legacy245/verify_representatives.py",
+      "arguments": [
+        "--output",
+        "{out}/representatives.json"
+      ],
+      "scope": "All 73 rational representative conjugacies, comparing the complete groups",
+      "legacy_extra": false
+    },
+    {
+      "id": "compact",
+      "script": "legacy245/verify_compact_cases.py",
+      "arguments": [
+        "--output",
+        "{out}/compact.json"
+      ],
+      "scope": "Invariant forms for 245 entries; 25 closures, ten full stabilizers, five integral conjugacies",
+      "legacy_extra": true
+    },
+    {
+      "id": "integral-lattices",
+      "script": "legacy245/verify_integral_lattices.py",
+      "arguments": [],
+      "scope": "Finite Hurwitz and order-32 lattice arithmetic",
+      "legacy_extra": true
+    },
+    {
+      "id": "named-hodge",
+      "script": "legacy245/ihs_verification/verify_named_hodge.py",
+      "arguments": [
+        "--output",
+        "{out}/hodge.json"
+      ],
+      "scope": "Ten named full Hodge profiles and independent commuting-pair Euler formula",
+      "legacy_extra": true
+    },
+    {
+      "id": "seven-torsion",
+      "script": "legacy245/ihs_verification/run.py",
+      "arguments": [
+        "--check",
+        "torsion",
+        "--output-dir",
+        "{out}/result"
+      ],
+      "scope": "All seven explicit finite torsion exclusions in Part VI",
+      "legacy_extra": true
+    },
+    {
+      "id": "extra-models",
+      "script": "legacy245/ihs_verification/run.py",
+      "arguments": [
+        "--check",
+        "models",
+        "--output-dir",
+        "{out}/result"
+      ],
+      "scope": "Type V automorphism and the G32 matrix model",
+      "legacy_extra": true
+    },
+    {
+      "id": "geometry",
+      "script": "legacy245/verify_geometry.py",
+      "arguments": [],
+      "scope": "Twelve complete invariant-ring presentations and all 46 toric fans",
+      "legacy_extra": false
+    },
+    {
+      "id": "cox-models",
+      "script": "legacy245/check_cox_models.sage.py",
+      "arguments": [],
+      "scope": "Gradings, homogeneity and modular consistency only; not full Cox generation",
+      "legacy_extra": false
+    },
+    {
+      "id": "geometry-132",
+      "script": "legacy245/geometry_proofs/run.py",
+      "arguments": [
+        "--case",
+        "132",
+        "--output-dir",
+        "{out}/result"
+      ],
+      "scope": "Full fresh geometry validation for representative 132",
+      "legacy_extra": false
+    },
+    {
+      "id": "geometry-234",
+      "script": "legacy245/geometry_proofs/run.py",
+      "arguments": [
+        "--case",
+        "234",
+        "--output-dir",
+        "{out}/result"
+      ],
+      "scope": "Full fresh geometry validation for representative 234",
+      "legacy_extra": false
+    },
+    {
+      "id": "geometry-236",
+      "script": "legacy245/geometry_proofs/run.py",
+      "arguments": [
+        "--case",
+        "236",
+        "--output-dir",
+        "{out}/result"
+      ],
+      "scope": "Full fresh geometry validation for representative 236",
+      "legacy_extra": false
+    }
+  ],
+  "cox_bundles": [
+    {
+      "old_case": 114,
+      "current_cases": [
+        35
+      ],
+      "steps": [
+        "binding-114",
+        "cox-114",
+        "endpoint-114"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 138,
+      "current_cases": [
+        43
+      ],
+      "steps": [
+        "binding-138",
+        "cox-138",
+        "endpoint-138"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 140,
+      "current_cases": [
+        45
+      ],
+      "steps": [
+        "binding-140",
+        "cox-140",
+        "endpoint-140"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 143,
+      "current_cases": [
+        46
+      ],
+      "steps": [
+        "binding-143",
+        "cox-143",
+        "endpoint-143"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 151,
+      "current_cases": [
+        50
+      ],
+      "steps": [
+        "binding-151",
+        "cox-151",
+        "endpoint-151"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 161,
+      "current_cases": [
+        55
+      ],
+      "steps": [
+        "binding-161",
+        "cox-161",
+        "endpoint-161"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 167,
+      "current_cases": [
+        58
+      ],
+      "steps": [
+        "binding-167",
+        "cox-167",
+        "endpoint-167"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 171,
+      "current_cases": [
+        60
+      ],
+      "steps": [
+        "binding-171",
+        "cox-171",
+        "endpoint-171"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 173,
+      "current_cases": [
+        62
+      ],
+      "steps": [
+        "binding-173",
+        "cox-173",
+        "endpoint-173"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 174,
+      "current_cases": [
+        63
+      ],
+      "steps": [
+        "binding-174",
+        "cox-174",
+        "endpoint-174"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 177,
+      "current_cases": [
+        64
+      ],
+      "steps": [
+        "binding-177",
+        "cox-177",
+        "endpoint-177"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 178,
+      "current_cases": [
+        65
+      ],
+      "steps": [
+        "binding-178",
+        "cox-178",
+        "endpoint-178"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 179,
+      "current_cases": [
+        66
+      ],
+      "steps": [
+        "binding-179",
+        "cox-179",
+        "endpoint-179"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 194,
+      "current_cases": [
+        75
+      ],
+      "steps": [
+        "binding-194",
+        "cox-194",
+        "endpoint-194"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 206,
+      "current_cases": [
+        80
+      ],
+      "steps": [
+        "binding-206",
+        "cox-206",
+        "endpoint-206"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 221,
+      "current_cases": [
+        88
+      ],
+      "steps": [
+        "binding-221",
+        "cox-221",
+        "endpoint-221"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 222,
+      "current_cases": [
+        89
+      ],
+      "steps": [
+        "binding-222",
+        "cox-222",
+        "endpoint-222"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 227,
+      "current_cases": [
+        93
+      ],
+      "steps": [
+        "binding-227",
+        "cox-227",
+        "endpoint-227"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 231,
+      "current_cases": [
+        97
+      ],
+      "steps": [
+        "binding-231",
+        "cox-231",
+        "endpoint-231"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 233,
+      "current_cases": [
+        98
+      ],
+      "steps": [
+        "binding-233",
+        "cox-233",
+        "endpoint-233"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    },
+    {
+      "old_case": 243,
+      "current_cases": [
+        105
+      ],
+      "steps": [
+        "binding-243",
+        "cox-243",
+        "endpoint-243"
+      ],
+      "must_share_one_legacy_runner_invocation": true
+    }
+  ]
+}

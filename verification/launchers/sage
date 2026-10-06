@@ -1,0 +1,85 @@
+#!/usr/bin/env python3
+"""Run bundled macOS Sage without its /var/tmp relocation launcher.
+
+Supports -python, Python/Sage files, -c and --version. It is deliberately not a
+replacement for the entire Sage command-line interface. No installation files
+are changed. SL4_RUNTIME_CACHE selects a persistent cache; otherwise a private
+temporary cache is deleted on exit. SL4_SAGE_BUNDLE can select a framework root.
+SL4_TOOL_BIN keeps the runner's explicitly selected tool wrappers first in PATH.
+"""
+import os
+from pathlib import Path
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
+
+
+def bundle_root():
+    override = os.environ.get("SL4_SAGE_BUNDLE")
+    if override:
+        candidates = [Path(override).expanduser()]
+    else:
+        candidates = list(Path("/Applications").glob(
+            "SageMath-*.app/Contents/Frameworks/Sage.framework/Versions/Current"))
+        candidates += list((Path.home() / "Applications").glob(
+            "SageMath-*.app/Contents/Frameworks/Sage.framework/Versions/Current"))
+        candidates.sort(key=lambda p: tuple(map(int, re.findall(r"\d+", str(p)))), reverse=True)
+    for candidate in candidates:
+        if (candidate / "venv/bin/python3").is_file():
+            return candidate.resolve()
+    raise RuntimeError("No SageMath macOS framework found; set SL4_SAGE_BUNDLE.")
+
+
+def main():
+    root = bundle_root()
+    args = sys.argv[1:]
+    python = str(root / "venv/bin/python3")
+    if args and args[0] in ("-python", "--python", "--python3"):
+        command = [python] + args[1:]
+    elif args and args[0] in ("-v", "--version"):
+        command = [python, "-c", "from sage.version import version; print('SageMath version ' + version)"]
+    elif len(args) >= 2 and args[0] == "-c":
+        command = [python, "-c", "from sage.all import *; from sage.repl.preparse import preparse; "
+                   "import sys; exec(compile(preparse(sys.argv[1]), '<sage -c>', 'exec'))", args[1]] + args[2:]
+    elif args and args[0].endswith(".py"):
+        command = [python] + args
+    elif args and args[0].endswith(".sage"):
+        loader = ("import sys; from pathlib import Path; from sage.all import *; "
+                  "from sage.repl.preparse import preparse_file; "
+                  "p=Path(sys.argv[1]).resolve(); sys.argv=sys.argv[1:]; "
+                  "sys.path.insert(0,str(p.parent)); "
+                  "g=dict(globals(),__file__=str(p),__name__='__main__'); "
+                  "exec(compile(preparse_file(p.read_text()),str(p),'exec'),g)")
+        command = [python, "-c", loader] + args
+    else:
+        raise RuntimeError("Supported: sage -python ..., sage file.py, sage file.sage, sage -c CODE, sage --version")
+    configured = os.environ.get("SL4_RUNTIME_CACHE")
+    cache = Path(configured).expanduser().resolve() if configured else Path(tempfile.mkdtemp(prefix="sl4-sage-"))
+    env = os.environ.copy()
+    tool_bin = env.get("SL4_TOOL_BIN")
+    path_parts = ([tool_bin] if tool_bin else []) + [str(root / "venv/bin"), str(root / "local/bin"), env.get("PATH", "")]
+    env.update({"SAGE_ROOT": str(root), "SAGE_LOCAL": str(root / "local"),
+                "SAGE_VENV": str(root / "venv"), "SAGE_SHARE": str(root / "local/share"),
+                "GAP_ROOT_PATHS": ";".join(str(root / p) for p in ("local/lib/gap", "local/share/gap")),
+                "PYTHONNOUSERSITE": "1", "PYTHONDONTWRITEBYTECODE": "1",
+                "SAGE_STARTUP_FILE": os.devnull,
+                "PATH": os.pathsep.join(path_parts)})
+    for variable, directory in (("DOT_SAGE", "dot_sage"), ("XDG_CACHE_HOME", "xdg"), ("MPLCONFIGDIR", "matplotlib")):
+        location = cache / directory
+        location.mkdir(parents=True, exist_ok=True)
+        env[variable] = str(location)
+    try:
+        return subprocess.call(command, env=env)
+    finally:
+        if not configured:
+            shutil.rmtree(cache, ignore_errors=True)
+
+
+if __name__ == "__main__":
+    try:
+        sys.exit(main())
+    except (RuntimeError, OSError) as error:
+        print("SL4 Sage launcher: " + str(error), file=sys.stderr)
+        sys.exit(2)

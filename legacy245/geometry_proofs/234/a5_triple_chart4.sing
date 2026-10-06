@@ -1,0 +1,16 @@
+LIB "elim.lib";
+option(noredefine);
+option(redSB);
+ring R=0,(p,q,r,h,y0,y1,y2,y3,v),dp;
+ideal raw=(1875*h^2 + 9*p^3*r - 3*p^2*q^2 + 140*p*r^2 - 45*q^2*r)-v*y1,(-45*h*p^2 + 100*h*r + 32*p*q*r - 9*q^3)-v*y2,(75*h*q + 9*p^2*r - 3*p*q^2 - 20*r^2)-v*y3,(81*p^4*r - 27*p^3*q^2 - 360*p^2*r^2 + 540*p*q^2*r - 135*q^4 + 400*r^3)-v,v^2*y0^2-(3125*h^4 - 3750*h^3*p*q + 108*h^2*p^5 - 900*h^2*p^3*r + 825*h^2*p^2*q^2 + 2000*h^2*p*r^2 + 2250*h^2*q^2*r - 72*h*p^4*q*r + 16*h*p^3*q^3 + 560*h*p^2*q*r^2 - 630*h*p*q^3*r + 108*h*q^5 - 1600*h*q*r^3 + 16*p^4*r^3 - 4*p^3*q^2*r^2 - 128*p^2*r^4 + 144*p*q^2*r^3 - 27*q^4*r^2 + 256*r^5);
+"SATURATION_START";
+list L=sat(raw,ideal(v));
+ideal C=std(L[1]);
+"CHART_DIMENSION";dim(C);
+"CHART_RELATIONS_BEGIN";C;"CHART_RELATIONS_END";
+ring F=0,(y0,y1,y2,y3),dp;
+map fiber=R,0,0,0,0,y0,y1,y2,y3,0;
+ideal CF=std(fiber(C));
+"FIBER_DIMENSION";dim(CF);
+"FIBER_IDEAL";CF;
+"DONE";quit;

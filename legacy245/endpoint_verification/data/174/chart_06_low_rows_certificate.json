@@ -1,0 +1,23 @@
+{
+  "chart": 6,
+  "source_chart_sha256": "31c5fb57b0470ea49c94c2d33bf6726dd16a65b53863a3b39275a9bec5c840e6",
+  "original_relation_rows_one_based": [
+    57,
+    11,
+    15,
+    16,
+    24,
+    20
+  ],
+  "variable_columns_one_based": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "minor_size": 2,
+  "number_of_minors": 225,
+  "exact_full_ideal_and_localization_binding": true
+}

@@ -1,0 +1,271 @@
+[
+  {
+    "case": 114,
+    "covered_catalogue_indices": [
+      114
+    ],
+    "decision": "YES",
+    "invariant_count": 14,
+    "junior_count": 2,
+    "relation_count": 90,
+    "model": "114/model.json",
+    "invariants": "114/invariants.json"
+  },
+  {
+    "case": 138,
+    "covered_catalogue_indices": [
+      138
+    ],
+    "decision": "NO",
+    "invariant_count": 18,
+    "junior_count": 2,
+    "relation_count": 148,
+    "model": "138/model.json",
+    "invariants": "138/invariants.json"
+  },
+  {
+    "case": 140,
+    "covered_catalogue_indices": [
+      140,
+      141,
+      142
+    ],
+    "decision": "NO",
+    "invariant_count": 6,
+    "junior_count": 4,
+    "relation_count": 2,
+    "model": "140/model.json",
+    "invariants": "140/invariants.json"
+  },
+  {
+    "case": 143,
+    "covered_catalogue_indices": [
+      143,
+      144
+    ],
+    "decision": "YES",
+    "invariant_count": 16,
+    "junior_count": 9,
+    "relation_count": 94,
+    "model": "143/model.json",
+    "invariants": "143/invariants.json"
+  },
+  {
+    "case": 151,
+    "covered_catalogue_indices": [
+      151,
+      152
+    ],
+    "decision": "YES",
+    "invariant_count": 14,
+    "junior_count": 4,
+    "relation_count": 153,
+    "model": "151/model.json",
+    "invariants": "151/invariants.json"
+  },
+  {
+    "case": 161,
+    "covered_catalogue_indices": [
+      161,
+      162,
+      163
+    ],
+    "decision": "YES",
+    "invariant_count": 19,
+    "junior_count": 2,
+    "relation_count": 648,
+    "model": "161/model.json",
+    "invariants": "161/invariants.json"
+  },
+  {
+    "case": 167,
+    "covered_catalogue_indices": [
+      167,
+      168,
+      169
+    ],
+    "decision": "YES",
+    "invariant_count": 18,
+    "junior_count": 5,
+    "relation_count": 99,
+    "model": "167/model.json",
+    "invariants": "167/invariants.json"
+  },
+  {
+    "case": 171,
+    "covered_catalogue_indices": [
+      171
+    ],
+    "decision": "NO",
+    "invariant_count": 36,
+    "junior_count": 3,
+    "relation_count": 2159,
+    "model": "171/model.json",
+    "invariants": "171/invariants.json"
+  },
+  {
+    "case": 173,
+    "covered_catalogue_indices": [
+      173
+    ],
+    "decision": "NO",
+    "invariant_count": 25,
+    "junior_count": 3,
+    "relation_count": 835,
+    "model": "173/model.json",
+    "invariants": "173/invariants.json"
+  },
+  {
+    "case": 174,
+    "covered_catalogue_indices": [
+      174,
+      175,
+      176
+    ],
+    "decision": "YES",
+    "invariant_count": 25,
+    "junior_count": 5,
+    "relation_count": 589,
+    "model": "174/model.json",
+    "invariants": "174/invariants.json"
+  },
+  {
+    "case": 177,
+    "covered_catalogue_indices": [
+      177
+    ],
+    "decision": "YES",
+    "invariant_count": 27,
+    "junior_count": 4,
+    "relation_count": 742,
+    "model": "177/model.json",
+    "invariants": "177/invariants.json"
+  },
+  {
+    "case": 178,
+    "covered_catalogue_indices": [
+      178
+    ],
+    "decision": "NO",
+    "invariant_count": 18,
+    "junior_count": 5,
+    "relation_count": 2051,
+    "model": "178/model.json",
+    "invariants": "178/invariants.json"
+  },
+  {
+    "case": 179,
+    "covered_catalogue_indices": [
+      179
+    ],
+    "decision": "NO",
+    "invariant_count": 31,
+    "junior_count": 5,
+    "relation_count": 2619,
+    "model": "179/model.json",
+    "invariants": "179/invariants.json"
+  },
+  {
+    "case": 194,
+    "covered_catalogue_indices": [
+      194,
+      195,
+      196,
+      197
+    ],
+    "decision": "YES",
+    "invariant_count": 12,
+    "junior_count": 3,
+    "relation_count": 51,
+    "model": "194/model.json",
+    "invariants": "194/invariants.json"
+  },
+  {
+    "case": 206,
+    "covered_catalogue_indices": [
+      206,
+      207
+    ],
+    "decision": "YES",
+    "invariant_count": 12,
+    "junior_count": 6,
+    "relation_count": 65,
+    "model": "206/model.json",
+    "invariants": "206/invariants.json"
+  },
+  {
+    "case": 221,
+    "covered_catalogue_indices": [
+      221
+    ],
+    "decision": "YES",
+    "invariant_count": 25,
+    "junior_count": 6,
+    "relation_count": 309,
+    "model": "221/model.json",
+    "invariants": "221/invariants.json"
+  },
+  {
+    "case": 222,
+    "covered_catalogue_indices": [
+      222,
+      223
+    ],
+    "decision": "YES",
+    "invariant_count": 21,
+    "junior_count": 7,
+    "relation_count": 268,
+    "model": "222/model.json",
+    "invariants": "222/invariants.json"
+  },
+  {
+    "case": 227,
+    "covered_catalogue_indices": [
+      227
+    ],
+    "decision": "NO",
+    "invariant_count": 19,
+    "junior_count": 3,
+    "relation_count": 500,
+    "model": "227/model.json",
+    "invariants": "227/invariants.json"
+  },
+  {
+    "case": 231,
+    "covered_catalogue_indices": [
+      231,
+      232
+    ],
+    "decision": "YES",
+    "invariant_count": 14,
+    "junior_count": 1,
+    "relation_count": 490,
+    "model": "231/model.json",
+    "invariants": "231/invariants.json"
+  },
+  {
+    "case": 233,
+    "covered_catalogue_indices": [
+      233
+    ],
+    "decision": "YES",
+    "invariant_count": 14,
+    "junior_count": 2,
+    "relation_count": 2750,
+    "model": "233/model.json",
+    "invariants": "233/invariants.json"
+  },
+  {
+    "case": 243,
+    "covered_catalogue_indices": [
+      243,
+      244
+    ],
+    "decision": "NO",
+    "invariant_count": 6,
+    "junior_count": 4,
+    "relation_count": 2,
+    "model": "243/model.json",
+    "invariants": "243/invariants.json"
+  }
+]

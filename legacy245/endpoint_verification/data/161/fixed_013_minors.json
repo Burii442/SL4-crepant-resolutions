@@ -1,0 +1,25 @@
+{
+  "source_certificate": "ASL4_OPEN_ATTACK_2026_09_11/remaining/cox161_endpoint/fixed_smoothness/fixed_013.json",
+  "source_sha256": "cb4950343b367646946726ea1880740b6fd13cfd7c8d433ebaf981bb230cf67d",
+  "helper_sha256": "75b8f955d9d7fca25f0a43501ed33f99cbc66c7798771fd160d611717e481145",
+  "required_residual_rank": 1,
+  "residual_rows": 24,
+  "residual_columns": [
+    10,
+    11,
+    14
+  ],
+  "minor_choices_tried": 2,
+  "normalized_minors": [
+    "u10 + 75/67*u16 + 177/268",
+    "u10 + 15/11*u16 - 15/44"
+  ],
+  "unit_ideal_identity_coefficients": [
+    "0",
+    "0",
+    "2/67",
+    "5/22*u16 + 379/396",
+    "-2/67*u10 - 25/134*u16 - 4711/4824"
+  ],
+  "identity_verified": true
+}

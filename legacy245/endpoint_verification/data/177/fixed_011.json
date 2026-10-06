@@ -1,0 +1,196 @@
+{
+  "support_index": 11,
+  "support": [
+    4,
+    9,
+    13,
+    21,
+    22
+  ],
+  "gauge": [
+    4,
+    9,
+    13,
+    21
+  ],
+  "gauge_determinant": 1,
+  "free_coordinates": [
+    22
+  ],
+  "ring_variables": [
+    "u22",
+    "zzloc"
+  ],
+  "cox_sha256": "c9a43fbe49b105b6b95e09578ab432e804fa64079a5b9898a4e08cf44dea9a21",
+  "supports_sha256": "8b3b6ffc4fc560ff12514eeec7c2cc9b6d6b676b120d5f62104ee1ed03127661",
+  "helper_sha256": "90ec83c2154262a23599c6f6467c3a9d10714c443058605e27b8db7dcb9140b0",
+  "required_jacobian_rank": 23,
+  "stratum_groebner_basis": [
+    "u22 - 3/10",
+    "zzloc - 10/3"
+  ],
+  "pivots": [
+    {
+      "row": 6,
+      "column": 29,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 103,
+      "column": 27,
+      "pivot": "-10",
+      "inverse": "-1/10",
+      "inverse_verified": true
+    },
+    {
+      "row": 71,
+      "column": 26,
+      "pivot": "-10",
+      "inverse": "-1/10",
+      "inverse_verified": true
+    },
+    {
+      "row": 59,
+      "column": 28,
+      "pivot": "-108/25",
+      "inverse": "-25/108",
+      "inverse_verified": true
+    },
+    {
+      "row": 58,
+      "column": 30,
+      "pivot": "-1200",
+      "inverse": "-1/1200",
+      "inverse_verified": true
+    },
+    {
+      "row": 11,
+      "column": 11,
+      "pivot": "-1215",
+      "inverse": "-1/1215",
+      "inverse_verified": true
+    },
+    {
+      "row": 14,
+      "column": 22,
+      "pivot": "-13892/27",
+      "inverse": "-27/13892",
+      "inverse_verified": true
+    },
+    {
+      "row": 27,
+      "column": 5,
+      "pivot": "-18",
+      "inverse": "-1/18",
+      "inverse_verified": true
+    },
+    {
+      "row": 13,
+      "column": 20,
+      "pivot": "-18",
+      "inverse": "-1/18",
+      "inverse_verified": true
+    },
+    {
+      "row": 21,
+      "column": 18,
+      "pivot": "-18225",
+      "inverse": "-1/18225",
+      "inverse_verified": true
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "pivot": "-189/100",
+      "inverse": "-100/189",
+      "inverse_verified": true
+    },
+    {
+      "row": 47,
+      "column": 4,
+      "pivot": "-234",
+      "inverse": "-1/234",
+      "inverse_verified": true
+    },
+    {
+      "row": 29,
+      "column": 17,
+      "pivot": "-30",
+      "inverse": "-1/30",
+      "inverse_verified": true
+    },
+    {
+      "row": 4,
+      "column": 16,
+      "pivot": "-30",
+      "inverse": "-1/30",
+      "inverse_verified": true
+    },
+    {
+      "row": 5,
+      "column": 9,
+      "pivot": "-5",
+      "inverse": "-1/5",
+      "inverse_verified": true
+    },
+    {
+      "row": 3,
+      "column": 10,
+      "pivot": "-738",
+      "inverse": "-1/738",
+      "inverse_verified": true
+    },
+    {
+      "row": 29,
+      "column": 25,
+      "pivot": "-768",
+      "inverse": "-1/768",
+      "inverse_verified": true
+    },
+    {
+      "row": 23,
+      "column": 19,
+      "pivot": "-86070",
+      "inverse": "-1/86070",
+      "inverse_verified": true
+    },
+    {
+      "row": 17,
+      "column": 7,
+      "pivot": "1215",
+      "inverse": "1/1215",
+      "inverse_verified": true
+    },
+    {
+      "row": 11,
+      "column": 6,
+      "pivot": "15",
+      "inverse": "1/15",
+      "inverse_verified": true
+    },
+    {
+      "row": 8,
+      "column": 14,
+      "pivot": "1722",
+      "inverse": "1/1722",
+      "inverse_verified": true
+    },
+    {
+      "row": 7,
+      "column": 23,
+      "pivot": "226500",
+      "inverse": "1/226500",
+      "inverse_verified": true
+    },
+    {
+      "row": 4,
+      "column": 0,
+      "pivot": "27",
+      "inverse": "1/27",
+      "inverse_verified": true
+    }
+  ],
+  "stratum_dimension": 0
+}

@@ -1,0 +1,40 @@
+{
+  "index": 145,
+  "actual_group_order": 32,
+  "generators": [
+    "2*x3^2 - 2*x3*x4 + x4^2",
+    "x1^2 + x2^2",
+    "2*x3^4 - 4*x3^3*x4 + 6*x3^2*x4^2 - 4*x3*x4^3 + x4^4",
+    "x1^2*x2^2",
+    "x1^3*x2*x3^3*x4 - x1*x2^3*x3^3*x4 - 3/2*x1^3*x2*x3^2*x4^2 + 3/2*x1*x2^3*x3^2*x4^2 + 1/2*x1^3*x2*x3*x4^3 - 1/2*x1*x2^3*x3*x4^3"
+  ],
+  "weights": [
+    2,
+    2,
+    4,
+    4,
+    8
+  ],
+  "minimal_relations": [
+    "u1^4*u2^2*u4 - 3*u1^2*u2^2*u3*u4 - 4*u1^4*u4^2 + 2*u2^2*u3^2*u4 + 12*u1^2*u3*u4^2 - 8*u3^2*u4^2 + 8*u5^2"
+  ],
+  "relation_degrees": [
+    16
+  ],
+  "molien": "(t^8 + 1)/(t^12 - 2*t^10 - t^8 + 4*t^6 - t^4 - 2*t^2 + 1)",
+  "hilbert_ci": "(t^8 + 1)/(t^12 - 2*t^10 - t^8 + 4*t^6 - t^4 - 2*t^2 + 1)",
+  "independent_graph_kernel": [
+    "u1^4*u2^2*u4 - 3*u1^2*u2^2*u3*u4 - 4*u1^4*u4^2 + 2*u2^2*u3^2*u4 + 12*u1^2*u3*u4^2 - 8*u3^2*u4^2 + 8*u5^2"
+  ],
+  "branch_discriminant": "-32*u1^4*u2^2*u4 + 96*u1^2*u2^2*u3*u4 + 128*u1^4*u4^2 - 64*u2^2*u3^2*u4 - 384*u1^2*u3*u4^2 + 256*u3^2*u4^2",
+  "branch_factorization": "(32) * u4 * (-u1^2 + u3) * (-u1^2 + 2*u3) * (-u2^2 + 4*u4)",
+  "actual_invariance": true,
+  "full_ring_by_exact_hilbert_equality": true,
+  "complete_intersection": true,
+  "source_hashes": {
+    "input_matrices.json": "567eef0efbe515e23fb66f3cda2c089a5f194ebd08624cb1f5be04dde58f565b",
+    "compute_invariants.sing": "6c279d6f9c125627ad79d4e1da38a3be20d09aebe1f75d3f7d48346b7174d334",
+    "generators.txt": "85c229ff617ee3a8e540f025f294c2aba89e75c273770531c1971620c80c5d54",
+    "relations.txt": "108e5bb3fee663b26d6b4791b76ab46ff4f8f02f8b4dc052189d2d3b4c22fc82"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "support_index": 17,
+  "support": [
+    3,
+    6,
+    9,
+    10,
+    11,
+    14,
+    15
+  ],
+  "gauge": [
+    3,
+    6,
+    9,
+    10,
+    11
+  ],
+  "gauge_determinant": 1,
+  "free_coordinates": [
+    14,
+    15
+  ],
+  "ring_variables": [
+    "u14",
+    "u15",
+    "zzloc"
+  ],
+  "cox_sha256": "c2f8f08c2cf3286ebdc8efdb48d80a91cd6856d8cfb8664c6082402734fe369d",
+  "supports_sha256": "b52ccfc24cba549ff566351db106c4d8bf557ffec745c1516b10cd34909e9a63",
+  "helper_sha256": "857191da9a0d39e5866fc279b91daea1e6b3ed126e79aace7a53217cb26f014a",
+  "required_jacobian_rank": 14,
+  "stratum_groebner_basis": [
+    "u14 + 1/4",
+    "u15 + 1/4",
+    "zzloc - 16"
+  ],
+  "pivots": [
+    {
+      "row": 66,
+      "column": 11,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 62,
+      "column": 12,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 40,
+      "column": 22,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 39,
+      "column": 21,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 34,
+      "column": 16,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 16,
+      "column": 7,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 9,
+      "column": 19,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 0,
+      "column": 20,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 16,
+      "column": 10,
+      "pivot": "-1/2",
+      "inverse": "-2",
+      "inverse_verified": true
+    },
+    {
+      "row": 6,
+      "column": 3,
+      "pivot": "-1/4",
+      "inverse": "-4",
+      "inverse_verified": true
+    },
+    {
+      "row": 29,
+      "column": 6,
+      "pivot": "-16",
+      "inverse": "-1/16",
+      "inverse_verified": true
+    },
+    {
+      "row": 7,
+      "column": 8,
+      "pivot": "-2",
+      "inverse": "-1/2",
+      "inverse_verified": true
+    },
+    {
+      "row": 16,
+      "column": 1,
+      "pivot": "1",
+      "inverse": "1",
+      "inverse_verified": true
+    },
+    {
+      "row": 5,
+      "column": 0,
+      "pivot": "1/4",
+      "inverse": "4",
+      "inverse_verified": true
+    }
+  ],
+  "stratum_dimension": 0
+}

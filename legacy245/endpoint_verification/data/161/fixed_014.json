@@ -1,0 +1,140 @@
+{
+  "support_index": 14,
+  "support": [
+    7,
+    9,
+    10,
+    16
+  ],
+  "gauge": [
+    7,
+    9
+  ],
+  "gauge_determinant": 1,
+  "free_coordinates": [
+    10,
+    16
+  ],
+  "ring_variables": [
+    "u10",
+    "u16",
+    "zzloc"
+  ],
+  "cox_sha256": "0aa996d5ab9df902cf8c0a2d1cccc39b7e6e4f5f1dd84ac07b07bfea29e7b999",
+  "supports_sha256": "fed2aa71642ee1995cebb4fa73ad99a25c91b38fc093a9b876d76fe221a59308",
+  "helper_sha256": "90ec83c2154262a23599c6f6467c3a9d10714c443058605e27b8db7dcb9140b0",
+  "required_jacobian_rank": 15,
+  "stratum_groebner_basis": [
+    "u10*u16*zzloc - 1",
+    "u16^2*zzloc + 16/25*u16*zzloc + 16/25*u10 - 32/25",
+    "u10^2 - 2*u10 + 25/16*u16 + 1"
+  ],
+  "pivots": [
+    {
+      "row": 15,
+      "column": 16,
+      "pivot": "-11340",
+      "inverse": "-1/11340",
+      "inverse_verified": true
+    },
+    {
+      "row": 61,
+      "column": 18,
+      "pivot": "-137200000",
+      "inverse": "-1/137200000",
+      "inverse_verified": true
+    },
+    {
+      "row": 19,
+      "column": 13,
+      "pivot": "-1456000/3",
+      "inverse": "-3/1456000",
+      "inverse_verified": true
+    },
+    {
+      "row": 34,
+      "column": 17,
+      "pivot": "-630000",
+      "inverse": "-1/630000",
+      "inverse_verified": true
+    },
+    {
+      "row": 73,
+      "column": 1,
+      "pivot": "-245000",
+      "inverse": "-1/245000",
+      "inverse_verified": true
+    },
+    {
+      "row": 18,
+      "column": 5,
+      "pivot": "-8",
+      "inverse": "-1/8",
+      "inverse_verified": true
+    },
+    {
+      "row": 1,
+      "column": 20,
+      "pivot": "-8",
+      "inverse": "-1/8",
+      "inverse_verified": true
+    },
+    {
+      "row": 5,
+      "column": 15,
+      "pivot": "100",
+      "inverse": "1/100",
+      "inverse_verified": true
+    },
+    {
+      "row": 4,
+      "column": 0,
+      "pivot": "1680",
+      "inverse": "1/1680",
+      "inverse_verified": true
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "pivot": "2240",
+      "inverse": "1/2240",
+      "inverse_verified": true
+    },
+    {
+      "row": 16,
+      "column": 4,
+      "pivot": "27216000",
+      "inverse": "1/27216000",
+      "inverse_verified": true
+    },
+    {
+      "row": 32,
+      "column": 12,
+      "pivot": "31200",
+      "inverse": "1/31200",
+      "inverse_verified": true
+    },
+    {
+      "row": 2,
+      "column": 3,
+      "pivot": "-180",
+      "inverse": "-1/180",
+      "inverse_verified": true
+    },
+    {
+      "row": 1,
+      "column": 10,
+      "pivot": "-140*u10",
+      "inverse": "-1/140*u16*zzloc",
+      "inverse_verified": true
+    },
+    {
+      "row": 0,
+      "column": 19,
+      "pivot": "5600*u10",
+      "inverse": "1/5600*u16*zzloc",
+      "inverse_verified": true
+    }
+  ],
+  "stratum_dimension": 1
+}

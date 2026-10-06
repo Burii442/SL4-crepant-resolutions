@@ -1,0 +1,10 @@
+{
+  "COPYING.Singular": {
+    "url": "https://raw.githubusercontent.com/Singular/Singular/spielwiese/COPYING",
+    "sha256": "53d2a2b37105ad8ca4fe5d1450d592e8ee1367955ff8cb9c27995a405353e29b"
+  },
+  "GPL-2.0.txt": {
+    "url": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt",
+    "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6"
+  }
+}

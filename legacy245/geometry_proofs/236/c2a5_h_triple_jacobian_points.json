@@ -1,0 +1,40 @@
+[
+  {
+    "chart": 0,
+    "rank": 4,
+    "rows": [
+      1,
+      2,
+      3,
+      7
+    ],
+    "columns": [
+      "r",
+      "s",
+      "w",
+      "y2"
+    ],
+    "determinant": "9375000*y2"
+  },
+  {
+    "chart": 1,
+    "rank": 3
+  },
+  {
+    "chart": 2,
+    "rank": 4,
+    "rows": [
+      1,
+      2,
+      3,
+      7
+    ],
+    "columns": [
+      "r",
+      "s",
+      "w",
+      "y0"
+    ],
+    "determinant": "421875000*y0"
+  }
+]

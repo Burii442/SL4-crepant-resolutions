@@ -1,0 +1,86 @@
+{
+  "chart": 0,
+  "support": [
+    2,
+    3,
+    4,
+    7,
+    10
+  ],
+  "pivot": [
+    2,
+    3,
+    4,
+    7
+  ],
+  "eliminations": [
+    {
+      "variable": "u12",
+      "source_polynomial": "u9 - 1/2*u12 - 1/2*u14",
+      "coefficient": "-1/2",
+      "expression": "2*u9 - u14"
+    },
+    {
+      "variable": "u11",
+      "source_polynomial": "u1*u9 - 1/2*u11 - 1/2*u13",
+      "coefficient": "-1/2",
+      "expression": "2*u1*u9 - u13"
+    },
+    {
+      "variable": "e1",
+      "source_polynomial": "u1*u14 - u13 - 8*e1",
+      "coefficient": "-8",
+      "expression": "1/8*u1*u14 - 1/8*u13"
+    },
+    {
+      "variable": "u1",
+      "source_polynomial": "u6*u9 - u1 + 8*u8",
+      "coefficient": "-1",
+      "expression": "u6*u9 + 8*u8"
+    },
+    {
+      "variable": "u10",
+      "source_polynomial": "u9*u14 - 1/2*u14^2 + 8*u10 - 1/2",
+      "coefficient": "8",
+      "expression": "-1/8*u9*u14 + 1/16*u14^2 + 1/16"
+    },
+    {
+      "variable": "u8",
+      "source_polynomial": "u6*u9 - 1/4*u14*e2 + 1/2*u9*e3 - 1/4*u14*e3 + 8*u8",
+      "coefficient": "8",
+      "expression": "-1/8*u6*u9 + 1/32*u14*e2 - 1/16*u9*e3 + 1/32*u14*e3"
+    },
+    {
+      "variable": "e2",
+      "source_polynomial": "u9^2*e3 - 1/2*u9*u14*e3 + u13 - 1/4*e2 - 1/4*e3",
+      "coefficient": "-1/4",
+      "expression": "4*u9^2*e3 - 2*u9*u14*e3 + 4*u13 - e3"
+    },
+    {
+      "variable": "e4",
+      "source_polynomial": "u9^3*u14*e3^2 - 1/2*u9^2*u14^2*e3^2 - 2*u9^2*u13*e3 + 2*u9*u13*u14*e3 - 1/2*u9^2*e3^2 - 2*u13^2 + 2*e4",
+      "coefficient": "2",
+      "expression": "-1/2*u9^3*u14*e3^2 + 1/4*u9^2*u14^2*e3^2 + u9^2*u13*e3 - u9*u13*u14*e3 + 1/4*u9^2*e3^2 + u13^2"
+    },
+    {
+      "variable": "u6",
+      "source_polynomial": "u9^2*u14^2*e3 - 1/2*u9*u14^3*e3 + u13*u14^2 + 1/2*u9*u14*e3 - 1/2*u14^2*e3 - 2*u6 + u13 - 1/2*e3",
+      "coefficient": "-2",
+      "expression": "1/2*u9^2*u14^2*e3 - 1/4*u9*u14^3*e3 + 1/2*u13*u14^2 + 1/4*u9*u14*e3 - 1/4*u14^2*e3 + 1/2*u13 - 1/4*e3"
+    },
+    {
+      "variable": "u5",
+      "source_polynomial": "u9^2*u13*u14*e3 - 1/2*u9*u13*u14^2*e3 - 1/4*u9^2*u14*e3^2 + 1/8*u9*u14^2*e3^2 + u13^2*u14 - 1/2*u13*u14*e3 + 1/8*u9*e3^2 - u5",
+      "coefficient": "-1",
+      "expression": "u9^2*u13*u14*e3 - 1/2*u9*u13*u14^2*e3 - 1/4*u9^2*u14*e3^2 + 1/8*u9*u14^2*e3^2 + u13^2*u14 - 1/2*u13*u14*e3 + 1/8*u9*e3^2"
+    }
+  ],
+  "remaining_variables": [
+    "u9",
+    "u13",
+    "u14",
+    "e3"
+  ],
+  "residual_equations": [],
+  "localization": "-1/8*u9*u14 + 1/16*u14^2 + 1/16"
+}

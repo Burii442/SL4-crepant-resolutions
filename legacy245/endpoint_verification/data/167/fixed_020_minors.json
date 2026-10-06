@@ -1,0 +1,19 @@
+{
+  "source_sha256": "c4d716cf49187d9318aed7d66902eaed031180c9857ac8b6ae42ccb2b4343eea",
+  "required_residual_rank": 1,
+  "normalized_minors": [
+    "u17^2 + 4*u17*u18 + 16/3*u18^2 - 4/3*u17 - 8/3*u18 + 4/9",
+    "u17^3 + 6*u17^2*u18 + 8*u17*u18^2 - u17^2 - 4*u17*u18",
+    "u17^3 + 6*u17^2*u18 + 8*u17*u18^2 - 4/3*u17^2 - 16/3*u17*u18 - 16/9*u18^2 + 4/9*u17 + 8/9*u18"
+  ],
+  "unit_ideal_identity_coefficients": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "9/4",
+    "-27/4",
+    "27/4"
+  ],
+  "identity_checked_as_exact_polynomial": true
+}

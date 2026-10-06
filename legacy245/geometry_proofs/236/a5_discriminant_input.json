@@ -1,0 +1,162 @@
+{
+  "discriminant": "3125*h**4 - 3750*h**3*p*q + 108*h**2*p**5 - 900*h**2*p**3*r + 825*h**2*p**2*q**2 + 2000*h**2*p*r**2 + 2250*h**2*q**2*r - 72*h*p**4*q*r + 16*h*p**3*q**3 + 560*h*p**2*q*r**2 - 630*h*p*q**3*r + 108*h*q**5 - 1600*h*q*r**3 + 16*p**4*r**3 - 4*p**3*q**2*r**2 - 128*p**2*r**4 + 144*p*q**2*r**3 - 27*q**4*r**2 + 256*r**5",
+  "discriminant_terms": 19,
+  "quotient": "w^2 = discriminant(T^5+p*T^3+q*T^2+r*T+h)",
+  "strata": [
+    {
+      "name": "triple",
+      "parametrization": {
+        "p": "-6*a**2 + b",
+        "q": "8*a**3 - 3*a*b",
+        "r": "-3*a**4 + 3*a**2*b",
+        "h": "-a**3*b"
+      },
+      "ideal_generators": [
+        {
+          "polynomial": "1875*h**2 + 9*p**3*r - 3*p**2*q**2 + 140*p*r**2 - 45*q**2*r",
+          "raw_junior_valuations": [
+            0,
+            3
+          ],
+          "normalized_divisorial_valuations": [
+            0,
+            1
+          ]
+        },
+        {
+          "polynomial": "-45*h*p**2 + 100*h*r + 32*p*q*r - 9*q**3",
+          "raw_junior_valuations": [
+            0,
+            3
+          ],
+          "normalized_divisorial_valuations": [
+            0,
+            1
+          ]
+        },
+        {
+          "polynomial": "75*h*q + 9*p**2*r - 3*p*q**2 - 20*r**2",
+          "raw_junior_valuations": [
+            0,
+            3
+          ],
+          "normalized_divisorial_valuations": [
+            0,
+            1
+          ]
+        },
+        {
+          "polynomial": "81*p**4*r - 27*p**3*q**2 - 360*p**2*r**2 + 540*p*q**2*r - 135*q**4 + 400*r**3",
+          "raw_junior_valuations": [
+            0,
+            3
+          ],
+          "normalized_divisorial_valuations": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "double_double",
+      "parametrization": {
+        "p": "-3*a**2 + 2*b",
+        "q": "2*a**3 + 2*a*b",
+        "r": "-4*a**2*b + b**2",
+        "h": "2*a*b**2"
+      },
+      "ideal_generators": [
+        {
+          "polynomial": "625*h**2 - 32*p**5 + 308*p**3*r - 216*p**2*q**2 - 720*p*r**2 + 135*q**2*r",
+          "raw_junior_valuations": [
+            2,
+            0
+          ],
+          "normalized_divisorial_valuations": [
+            1,
+            0
+          ]
+        },
+        {
+          "polynomial": "-40*h*p**2 + 200*h*r + 4*p**3*q - 36*p*q*r + 27*q**3",
+          "raw_junior_valuations": [
+            2,
+            0
+          ],
+          "normalized_divisorial_valuations": [
+            1,
+            0
+          ]
+        },
+        {
+          "polynomial": "50*h*q - 4*p**4 + 36*p**2*r - 27*p*q**2 - 80*r**2",
+          "raw_junior_valuations": [
+            2,
+            0
+          ],
+          "normalized_divisorial_valuations": [
+            1,
+            0
+          ]
+        },
+        {
+          "polynomial": "-16*p**6 + 224*p**4*r - 88*p**3*q**2 - 1040*p**2*r**2 + 360*p*q**2*r + 135*q**4 + 1600*r**3",
+          "raw_junior_valuations": [
+            2,
+            0
+          ],
+          "normalized_divisorial_valuations": [
+            1,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "input_coordinate_valuations": {
+    "p": [
+      0,
+      0
+    ],
+    "q": [
+      0,
+      0
+    ],
+    "r": [
+      0,
+      0
+    ],
+    "h": [
+      0,
+      0
+    ],
+    "w": [
+      1,
+      1
+    ]
+  },
+  "central_extension_C2xA5": {
+    "presentation": [
+      "Q*K=H^2",
+      "w^2=-3750*H*K*p + 108*H*Q**2 + H*Q*(16*p**3 - 630*p*r) + H*(-72*p**4*r + 560*p**2*r**2 - 1600*r**3) + 3125*K**2 + K*Q*(825*p**2 + 2250*r) + K*(108*p**5 - 900*p**3*r + 2000*p*r**2) - 27*Q**2*r**2 + Q*(-4*p**3*r**2 + 144*p*r**3) + 16*p**4*r**3 - 128*p**2*r**4 + 256*r**5"
+    ],
+    "first_crepant_extraction": "Resolve Q*K=H^2 by blowing up (Q,H,K), then take the strict transform of the second equation.",
+    "two_charts": [
+      {
+        "Q": "s",
+        "H": "s*v",
+        "K": "s*v^2",
+        "D": "108*p**5*s*v**2 + 16*p**4*r**3 - 72*p**4*r*s*v - 4*p**3*r**2*s - 900*p**3*r*s*v**2 + 16*p**3*s**2*v - 128*p**2*r**4 + 560*p**2*r**2*s*v + 825*p**2*s**2*v**2 + 144*p*r**3*s + 2000*p*r**2*s*v**2 - 630*p*r*s**2*v - 3750*p*s**2*v**3 + 256*r**5 - 1600*r**3*s*v - 27*r**2*s**2 + 2250*r*s**2*v**2 + 108*s**3*v + 3125*s**2*v**4"
+      },
+      {
+        "Q": "s*v^2",
+        "H": "s*v",
+        "K": "s",
+        "D": "108*p**5*s + 16*p**4*r**3 - 72*p**4*r*s*v - 4*p**3*r**2*s*v**2 - 900*p**3*r*s + 16*p**3*s**2*v**3 - 128*p**2*r**4 + 560*p**2*r**2*s*v + 825*p**2*s**2*v**2 + 144*p*r**3*s*v**2 + 2000*p*r**2*s - 630*p*r*s**2*v**3 - 3750*p*s**2*v + 256*r**5 - 1600*r**3*s*v - 27*r**2*s**2*v**4 + 2250*r*s**2*v**2 + 108*s**3*v**5 + 3125*s**2"
+      }
+    ],
+    "exceptional_restriction": "w^2=16*r^3*(p^2-4*r)^2",
+    "discrepancy": "ambient codimension 3 minus 1, minus equation multiplicities 2 and 0: 0"
+  }
+}

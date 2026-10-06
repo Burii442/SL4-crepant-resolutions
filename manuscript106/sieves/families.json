@@ -1,0 +1,112 @@
+[
+  {
+    "id": "A",
+    "historical_label": "A",
+    "name": "Failure of generation by junior elements",
+    "reference_key": "Yamagishi",
+    "retained": true,
+    "private_case": 16
+  },
+  {
+    "id": "B",
+    "historical_label": "B",
+    "name": "A nonzero fixed factor",
+    "reference_key": "BKR",
+    "retained": true,
+    "private_case": 13
+  },
+  {
+    "id": "C",
+    "historical_label": "C",
+    "name": "Abelian junior-simplex geometry",
+    "reference_key": "DHZ",
+    "retained": true,
+    "private_case": 15,
+    "scope_note": "Historical abelian geometry records 17 positive and 15 negative projected cases; the negative cases are all already excluded by A. The manuscript Sieve C records only the 17 positive cases."
+  },
+  {
+    "id": "D",
+    "historical_label": "D",
+    "name": "Cotangent reflection representations",
+    "reference_key": "BellamyV3",
+    "retained": true,
+    "private_case": 14
+  },
+  {
+    "id": "E",
+    "historical_label": "E",
+    "name": "Complete-intersection blow-ups",
+    "reference_key": "manuscript Sieve E",
+    "retained": true,
+    "private_case": 23
+  },
+  {
+    "id": "F",
+    "historical_label": "G",
+    "name": "Double covers",
+    "reference_key": "CynkSzembergDoubleCovers",
+    "retained": true,
+    "private_case": 28
+  },
+  {
+    "id": "G",
+    "historical_label": "H",
+    "name": "Determinant extensions",
+    "reference_key": "IshiiNimura",
+    "retained": true,
+    "private_case": 52
+  },
+  {
+    "id": "H",
+    "historical_label": "I",
+    "name": "A toric resolution and an involution",
+    "reference_key": "manuscript Sieve H",
+    "retained": true,
+    "private_case": 31
+  },
+  {
+    "id": "I",
+    "historical_label": "U",
+    "name": "Full Cox rings and GIT",
+    "reference_key": "Yamagishi;ADHL;SchmittMUVAK",
+    "retained": true,
+    "private_case": 35
+  },
+  {
+    "id": "J",
+    "historical_label": "Z",
+    "name": "Hilbert-square towers",
+    "reference_key": "Baird",
+    "retained": true,
+    "private_case": 57
+  },
+  {
+    "id": "product",
+    "historical_label": "F",
+    "name": "Independent quotient factors",
+    "reference_key": "BKR",
+    "retained": false
+  },
+  {
+    "id": "cyclic",
+    "historical_label": "J",
+    "name": "Cyclic fourfold tests",
+    "reference_key": "Davis",
+    "retained": false,
+    "scope_note": "Seven positive and twelve negative projected cases. All recorded negative cyclic cases are already excluded by A; a failed triangulation search is not treated as a negative proof."
+  },
+  {
+    "id": "fujiki_oka",
+    "historical_label": "K",
+    "name": "Fujiki--Oka resolutions",
+    "reference_key": "SatoSato",
+    "retained": false
+  },
+  {
+    "id": "roan",
+    "historical_label": "S",
+    "name": "Scalar-quotient obstruction",
+    "reference_key": "Roan",
+    "retained": false
+  }
+]

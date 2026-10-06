@@ -1,0 +1,80 @@
+// Exact full invariant-ring presentation for ASL4[243].
+LIB "singular/vendor/finvar.lib";
+ring R=0,(x1,x2,x3,x4),dp;
+matrix A1[4][4]=1,-1,0,0,0,-1,0,0,0,0,0,1,0,0,1,0;
+matrix A2[4][4]=-1,0,0,0,0,-1,0,0,0,0,0,1,0,0,-1,0;
+matrix A3[4][4]=1,0,0,0,0,1,0,0,0,0,-1,0,0,0,0,-1;
+matrix A4[4][4]=0,-1,0,0,1,-1,0,0,0,0,1,0,0,0,0,1;
+
+matrix P,S,IS=invariant_ring(A1,A2,A3,A4,intvec(0,0,0));
+matrix F=concat(P,IS);
+
+poly qm=x1^2-x1*x2+x2^2;
+poly am=-2*x1^3+3*x1^2*x2+3*x1*x2^2-2*x2^3;
+poly bm=x1^2*x2-x1*x2^2;
+poly hm=2*x1^6-6*x1^5*x2+15*x1^4*x2^2-20*x1^3*x2^3
+  +15*x1^2*x2^4-6*x1*x2^5+2*x2^6;
+poly z1=x3^2+x4^2;
+poly z2=qm;
+poly z3=x3^2*x4^2;
+poly z4=hm;
+poly z5=-am*x3*x4;
+poly z6=bm*(x3^2-x4^2);
+
+ideal explicitDifference=F[1,1]-z1,F[1,2]-z2,F[1,3]-z3,
+  F[1,4]-z4,F[1,5]-z5,F[1,6]-z6;
+poly relation1=22*z2^3*z3-9*z3*z4-z5^2;
+poly relation2=22*z1^2*z2^3-11*z1^2*z4+8*z3*z4-4*z5^2+33*z6^2;
+
+"INDEX"; 243;
+"GENERATOR_DEGREES";
+for(int j=1;j<=ncols(F);j++){deg(F[1,j]);}
+"EXPLICIT_GENERATORS_MATCH_FINVAR"; size(simplify(explicitDifference,2))==0;
+"DISPLAYED_RELATIONS_SUBSTITUTE_TO_ZERO"; relation1==0 and relation2==0;
+
+list L=rel_orbit_variety(ideal(0),F);
+def Q=L[1]; setring Q; option(redSB);
+ideal minimalRelations=minbase(G);
+"NUMBER_OF_INVARIANT_GENERATORS"; nvars(basering);
+"NUMBER_OF_MINIMAL_RELATIONS"; size(minimalRelations);
+"QUOTIENT_DIMENSION"; dim(std(G));
+"WEIGHTED_RELATION_ORDERS";
+int minimumWeightedRelationOrder=1000000;
+for(int relationIndex=1;relationIndex<=size(minimalRelations);relationIndex++){
+  ord(minimalRelations[relationIndex]);
+  if(ord(minimalRelations[relationIndex])<minimumWeightedRelationOrder){
+    minimumWeightedRelationOrder=ord(minimalRelations[relationIndex]);
+  }
+}
+def WeightedRelationRing=basering;
+ring OrdinaryTangentRing=0,(z(1..6)),dp;
+map toOrdinary=WeightedRelationRing,z(1..6);
+ideal ordinaryRelations=toOrdinary(minimalRelations);
+int minimumMAdicOrder=1000000;
+int currentMAdicOrder,termIndex,currentTotalDegree,variableIndex;
+intvec currentExponent;
+"MINIMAL_RELATION_M_ADIC_ORDERS";
+for(relationIndex=1;relationIndex<=size(ordinaryRelations);relationIndex++){
+  currentMAdicOrder=1000000;
+  for(termIndex=1;termIndex<=size(ordinaryRelations[relationIndex]);termIndex++){
+    currentExponent=leadexp(ordinaryRelations[relationIndex][termIndex]);
+    currentTotalDegree=0;
+    for(variableIndex=1;variableIndex<=6;variableIndex++){
+      currentTotalDegree=currentTotalDegree+currentExponent[variableIndex];
+    }
+    if(currentTotalDegree<currentMAdicOrder){currentMAdicOrder=currentTotalDegree;}
+  }
+  currentMAdicOrder;
+  if(currentMAdicOrder<minimumMAdicOrder){minimumMAdicOrder=currentMAdicOrder;}
+}
+"EMBEDDING_DIMENSION_AT_ORIGIN"; nvars(basering);
+"MINIMAL_EMBEDDING_PASS";
+nvars(basering)==6 and minimumMAdicOrder>=2
+  and size(simplify(ideal(jet(ordinaryRelations[1],1),jet(ordinaryRelations[2],1)),2))==0;
+setring WeightedRelationRing;
+"MINIMAL_RELATION_DEGREES";
+for(int k=1;k<=size(minimalRelations);k++){deg(minimalRelations[k]);}
+"MINIMAL_RELATIONS"; minimalRelations;
+"INVARIANT_AUDIT_PASS";
+nvars(basering)==6 and size(minimalRelations)==2 and dim(std(G))==4;
+quit;

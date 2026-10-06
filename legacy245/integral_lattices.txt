@@ -1,0 +1,3 @@
+Hurwitz: |Q8|=8; |B^Q8|=4; |wreath|=128; |full stabilizer|=16; reflections=2; |reflection subgroup|=4.
+Order 32: five singular directions and ten pair sums; orbit equations force t=16; component lower bound forces F_i=64.
+ALL_INDEPENDENT_IHK_FINITE_CHECKS_PASSED

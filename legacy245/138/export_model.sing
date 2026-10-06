@@ -1,0 +1,252 @@
+// Exact Donten--Bury/Yamagishi candidate for ASL4[138].
+// Fan routines are not needed to export this presentation.
+
+LIB "toric.lib";
+LIB "primdec.lib";
+option(noredefine);
+
+ring SourceToric=(0,zeta),t(1..18),dp;
+minpoly=zeta^4 - zeta^2 + 1;
+intmat A[4][18]=0,0,1,1,0,0,0,0,0,0,0,0,1,2,3,4,5,6,1,1,0,0,0,0,0,0,0,0,0,6,5,4,3,2,1,0,0,1,0,1,0,1,2,3,4,5,6,0,0,0,0,0,0,0,1,0,1,0,6,5,4,3,2,1,0,0,0,0,0,0,0,0;
+intvec positiveRow=2,2,2,2,6,6,6,6,6,6,6,6,6,6,6,6,6,6;
+ideal Itoric=toric_ideal(A,"hs",positiveRow);
+"ASL4_INDEX"; 138;
+"TORIC_GENERATORS"; nvars(basering);
+"TORIC_RELATIONS"; size(Itoric);
+"TORIC_DIMENSION"; dim(std(Itoric));
+
+
+// Mandatory independent algorithm and defining-map preflight.
+ideal alternative=toric_ideal(A,"pt");
+if(size(simplify(reduce(Itoric,std(alternative)),2))!=0){ERROR("toric algorithms disagree");}
+if(size(simplify(reduce(alternative,std(Itoric)),2))!=0){ERROR("toric algorithms disagree");}
+"TORIC_ALGORITHM_AGREEMENT";
+ring OriginalVariables=(0,zeta),x(1..4),dp;
+minpoly=zeta^4 - zeta^2 + 1;
+map checkDefiningMap=SourceToric,x(2)^1*x(4)^1,x(2)^1*x(3)^1,x(1)^1*x(4)^1,x(1)^1*x(3)^1,x(4)^6,x(3)^1*x(4)^5,x(3)^2*x(4)^4,x(3)^3*x(4)^3,x(3)^4*x(4)^2,x(3)^5*x(4)^1,x(3)^6,x(2)^6,x(1)^1*x(2)^5,x(1)^2*x(2)^4,x(1)^3*x(2)^3,x(1)^4*x(2)^2,x(1)^5*x(2)^1,x(1)^6;
+if(size(simplify(checkDefiningMap(Itoric),2))!=0){ERROR("invalid upstream toric relations");}
+"TORIC_DEFINING_MAP_CHECK_PASS";
+setring SourceToric;
+
+ring MinimalToric=(0,zeta),t(1..18),wp(2,2,2,2,6,6,6,6,6,6,6,6,6,6,6,6,6,6);
+minpoly=zeta^4 - zeta^2 + 1;
+map importToric=SourceToric,t(1..18);
+ideal before=importToric(Itoric);
+"TORIC_MINIMIZATION_START";
+ideal small=minbase(before);
+ideal smallStd=std(small);
+if(size(simplify(reduce(before,smallStd),2))!=0){ERROR("lost toric relations");}
+if(size(simplify(reduce(small,std(before)),2))!=0){ERROR("added false toric relations");}
+"TORIC_MINIMIZATION_EQUALITY_CERTIFIED"; size(small);
+setring SourceToric;
+map returnSmall=MinimalToric,t(1..18);
+Itoric=returnSmall(small);
+ring Hom=(0,zeta),u(1..18),wp(2,2,6,6,6,2,6,6,6,6,6,6,6,2,6,6,6,6);
+minpoly=zeta^4 - zeta^2 + 1;
+map oldToHom=SourceToric,
+  (1)*u(1)+(zeta^2)*u(2)+(-zeta^2)*u(14),
+  (1/2*zeta^2 - 1/2)*u(1)+(-1/2*zeta^2 + 1/2)*u(6)+(1/2)*u(14),
+  (-1/2*zeta^2)*u(1)+(-zeta^2 + 1)*u(2)+(1/2*zeta^2)*u(6)+(1/2*zeta^2 - 1/2)*u(14),
+  (1/2)*u(1)+(1/2*zeta^2)*u(2)+(-1/2)*u(6),
+  (1/2)*u(3)+(3*zeta^2)*u(4)+(15*zeta^2 - 15)*u(5)+(-3*zeta^2)*u(8)+(-15*zeta^2 + 15)*u(9)+(40)*u(10)+(1/2)*u(11)+(3*zeta^2)*u(12)+(15*zeta^2 - 15)*u(13)+(-3*zeta^2)*u(16)+(-15*zeta^2 + 15)*u(17)+(40)*u(18),
+  (1/4*zeta^2 - 1/4)*u(3)+(-5/2)*u(4)+(-25/2*zeta^2)*u(5)+(-1/4*zeta^2 + 1/4)*u(7)+(3)*u(8)+(25/2*zeta^2)*u(9)+(30*zeta^2 - 30)*u(10)+(1/4*zeta^2 - 1/4)*u(11)+(-5/2)*u(12)+(-25/2*zeta^2)*u(13)+(-1/4*zeta^2 + 1/4)*u(15)+(3)*u(16)+(25/2*zeta^2)*u(17)+(30*zeta^2 - 30)*u(18),
+  (-1/4*zeta^2)*u(3)+(-5/2*zeta^2 + 5/2)*u(4)+(21/2)*u(5)+(1/4*zeta^2)*u(7)+(5/2*zeta^2 - 5/2)*u(8)+(-10)*u(9)+(-22*zeta^2)*u(10)+(-1/4*zeta^2)*u(11)+(-5/2*zeta^2 + 5/2)*u(12)+(21/2)*u(13)+(1/4*zeta^2)*u(15)+(5/2*zeta^2 - 5/2)*u(16)+(-10)*u(17)+(-22*zeta^2)*u(18),
+  (1/4)*u(3)+(9/4*zeta^2)*u(4)+(33/4*zeta^2 - 33/4)*u(5)+(-1/4)*u(7)+(-9/4*zeta^2)*u(8)+(-33/4*zeta^2 + 33/4)*u(9)+(16)*u(10)+(1/4)*u(11)+(9/4*zeta^2)*u(12)+(33/4*zeta^2 - 33/4)*u(13)+(-1/4)*u(15)+(-9/4*zeta^2)*u(16)+(-33/4*zeta^2 + 33/4)*u(17)+(16)*u(18),
+  (1/4*zeta^2 - 1/4)*u(3)+(-2)*u(4)+(-13/2*zeta^2)*u(5)+(-1/4*zeta^2 + 1/4)*u(7)+(2)*u(8)+(13/2*zeta^2)*u(9)+(11*zeta^2 - 11)*u(10)+(1/4*zeta^2 - 1/4)*u(11)+(-2)*u(12)+(-13/2*zeta^2)*u(13)+(-1/4*zeta^2 + 1/4)*u(15)+(2)*u(16)+(13/2*zeta^2)*u(17)+(11*zeta^2 - 11)*u(18),
+  (-1/4*zeta^2)*u(3)+(-7/4*zeta^2 + 7/4)*u(4)+(5)*u(5)+(1/4*zeta^2)*u(7)+(7/4*zeta^2 - 7/4)*u(8)+(-5)*u(9)+(-15/2*zeta^2)*u(10)+(-1/4*zeta^2)*u(11)+(-7/4*zeta^2 + 7/4)*u(12)+(5)*u(13)+(1/4*zeta^2)*u(15)+(7/4*zeta^2 - 7/4)*u(16)+(-5)*u(17)+(-15/2*zeta^2)*u(18),
+  (1/4)*u(3)+(3/2*zeta^2)*u(4)+(15/4*zeta^2 - 15/4)*u(5)+(-1/4)*u(7)+(-3/2*zeta^2)*u(8)+(-15/4*zeta^2 + 15/4)*u(9)+(5)*u(10)+(1/4)*u(11)+(3/2*zeta^2)*u(12)+(15/4*zeta^2 - 15/4)*u(13)+(-1/4)*u(15)+(-3/2*zeta^2)*u(16)+(-15/4*zeta^2 + 15/4)*u(17)+(5)*u(18),
+  (1/2)*u(3)+(3*zeta^2)*u(4)+(15*zeta^2 - 15)*u(5)+(3*zeta^2)*u(8)+(15*zeta^2 - 15)*u(9)+(-40)*u(10)+(-1/2)*u(11)+(-3*zeta^2)*u(12)+(-15*zeta^2 + 15)*u(13)+(-3*zeta^2)*u(16)+(-15*zeta^2 + 15)*u(17)+(40)*u(18),
+  (-1/4*zeta^2)*u(3)+(-1/2*zeta^2 + 1/2)*u(4)+(5/2)*u(5)+(1/4*zeta^2)*u(7)+(5/2)*u(9)+(10*zeta^2)*u(10)+(1/4*zeta^2)*u(11)+(1/2*zeta^2 - 1/2)*u(12)+(-5/2)*u(13)+(-1/4*zeta^2)*u(15)+(-5/2)*u(17)+(-10*zeta^2)*u(18),
+  (1/4*zeta^2 - 1/4)*u(3)+(-1/2)*u(4)+(-1/2*zeta^2)*u(5)+(-1/4*zeta^2 + 1/4)*u(7)+(1/2)*u(8)+(-2*zeta^2 + 2)*u(10)+(-1/4*zeta^2 + 1/4)*u(11)+(1/2)*u(12)+(1/2*zeta^2)*u(13)+(1/4*zeta^2 - 1/4)*u(15)+(-1/2)*u(16)+(2*zeta^2 - 2)*u(18),
+  (1/4)*u(3)+(3/4*zeta^2)*u(4)+(3/4*zeta^2 - 3/4)*u(5)+(-1/4)*u(7)+(-3/4*zeta^2)*u(8)+(-3/4*zeta^2 + 3/4)*u(9)+(-1/4)*u(11)+(-3/4*zeta^2)*u(12)+(-3/4*zeta^2 + 3/4)*u(13)+(1/4)*u(15)+(3/4*zeta^2)*u(16)+(3/4*zeta^2 - 3/4)*u(17),
+  (-1/4*zeta^2)*u(3)+(-zeta^2 + 1)*u(4)+(3/2)*u(5)+(1/4*zeta^2)*u(7)+(zeta^2 - 1)*u(8)+(-3/2)*u(9)+(-zeta^2)*u(10)+(1/4*zeta^2)*u(11)+(zeta^2 - 1)*u(12)+(-3/2)*u(13)+(-1/4*zeta^2)*u(15)+(-zeta^2 + 1)*u(16)+(3/2)*u(17)+(zeta^2)*u(18),
+  (1/4*zeta^2 - 1/4)*u(3)+(-5/4)*u(4)+(-5/2*zeta^2)*u(5)+(-1/4*zeta^2 + 1/4)*u(7)+(5/4)*u(8)+(5/2*zeta^2)*u(9)+(5/2*zeta^2 - 5/2)*u(10)+(-1/4*zeta^2 + 1/4)*u(11)+(5/4)*u(12)+(5/2*zeta^2)*u(13)+(1/4*zeta^2 - 1/4)*u(15)+(-5/4)*u(16)+(-5/2*zeta^2)*u(17)+(-5/2*zeta^2 + 5/2)*u(18),
+  (1/4)*u(3)+(3/2*zeta^2)*u(4)+(15/4*zeta^2 - 15/4)*u(5)+(-1/4)*u(7)+(-3/2*zeta^2)*u(8)+(-15/4*zeta^2 + 15/4)*u(9)+(5)*u(10)+(-1/4)*u(11)+(-3/2*zeta^2)*u(12)+(-15/4*zeta^2 + 15/4)*u(13)+(1/4)*u(15)+(3/2*zeta^2)*u(16)+(15/4*zeta^2 - 15/4)*u(17)+(-5)*u(18);
+ideal Ibase=oldToHom(Itoric);
+"LINEAR_PRESENTATION_NO_REDUNDANT_GB";
+"BASE_COX_RELATIONS"; size(Ibase);
+
+
+intmat JuniorValuationsHom[2][18]=0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0;
+intvec JuniorOrdersHom=2,2;
+
+
+proc splitJuniorCharacters(ideal base, int nbase, intmat V, intvec orders)
+{
+  int njunior=nrows(V);
+  int componentCount=1;
+  int q,nv;
+  for(q=1;q<=njunior;q++){componentCount=componentCount*orders[q];}
+  ideal result;
+  int outPosition=0;
+  for(int ip=1;ip<=size(base);ip++){
+    for(int code=0;code<componentCount;code++){
+      int quotientCode=code;
+      intvec targetResidue;
+      for(q=1;q<=njunior;q++){
+        targetResidue[q]=quotientCode%orders[q];
+        quotientCode=quotientCode div orders[q];
+      }
+      poly component=0;
+      for(int it=1;it<=size(base[ip]);it++){
+        intvec exponent=leadexp(base[ip][it]);
+        int matches=1;
+        for(q=1;q<=njunior;q++){
+          int value=0;
+          for(nv=1;nv<=nbase;nv++){value=value+V[q,nv]*exponent[nv];}
+          if(value%orders[q]!=targetResidue[q]){matches=0;}
+        }
+        if(matches){component=component+base[ip][it];}
+      }
+      if(component!=0){outPosition++; result[outPosition]=component;}
+    }
+  }
+  return(result);
+}
+
+proc multiJuniorHomogenize(ideal base, int nbase, intmat V, intvec orders)
+{
+  int njunior=nrows(V);
+  int q,nv;
+  ideal result;
+  for(int ip=1;ip<=size(base);ip++){
+    int terms=size(base[ip]);
+    intmat exponents[terms][nbase];
+    intmat values[terms][njunior];
+    intvec minima;
+    for(q=1;q<=njunior;q++){minima[q]=100000000;}
+    for(int it=1;it<=terms;it++){
+      intvec currentExponent=leadexp(base[ip][it]);
+      for(nv=1;nv<=nbase;nv++){
+        exponents[it,nv]=currentExponent[nv];
+      }
+      for(q=1;q<=njunior;q++){
+        int value=0;
+        for(nv=1;nv<=nbase;nv++){
+          value=value+V[q,nv]*exponents[it,nv];
+        }
+        values[it,q]=value;
+        if(value<minima[q]){minima[q]=value;}
+      }
+    }
+    poly transformed=0;
+    for(it=1;it<=terms;it++){
+      number coefficient=leadcoef(base[ip][it]);
+      intvec lifted=leadexp(base[ip][it]);
+      for(q=1;q<=njunior;q++){
+        if((values[it,q]-minima[q])%orders[q]!=0){
+          "NONINTEGRAL_HOMOGENIZATION";
+          "relation"; ip; "term"; it; "valuation"; values[it,q];
+          "minimum"; minima[q]; "order"; orders[q];
+          ERROR("nonintegral junior homogenization exponent");
+        }
+        lifted[nbase+q]=(values[it,q]-minima[q]) div orders[q];
+      }
+      transformed=transformed+coefficient*monomial(lifted);
+    }
+    result[ip]=transformed;
+  }
+  return(result);
+}
+
+
+ideal IbaseHomogeneous=splitJuniorCharacters(
+  Ibase,18,JuniorValuationsHom,JuniorOrdersHom
+);
+
+"CHARACTER_COMPONENTS"; size(IbaseHomogeneous);
+setring SourceToric;
+map returnToToric=Hom,((1)*zeta^0)*t(1)+((-2)*zeta^2+(2)*zeta^0)*t(3)+((2)*zeta^0)*t(4),((1)*zeta^0)*t(2)+((1)*zeta^2)*t(3),((1)*zeta^0)*t(5)+((-20)*zeta^0)*t(8)+((-60)*zeta^2)*t(9)+((-72)*zeta^2+(72)*zeta^0)*t(10)+((32)*zeta^0)*t(11)+((1)*zeta^0)*t(12)+((-12)*zeta^2+(12)*zeta^0)*t(13)+((-60)*zeta^2)*t(14)+((-140)*zeta^0)*t(15)+((180)*zeta^2+(-180)*zeta^0)*t(16)+((120)*zeta^2)*t(17)+((32)*zeta^0)*t(18),((1)*zeta^0)*t(6)+((-10)*zeta^2+(10)*zeta^0)*t(8)+((25)*zeta^0)*t(9)+((26)*zeta^2)*t(10)+((10)*zeta^2+(-10)*zeta^0)*t(11)+((1)*zeta^2)*t(13)+((10)*zeta^0)*t(14)+((-30)*zeta^2+(30)*zeta^0)*t(15)+((-45)*zeta^2)*t(16)+((-34)*zeta^0)*t(17)+((10)*zeta^2+(-10)*zeta^0)*t(18),((1)*zeta^0)*t(7)+((4)*zeta^2)*t(8)+((7)*zeta^2+(-7)*zeta^0)*t(9)+((-6)*zeta^0)*t(10)+((-2)*zeta^2)*t(11)+((1)*zeta^2+(-1)*zeta^0)*t(14)+((4)*zeta^2)*t(15)+((7)*zeta^0)*t(16)+((-6)*zeta^2+(6)*zeta^0)*t(17)+((-2)*zeta^2)*t(18),((1)*zeta^0)*t(1)+((1)*zeta^2)*t(2)+((-1)*zeta^2+(1)*zeta^0)*t(3),((1)*zeta^0)*t(5)+((30)*zeta^2)*t(9)+((60)*zeta^2+(-60)*zeta^0)*t(10)+((-32)*zeta^0)*t(11)+((1)*zeta^0)*t(12)+((-12)*zeta^2+(12)*zeta^0)*t(13)+((-60)*zeta^2)*t(14)+((-160)*zeta^0)*t(15)+((210)*zeta^2+(-210)*zeta^0)*t(16)+((132)*zeta^2)*t(17)+((32)*zeta^0)*t(18),((1)*zeta^0)*t(6)+((-15)*zeta^0)*t(9)+((-26)*zeta^2)*t(10)+((-12)*zeta^2+(12)*zeta^0)*t(11)+((1)*zeta^2)*t(13)+((10)*zeta^0)*t(14)+((-40)*zeta^2+(40)*zeta^0)*t(15)+((-65)*zeta^2)*t(16)+((-46)*zeta^0)*t(17)+((12)*zeta^2+(-12)*zeta^0)*t(18),((1)*zeta^0)*t(7)+((-7)*zeta^2+(7)*zeta^0)*t(9)+((10)*zeta^0)*t(10)+((4)*zeta^2)*t(11)+((1)*zeta^2+(-1)*zeta^0)*t(14)+((8)*zeta^2)*t(15)+((17)*zeta^0)*t(16)+((-14)*zeta^2+(14)*zeta^0)*t(17)+((-4)*zeta^2)*t(18),((1)*zeta^0)*t(8)+((3)*zeta^2)*t(9)+((3)*zeta^2+(-3)*zeta^0)*t(10)+((-1)*zeta^0)*t(11)+((-1)*zeta^0)*t(15)+((3)*zeta^2+(-3)*zeta^0)*t(16)+((3)*zeta^2)*t(17)+((1)*zeta^0)*t(18),((1)*zeta^0)*t(5)+((-20)*zeta^0)*t(8)+((-60)*zeta^2)*t(9)+((-72)*zeta^2+(72)*zeta^0)*t(10)+((32)*zeta^0)*t(11)+((-1)*zeta^0)*t(12)+((12)*zeta^2+(-12)*zeta^0)*t(13)+((60)*zeta^2)*t(14)+((140)*zeta^0)*t(15)+((-180)*zeta^2+(180)*zeta^0)*t(16)+((-120)*zeta^2)*t(17)+((-32)*zeta^0)*t(18),((1)*zeta^0)*t(6)+((-10)*zeta^2+(10)*zeta^0)*t(8)+((25)*zeta^0)*t(9)+((26)*zeta^2)*t(10)+((10)*zeta^2+(-10)*zeta^0)*t(11)+((-1)*zeta^2)*t(13)+((-10)*zeta^0)*t(14)+((30)*zeta^2+(-30)*zeta^0)*t(15)+((45)*zeta^2)*t(16)+((34)*zeta^0)*t(17)+((-10)*zeta^2+(10)*zeta^0)*t(18),((1)*zeta^0)*t(7)+((4)*zeta^2)*t(8)+((7)*zeta^2+(-7)*zeta^0)*t(9)+((-6)*zeta^0)*t(10)+((-2)*zeta^2)*t(11)+((-1)*zeta^2+(1)*zeta^0)*t(14)+((-4)*zeta^2)*t(15)+((-7)*zeta^0)*t(16)+((6)*zeta^2+(-6)*zeta^0)*t(17)+((2)*zeta^2)*t(18),((1)*zeta^0)*t(2)+((-1)*zeta^2)*t(3)+((-2)*zeta^2+(2)*zeta^0)*t(4),((1)*zeta^0)*t(5)+((30)*zeta^2)*t(9)+((60)*zeta^2+(-60)*zeta^0)*t(10)+((-32)*zeta^0)*t(11)+((-1)*zeta^0)*t(12)+((12)*zeta^2+(-12)*zeta^0)*t(13)+((60)*zeta^2)*t(14)+((160)*zeta^0)*t(15)+((-210)*zeta^2+(210)*zeta^0)*t(16)+((-132)*zeta^2)*t(17)+((-32)*zeta^0)*t(18),((1)*zeta^0)*t(6)+((-15)*zeta^0)*t(9)+((-26)*zeta^2)*t(10)+((-12)*zeta^2+(12)*zeta^0)*t(11)+((-1)*zeta^2)*t(13)+((-10)*zeta^0)*t(14)+((40)*zeta^2+(-40)*zeta^0)*t(15)+((65)*zeta^2)*t(16)+((46)*zeta^0)*t(17)+((-12)*zeta^2+(12)*zeta^0)*t(18),((1)*zeta^0)*t(7)+((-7)*zeta^2+(7)*zeta^0)*t(9)+((10)*zeta^0)*t(10)+((4)*zeta^2)*t(11)+((-1)*zeta^2+(1)*zeta^0)*t(14)+((-8)*zeta^2)*t(15)+((-17)*zeta^0)*t(16)+((14)*zeta^2+(-14)*zeta^0)*t(17)+((4)*zeta^2)*t(18),((1)*zeta^0)*t(8)+((3)*zeta^2)*t(9)+((3)*zeta^2+(-3)*zeta^0)*t(10)+((-1)*zeta^0)*t(11)+((1)*zeta^0)*t(15)+((-3)*zeta^2+(3)*zeta^0)*t(16)+((-3)*zeta^2)*t(17)+((-1)*zeta^0)*t(18);
+ideal ToricStd=std(Itoric);
+ideal characterCheck=reduce(returnToToric(IbaseHomogeneous),ToricStd);
+if(size(simplify(characterCheck,2))!=0){ERROR("character projection failed");}
+"CHARACTER_COMPONENTS_IN_ORIGINAL_IDEAL_CERTIFIED";
+setring Hom;
+// Each original relation is the sum of its character components. Together
+// with the preceding reduction, this proves equality of the base ideals.
+ideal IbaseHomogeneousStd=IbaseHomogeneous;
+ring Candidate=(0,zeta),(u(1..18),e(1..2)),wp(8,8,24,24,24,7,23,23,23,23,22,22,22,7,23,23,23,23,2,2);
+minpoly=zeta^4 - zeta^2 + 1;
+map extendBase=Hom,u(1..18);
+ideal baseExtended=extendBase(IbaseHomogeneousStd);
+intmat JuniorValuations[2][18]=0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0;
+intvec JuniorOrders=2,2;
+ideal raw=multiJuniorHomogenize(
+  baseExtended,18,JuniorValuations,JuniorOrders
+);
+"RAW_CANDIDATE_RELATIONS"; size(raw);
+
+ideal Icox=raw;
+
+// Weighted degree reverse lexicographic order with the saturation variable
+// last: its exponent in a leading term is the minimum over all terms.
+ring Bayer1=(0,zeta),(u(1..18),e(2),e(1)),wp(8,8,24,24,24,7,23,23,23,23,22,22,22,7,23,23,23,23,2,2);
+minpoly=zeta^4 - zeta^2 + 1;
+map import1=Candidate,u(1..18),e(1),e(2);
+ideal J=import1(Icox);
+"BAYER_STANDARD_BASIS_START"; 1;
+ideal B=std(J);
+"BAYER_STANDARD_BASIS_DONE"; size(B);
+ideal stripped;
+for(int ib=1;ib<=size(B);ib++){
+  poly h=B[ib];
+  intvec leading=leadexp(h);
+  int bayerPower=leading[nvars(basering)];
+  for(int it=1;it<=size(h);it++){
+    intvec et=leadexp(h[it]);
+    if(et[nvars(basering)]<bayerPower){ERROR("Bayer minimum-exponent check failed");}
+  }
+  stripped[ib]=h/var(nvars(basering))^bayerPower;
+}
+setring Candidate;
+map return1=Bayer1,u(1..18),e(2),e(1);
+Icox=return1(stripped);
+"BAYER_SATURATION_DONE"; 1; size(Icox);
+
+
+// Weighted degree reverse lexicographic order with the saturation variable
+// last: its exponent in a leading term is the minimum over all terms.
+ring Bayer2=(0,zeta),(u(1..18),e(1),e(2)),wp(8,8,24,24,24,7,23,23,23,23,22,22,22,7,23,23,23,23,2,2);
+minpoly=zeta^4 - zeta^2 + 1;
+map import2=Candidate,u(1..18),e(1),e(2);
+ideal J=import2(Icox);
+"BAYER_STANDARD_BASIS_START"; 2;
+ideal B=std(J);
+"BAYER_STANDARD_BASIS_DONE"; size(B);
+ideal stripped;
+for(int ib=1;ib<=size(B);ib++){
+  poly h=B[ib];
+  intvec leading=leadexp(h);
+  int bayerPower=leading[nvars(basering)];
+  for(int it=1;it<=size(h);it++){
+    intvec et=leadexp(h[it]);
+    if(et[nvars(basering)]<bayerPower){ERROR("Bayer minimum-exponent check failed");}
+  }
+  stripped[ib]=h/var(nvars(basering))^bayerPower;
+}
+setring Candidate;
+map return2=Bayer2,u(1..18),e(1),e(2);
+Icox=return2(stripped);
+"BAYER_SATURATION_DONE"; 2; size(Icox);
+
+Icox=std(Icox);
+intmat CoxDegree[2][20];
+for(int degreeRow=1;degreeRow<=2;degreeRow++){
+  for(int degreeColumn=1;degreeColumn<=18;degreeColumn++){
+    CoxDegree[degreeRow,degreeColumn]
+      =-JuniorValuations[degreeRow,degreeColumn];
+  }
+  CoxDegree[degreeRow,18+degreeRow]=JuniorOrders[degreeRow];
+}
+"CANDIDATE_VARIABLES"; nvars(basering);
+"CANDIDATE_RELATIONS"; size(Icox);
+"CANDIDATE_DIMENSION"; dim(Icox);
+if(dim(Icox)!=6){ERROR("wrong saturated algebra dimension");}
+"EXPECTED_DIMENSION"; 6;
+"COX_DEGREE_MATRIX"; CoxDegree;
+"COX_CODIMENSION_TEST";
+"SATURATED_PRESENTATION_NOT_FULL_COX_GENERATION_CERTIFICATE";
+Icox;
+
+"EXPORT_EQUATIONS_BEGIN"; for(int exi=1;exi<=size(Icox);exi++){string(Icox[exi]);}
+"EXPORT_EQUATIONS_END";quit;

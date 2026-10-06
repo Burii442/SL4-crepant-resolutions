@@ -1,0 +1,212 @@
+{
+  "support_index": 35,
+  "support": [
+    3,
+    11,
+    12,
+    13,
+    14,
+    23,
+    28,
+    29,
+    31
+  ],
+  "gauge": [
+    3,
+    13,
+    28,
+    29
+  ],
+  "gauge_determinant": 1,
+  "free_coordinates": [
+    11,
+    12,
+    14,
+    23,
+    31
+  ],
+  "ring_variables": [
+    "u11",
+    "u12",
+    "u14",
+    "u23",
+    "e4",
+    "zzloc"
+  ],
+  "cox_sha256": "c9a43fbe49b105b6b95e09578ab432e804fa64079a5b9898a4e08cf44dea9a21",
+  "supports_sha256": "8b3b6ffc4fc560ff12514eeec7c2cc9b6d6b676b120d5f62104ee1ed03127661",
+  "helper_sha256": "90ec83c2154262a23599c6f6467c3a9d10714c443058605e27b8db7dcb9140b0",
+  "required_jacobian_rank": 23,
+  "stratum_groebner_basis": [
+    "zzloc^2 + 27010737516/197678125*zzloc + 885094428672/197678125",
+    "u11 - 563184978125/96566487916608*zzloc - 4556770199/8533623888",
+    "u12 + 197678125/2726018742*zzloc + 1423353/481799",
+    "u14 + 197678125/14538766624*zzloc + 448733/3854392",
+    "u23 + 29849396875/125396862132*zzloc + 128421408/11081377",
+    "e4 + 120781334375/37684483089408*zzloc + 907238261/3330194688"
+  ],
+  "pivots": [
+    {
+      "row": 21,
+      "column": 24,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 130,
+      "column": 13,
+      "pivot": "-10",
+      "inverse": "-1/10",
+      "inverse_verified": true
+    },
+    {
+      "row": 252,
+      "column": 17,
+      "pivot": "-1433745",
+      "inverse": "-1/1433745",
+      "inverse_verified": true
+    },
+    {
+      "row": 112,
+      "column": 25,
+      "pivot": "-170880",
+      "inverse": "-1/170880",
+      "inverse_verified": true
+    },
+    {
+      "row": 65,
+      "column": 7,
+      "pivot": "-18",
+      "inverse": "-1/18",
+      "inverse_verified": true
+    },
+    {
+      "row": 17,
+      "column": 1,
+      "pivot": "-2",
+      "inverse": "-1/2",
+      "inverse_verified": true
+    },
+    {
+      "row": 171,
+      "column": 6,
+      "pivot": "-2140425",
+      "inverse": "-1/2140425",
+      "inverse_verified": true
+    },
+    {
+      "row": 41,
+      "column": 19,
+      "pivot": "-25935",
+      "inverse": "-1/25935",
+      "inverse_verified": true
+    },
+    {
+      "row": 30,
+      "column": 0,
+      "pivot": "-27",
+      "inverse": "-1/27",
+      "inverse_verified": true
+    },
+    {
+      "row": 4,
+      "column": 3,
+      "pivot": "-27",
+      "inverse": "-1/27",
+      "inverse_verified": true
+    },
+    {
+      "row": 32,
+      "column": 9,
+      "pivot": "-3",
+      "inverse": "-1/3",
+      "inverse_verified": true
+    },
+    {
+      "row": 12,
+      "column": 23,
+      "pivot": "-37750/89",
+      "inverse": "-89/37750",
+      "inverse_verified": true
+    },
+    {
+      "row": 128,
+      "column": 15,
+      "pivot": "-302265",
+      "inverse": "-1/302265",
+      "inverse_verified": true
+    },
+    {
+      "row": 43,
+      "column": 10,
+      "pivot": "123",
+      "inverse": "1/123",
+      "inverse_verified": true
+    },
+    {
+      "row": 43,
+      "column": 4,
+      "pivot": "130",
+      "inverse": "1/130",
+      "inverse_verified": true
+    },
+    {
+      "row": 0,
+      "column": 5,
+      "pivot": "15",
+      "inverse": "1/15",
+      "inverse_verified": true
+    },
+    {
+      "row": 62,
+      "column": 14,
+      "pivot": "246",
+      "inverse": "1/246",
+      "inverse_verified": true
+    },
+    {
+      "row": 70,
+      "column": 16,
+      "pivot": "-1000198599738165875/15820417056972096*zzloc - 39161430952055387/11650477978800",
+      "inverse": "503875049583094513678125/1256014243625403073224125608*zzloc + 5575250602095336853200/166491813842179622643707",
+      "inverse_verified": true
+    },
+    {
+      "row": 86,
+      "column": 28,
+      "pivot": "-101279003596875/232620265984*zzloc - 989432426979/61670272",
+      "inverse": "102792625/35811708213654*zzloc + 5438848/18988180389",
+      "inverse_verified": true
+    },
+    {
+      "row": 66,
+      "column": 29,
+      "pivot": "-1044728890625/21808149936*zzloc - 4670605915/1927196",
+      "inverse": "276749375/1646515320168*zzloc + 5261212/363758245",
+      "inverse_verified": true
+    },
+    {
+      "row": 87,
+      "column": 12,
+      "pivot": "-10744833623146889925860595703125/465240531968*zzloc - 283782162643195032390111328125/123340544",
+      "inverse": "3264503999/59536909902738061542897000000000*zzloc + 206/101491193200742989453125",
+      "inverse_verified": true
+    },
+    {
+      "row": 51,
+      "column": 22,
+      "pivot": "-1045911615793521533622329541599/210708730889914901184000*zzloc - 3532887151789584078879618486279013/10706744455788358800000000",
+      "inverse": "-645630485006422153185077327527687575003300000000000/598542087981127349487216743757552414481432231708510457454131*zzloc - 48038713906791959672722639047144845792989200000000/634721196162383191396836419679270853108623787601813846717",
+      "inverse_verified": true
+    },
+    {
+      "row": 24,
+      "column": 20,
+      "pivot": "-1101488384415321875/1205903458861056*zzloc - 7992823220319929/106566230016",
+      "inverse": "11671400099765/900232251301854*zzloc + 4165871104/5892883569",
+      "inverse_verified": true
+    }
+  ],
+  "stratum_dimension": 0
+}

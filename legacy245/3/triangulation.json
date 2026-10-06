@@ -1,0 +1,99 @@
+{
+  "index": 3,
+  "order": 2,
+  "actual_character_coordinate_permutation": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "points": [
+    [
+      "0",
+      "0",
+      "0",
+      "1"
+    ],
+    [
+      "0",
+      "0",
+      "1",
+      "0"
+    ],
+    [
+      "0",
+      "1",
+      "0",
+      "0"
+    ],
+    [
+      "1/2",
+      "1/2",
+      "0",
+      "0"
+    ],
+    [
+      "1",
+      "0",
+      "0",
+      "0"
+    ]
+  ],
+  "heights": [
+    "29/1000",
+    "9999999653/1000",
+    "9999999591/1000",
+    "1249999877/250",
+    "999999941/100"
+  ],
+  "simplices": [
+    {
+      "simplex": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "normalized_volume": 1,
+      "lower_plane": [
+        "-23/40",
+        "9999999591/1000",
+        "9999999653/1000",
+        "29/1000"
+      ],
+      "slacks": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1999999997/200"
+      ]
+    },
+    {
+      "simplex": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "normalized_volume": 1,
+      "lower_plane": [
+        "999999941/100",
+        "-197/500",
+        "9999999653/1000",
+        "29/1000"
+      ],
+      "slacks": [
+        "0",
+        "0",
+        "1999999997/200",
+        "0",
+        "0"
+      ]
+    }
+  ],
+  "all_pair_intersections_are_common_faces": true,
+  "pair_intersections_checked": 1,
+  "total_normalized_volume": 2,
+  "full_coherent_unimodular_cover": true
+}

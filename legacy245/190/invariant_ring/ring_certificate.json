@@ -1,0 +1,40 @@
+{
+  "index": 190,
+  "actual_group_order": 12,
+  "generators": [
+    "x4^2",
+    "x2^2 - x2*x3 + x3^2",
+    "x1^2",
+    "x2^2*x3 - x2*x3^2",
+    "2*x1*x2^3*x4 - 3*x1*x2^2*x3*x4 - 3*x1*x2*x3^2*x4 + 2*x1*x3^3*x4"
+  ],
+  "weights": [
+    2,
+    2,
+    2,
+    3,
+    5
+  ],
+  "minimal_relations": [
+    "4*u1*u2^3*u3 - 27*u1*u3*u4^2 - u5^2"
+  ],
+  "relation_degrees": [
+    10
+  ],
+  "molien": "(t^4 - t^3 + t^2 - t + 1)/(t^8 - t^7 - 2*t^6 + t^5 + 2*t^4 + t^3 - 2*t^2 - t + 1)",
+  "hilbert_ci": "(t^4 - t^3 + t^2 - t + 1)/(t^8 - t^7 - 2*t^6 + t^5 + 2*t^4 + t^3 - 2*t^2 - t + 1)",
+  "independent_graph_kernel": [
+    "u1*u2^3*u3 - 27/4*u1*u3*u4^2 - 1/4*u5^2"
+  ],
+  "branch_discriminant": "16*u1*u2^3*u3 - 108*u1*u3*u4^2",
+  "branch_factorization": "(-4) * u3 * u1 * (-4*u2^3 + 27*u4^2)",
+  "actual_invariance": true,
+  "full_ring_by_exact_hilbert_equality": true,
+  "complete_intersection": true,
+  "source_hashes": {
+    "input_matrices.json": "ef8c628979f4795cc19fe820bc147944a69ad8672f595833b84d66eea33c44ba",
+    "compute_invariants.sing": "120b05a05733de8c8a0ffcddeb92b2bd0ec39c2088749eadb1dd71319a229a31",
+    "generators.txt": "e507c6ab455ccaca1c4d482c87b497a21e009306c301ddc4371a86722f2f49d7",
+    "relations.txt": "3f8fab222ac375c56ec2600e4395c8faad233802c6957a7ceced2401364ff559"
+  }
+}

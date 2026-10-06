@@ -1,0 +1,134 @@
+{
+  "core_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    15
+  ],
+  "recoveries": [
+    {
+      "index": 7,
+      "power": 0,
+      "numerator": "u1^4 + 8*u1*u2 - u3"
+    },
+    {
+      "index": 8,
+      "power": 0,
+      "numerator": "u1^6 + 8*u1^3*u2 - u1^2*u3 + 16*u2^2"
+    },
+    {
+      "index": 9,
+      "power": 0,
+      "numerator": "u1^3*u2 + 1/4*u1^2*u3 + 6*u2^2 + 1/4*u4"
+    },
+    {
+      "index": 10,
+      "power": 0,
+      "numerator": "u1^7 + 8*u1^4*u2 - 3*u1^3*u3 + 16*u1*u2^2 - 8*u2*u3 - 2*u1*u4"
+    },
+    {
+      "index": 11,
+      "power": 0,
+      "numerator": "u1^3*u3 + 4*u2*u3 + u1*u4"
+    },
+    {
+      "index": 12,
+      "power": 0,
+      "numerator": "-16/5*u1^6*u2 + 8/5*u1^5*u3 - 128/5*u1^3*u2^2 + 96/5*u1^2*u2*u3 - 16/5*u1^3*u4 - 256/5*u2^3 - 24/5*u1*u3^2 - 48/5*u2*u4"
+    },
+    {
+      "index": 13,
+      "power": 0,
+      "numerator": "3/5*u1^6*u2 - 13/10*u1^5*u3 + 24/5*u1^3*u2^2 - 53/5*u1^2*u2*u3 + 3/5*u1^3*u4 + 48/5*u2^3 + 19/10*u1*u3^2 + 14/5*u2*u4"
+    },
+    {
+      "index": 14,
+      "power": 0,
+      "numerator": "u1^3*u4 + u1*u3^2 + 4*u2*u4"
+    },
+    {
+      "index": 16,
+      "power": 0,
+      "numerator": "12*u4*u7 - 4*u3*u8 - 16*u2*u11"
+    },
+    {
+      "index": 17,
+      "power": 0,
+      "numerator": "-42*u4*u7 + 16*u3*u8 + 2*u7*u8 + 48*u3*u9 + 32*u2*u11"
+    },
+    {
+      "index": 18,
+      "power": 0,
+      "numerator": "12*u4*u7 - 4*u3*u8 - 8*u2*u11"
+    },
+    {
+      "index": 19,
+      "power": 2,
+      "numerator": "8*u1^3*u15 + 2304*u5^2 - 36864*u6^2 + 32*u2*u15"
+    },
+    {
+      "index": 20,
+      "power": 2,
+      "numerator": "-768*u5^2 + 12288*u6^2 - 32/3*u2*u15"
+    },
+    {
+      "index": 21,
+      "power": 0,
+      "numerator": "-48*u3^2*u7 - 4*u3*u7^2 + 52/3*u4*u8 + 5/4*u8^2 + 32*u4*u9 + 32/3*u8*u9 + 48*u2*u14"
+    },
+    {
+      "index": 22,
+      "power": 1,
+      "numerator": "-1536*u1*u5^2 - 12288*u1*u6^2 + 8/3*u7*u15 - 8/3*u2*u19 - 4*u2*u20"
+    },
+    {
+      "index": 23,
+      "power": 0,
+      "numerator": "-3/8*u8*u10 - 4*u9*u10 - 8*u9*u11 - 2*u7*u13 + 2*u7*u14"
+    },
+    {
+      "index": 24,
+      "power": 0,
+      "numerator": "-9216*u1*u6^2 + 2*u7*u15 - 3*u2*u20"
+    },
+    {
+      "index": 25,
+      "power": 0,
+      "numerator": "-u7^2*u10 + 2*u7^2*u11 - 3/4*u8*u12 - u8*u13 + 32*u9*u13"
+    },
+    {
+      "index": 26,
+      "power": 0,
+      "numerator": "-4*u7^2*u10 + 8*u7^2*u11 - 4*u8*u13 + 128*u9*u13"
+    },
+    {
+      "index": 27,
+      "power": 0,
+      "numerator": "3072*u2*u5^2 + 98304*u2*u6^2 - 128/3*u2^2*u15 - 2*u1*u7*u20 + 16/3*u8*u15 - 64/3*u9*u15"
+    },
+    {
+      "index": 28,
+      "power": 0,
+      "numerator": "-3/4*u10*u12 + u10*u13 - 2*u11*u13 + 16*u9*u17"
+    },
+    {
+      "index": 29,
+      "power": 0,
+      "numerator": "64/3*u4*u6^2 - 4/9*u5^2*u8 - 32/9*u6^2*u8 - 16/3*u5^2*u9 - 1/1728*u3*u7*u19 - 1/576*u3*u7*u20 - 1/2592*u12*u15 - 1/162*u13*u15 + 1/324*u14*u15 - 1/6912*u8*u22"
+    },
+    {
+      "index": 30,
+      "power": 0,
+      "numerator": "-6144*u5^2*u15 + 98304*u6^2*u15 - 256/3*u2*u15^2 - 3*u1*u20^2 - 4*u15*u22"
+    },
+    {
+      "index": 31,
+      "power": 0,
+      "numerator": "-13/3686400*u19*u21 + 17/1228800*u20*u21 + 1/614400*u16*u22 + 3/102400*u17*u22 + 1/614400*u18*u22 + 1/23040*u15*u23 + 1/15360*u12*u24 + 1/57600*u13*u24 + 11/460800*u14*u24 + 1/40960*u11*u27"
+    }
+  ],
+  "description": "Candidate graph identities only. Every identity and grading is recomputed from the literal current public initial forms before use."
+}

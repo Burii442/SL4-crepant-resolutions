@@ -1,0 +1,204 @@
+{
+  "support_index": 2,
+  "support": [
+    9,
+    12,
+    13,
+    14,
+    22,
+    23,
+    29
+  ],
+  "gauge": [
+    9,
+    13,
+    22,
+    29
+  ],
+  "gauge_determinant": 1,
+  "free_coordinates": [
+    12,
+    14,
+    23
+  ],
+  "ring_variables": [
+    "u12",
+    "u14",
+    "u23",
+    "zzloc"
+  ],
+  "cox_sha256": "c9a43fbe49b105b6b95e09578ab432e804fa64079a5b9898a4e08cf44dea9a21",
+  "supports_sha256": "8b3b6ffc4fc560ff12514eeec7c2cc9b6d6b676b120d5f62104ee1ed03127661",
+  "helper_sha256": "90ec83c2154262a23599c6f6467c3a9d10714c443058605e27b8db7dcb9140b0",
+  "required_jacobian_rank": 23,
+  "stratum_groebner_basis": [
+    "u12 - 196/25",
+    "u14 - 10/7",
+    "u23 + 8232/575",
+    "zzloc + 2875/460992"
+  ],
+  "pivots": [
+    {
+      "row": 7,
+      "column": 29,
+      "pivot": "-1",
+      "inverse": "-1",
+      "inverse_verified": true
+    },
+    {
+      "row": 15,
+      "column": 18,
+      "pivot": "-10/7",
+      "inverse": "-7/10",
+      "inverse_verified": true
+    },
+    {
+      "row": 24,
+      "column": 27,
+      "pivot": "-100/49",
+      "inverse": "-49/100",
+      "inverse_verified": true
+    },
+    {
+      "row": 106,
+      "column": 21,
+      "pivot": "-10314500539392/625",
+      "inverse": "-625/10314500539392",
+      "inverse_verified": true
+    },
+    {
+      "row": 31,
+      "column": 5,
+      "pivot": "-1037232/5",
+      "inverse": "-5/1037232",
+      "inverse_verified": true
+    },
+    {
+      "row": 77,
+      "column": 2,
+      "pivot": "-104",
+      "inverse": "-1/104",
+      "inverse_verified": true
+    },
+    {
+      "row": 66,
+      "column": 16,
+      "pivot": "-104414688/5",
+      "inverse": "-5/104414688",
+      "inverse_verified": true
+    },
+    {
+      "row": 78,
+      "column": 25,
+      "pivot": "-1053696/5",
+      "inverse": "-5/1053696",
+      "inverse_verified": true
+    },
+    {
+      "row": 8,
+      "column": 28,
+      "pivot": "-108/13",
+      "inverse": "-13/108",
+      "inverse_verified": true
+    },
+    {
+      "row": 1,
+      "column": 15,
+      "pivot": "-1176/25",
+      "inverse": "-25/1176",
+      "inverse_verified": true
+    },
+    {
+      "row": 11,
+      "column": 26,
+      "pivot": "-10",
+      "inverse": "-1/10",
+      "inverse_verified": true
+    },
+    {
+      "row": 13,
+      "column": 1,
+      "pivot": "-14",
+      "inverse": "-1/14",
+      "inverse_verified": true
+    },
+    {
+      "row": 13,
+      "column": 23,
+      "pivot": "-15625/235298",
+      "inverse": "-235298/15625",
+      "inverse_verified": true
+    },
+    {
+      "row": 2,
+      "column": 24,
+      "pivot": "-100842/625",
+      "inverse": "-625/100842",
+      "inverse_verified": true
+    },
+    {
+      "row": 49,
+      "column": 17,
+      "pivot": "-16464/25",
+      "inverse": "-25/16464",
+      "inverse_verified": true
+    },
+    {
+      "row": 46,
+      "column": 3,
+      "pivot": "-168",
+      "inverse": "-1/168",
+      "inverse_verified": true
+    },
+    {
+      "row": 39,
+      "column": 14,
+      "pivot": "-2025072/25",
+      "inverse": "-25/2025072",
+      "inverse_verified": true
+    },
+    {
+      "row": 17,
+      "column": 10,
+      "pivot": "-2025072/25",
+      "inverse": "-25/2025072",
+      "inverse_verified": true
+    },
+    {
+      "row": 26,
+      "column": 7,
+      "pivot": "-296352/5",
+      "inverse": "-5/296352",
+      "inverse_verified": true
+    },
+    {
+      "row": 13,
+      "column": 9,
+      "pivot": "-32928/25",
+      "inverse": "-25/32928",
+      "inverse_verified": true
+    },
+    {
+      "row": 9,
+      "column": 4,
+      "pivot": "-3852576/25",
+      "inverse": "-25/3852576",
+      "inverse_verified": true
+    },
+    {
+      "row": 10,
+      "column": 6,
+      "pivot": "-74088/5",
+      "inverse": "-5/74088",
+      "inverse_verified": true
+    },
+    {
+      "row": 4,
+      "column": 0,
+      "pivot": "-98784/25",
+      "inverse": "-25/98784",
+      "inverse_verified": true
+    }
+  ],
+  "stratum_dimension": 0
+}

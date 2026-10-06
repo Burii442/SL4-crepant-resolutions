@@ -1,0 +1,46 @@
+{
+  "index": 85,
+  "actual_group_order": 12,
+  "generators": [
+    "x3^2 + x3*x4 + x4^2",
+    "x2^2",
+    "x1^2",
+    "2*x3^6 + 6*x3^5*x4 + 15*x3^4*x4^2 + 20*x3^3*x4^3 + 15*x3^2*x4^4 + 6*x3*x4^5 + 2*x4^6",
+    "x1*x3^2*x4 + x1*x3*x4^2",
+    "2*x2*x3^3 + 3*x2*x3^2*x4 - 3*x2*x3*x4^2 - 2*x2*x4^3"
+  ],
+  "weights": [
+    2,
+    2,
+    2,
+    6,
+    4,
+    4
+  ],
+  "minimal_relations": [
+    "2*u1^3*u3 - u3*u4 + 3*u5^2",
+    "22*u1^3*u2 - 9*u2*u4 - u6^2"
+  ],
+  "relation_degrees": [
+    8,
+    8
+  ],
+  "molien": "(t^8 + 2*t^4 + 1)/(t^12 - 3*t^10 + 3*t^8 - 2*t^6 + 3*t^4 - 3*t^2 + 1)",
+  "hilbert_ci": "(t^8 + 2*t^4 + 1)/(t^12 - 3*t^10 + 3*t^8 - 2*t^6 + 3*t^4 - 3*t^2 + 1)",
+  "independent_graph_kernel": [
+    "u1^3*u2 - 9/22*u2*u4 - 1/22*u6^2",
+    "u1^3*u3 - 1/2*u3*u4 + 3/2*u5^2",
+    "u2*u3*u4 - 33/2*u2*u5^2 - 1/2*u3*u6^2"
+  ],
+  "branch_discriminant": null,
+  "branch_factorization": null,
+  "actual_invariance": true,
+  "full_ring_by_exact_hilbert_equality": true,
+  "complete_intersection": true,
+  "source_hashes": {
+    "input_matrices.json": "ad8e6558b6bb0ba7f96ae044601f73f9a00df0eef25259c24b2079e09cbb153f",
+    "compute_invariants.sing": "76abd19ea73afb5c3ff3989cdb871a7ab0262fda73b246d102035fe0d801f56a",
+    "generators.txt": "ee74ebb5966690f044922985cffd9dbf2a6c82336e5337c99165c49f83359e99",
+    "relations.txt": "07965cb24e92b6f90d08b3ded43b09d663c75588bf300c004af3a1ef3d020313"
+  }
+}

@@ -1,0 +1,34 @@
+__pycache__/
+*.pyc
+.DS_Store
+.sage/
+.env
+.env.*
+verification_runs/
+*.aux
+*.log
+*.out
+*.toc
+*.fdb_latexmk
+*.fls
+# Manuscripts stay in the authors' local project, outside this repository.
+*.tex
+*.pdf
+
+# Results belong outside the source repository.
+evidence/
+reference_results/
+**/reference_run/
+**/source_snapshot/
+**/retained/
+status.json
+REPORT.txt
+verification.json
+verification_106.json
+verification_reduction.json
+comparison.json
+controller.log
+*.bundle
+*.zip
+*.tar.gz
+*.tar.xz

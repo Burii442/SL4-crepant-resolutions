@@ -1,0 +1,27 @@
+{
+  "source_certificate": "ASL4_OPEN_ATTACK_2026_09_11/cox177/endpoint/generic_smoothness/fixed_018.json",
+  "source_sha256": "443dd7214b128b1b45bf3c86a00c979959d8364b7b4d6be8cbc58f501da2f4ac",
+  "helper_sha256": "75b8f955d9d7fca25f0a43501ed33f99cbc66c7798771fd160d611717e481145",
+  "required_residual_rank": 1,
+  "residual_rows": 21,
+  "residual_columns": [
+    1,
+    5,
+    26
+  ],
+  "minor_choices_tried": 3,
+  "normalized_minors": [
+    "u14 - 2*u22",
+    "u14*u22 + 55/294*u14 + 3/7*u21 - 10/7*u22 - 25/42",
+    "u14*u22 - 5/6*u14 + 29/21*u21 - 10/7*u22 - 25/42"
+  ],
+  "unit_ideal_identity_coefficients": [
+    "0",
+    "0",
+    "-3724/1125*u22 - 877/675",
+    "3724/1125*u14*u22 + 877/675*u14 - 1064/225*u22 - 104/135",
+    "34447/5625*u22 - 17101/4500",
+    "-1862/625*u22 + 189/250"
+  ],
+  "identity_verified": true
+}

@@ -1,0 +1,20 @@
+Read("ASL4.txt");; SizeScreen([100000,30]);;
+out:="cotangent_actual_characters.txt";;
+PrintTo(out,"Actual finite matrix representations, all character values in ConjugacyClasses order.\n");;
+indices:=[41,42,43,60,61,62,89,90,98,99,118,119,120,149,150,159,164,172,199,200,201,202,203,211,212,226];;
+for index in indices do
+ G:=Group(List(ASL4[index],A->ImmutableMatrix(Rationals,A)));;
+ chi:=NaturalCharacter(G);; classes:=ConjugacyClasses(G);;
+ candidates:=Filtered(ConstituentsOfCharacter(chi),psi->psi[1]=2 and chi=psi+ComplexConjugate(psi) and Size(KernelOfCharacter(psi))=1);;
+ if Length(candidates)=0 then Error("No faithful cotangent constituent");fi;
+ psi:=candidates[1];;det:=ExteriorPower(psi,2);;
+ refs:=Filtered([1..Length(classes)],j->psi[j]<>2 and 1-psi[j]+det[j]=0);;
+ N:=NormalClosure(G,Subgroup(G,List(refs,j->Representative(classes[j]))));;
+ if Size(N)<>Size(G) then Error("Not reflection generated");fi;
+ AppendTo(out,"INDEX=",index," ORDER=",Size(G)," ID=",IdGroup(G)," DERIVED_ORDER=",Size(DerivedSubgroup(G))," REFLECTION_CLASSES=",Length(refs)," REFLECTION_GENERATED_ORDER=",Size(N),"\n");;
+ AppendTo(out,"chi=",List(chi),"\npsi=",List(psi),"\npsi_dual=",List(ComplexConjugate(psi)),"\npsi_det=",List(det),"\nclass_representatives=",List(classes,Representative),"\nclass_sizes=",List(classes,Size),"\n");;
+ Print("PASS ",index,"\n");;
+od;
+AppendTo(out,"ALL_26_ACTUAL_COTANGENT_REFLECTION_HYPOTHESES_PASS\n");;
+Print("ALL_26_ACTUAL_COTANGENT_REFLECTION_HYPOTHESES_PASS\n");;
+QUIT_GAP(0);

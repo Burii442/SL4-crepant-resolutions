@@ -1,0 +1,529 @@
+{
+  "140": {
+    "cyclotomic_order": 6,
+    "input_cyclotomic_order": 6,
+    "P": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "convention": "P^-1 * G_catalogue * P = G_polynomial"
+  },
+  "143": {
+    "cyclotomic_order": 4,
+    "input_cyclotomic_order": 4,
+    "P": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "convention": "P^-1 * G_catalogue * P = G_polynomial"
+  },
+  "151": {
+    "cyclotomic_order": 4,
+    "input_cyclotomic_order": 4,
+    "P": [
+      [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "-2",
+        "-2"
+      ],
+      [
+        "-1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "2"
+      ]
+    ],
+    "convention": "P^-1 * G_catalogue * P = G_polynomial"
+  },
+  "161": {
+    "cyclotomic_order": 24,
+    "input_cyclotomic_order": 24,
+    "P": [
+      [
+        "1",
+        "-1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "-1",
+        "0",
+        "1"
+      ]
+    ],
+    "convention": "P^-1 * G_catalogue * P = G_polynomial"
+  },
+  "167": {
+    "cyclotomic_order": 12,
+    "input_cyclotomic_order": 12,
+    "P": [
+      [
+        "1",
+        "1",
+        "1",
+        "-1"
+      ],
+      [
+        "0",
+        "-2",
+        "-2",
+        "0"
+      ],
+      [
+        "0",
+        "2",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    ],
+    "convention": "P^-1 * G_catalogue * P = G_polynomial"
+  },
+  "171": {
+    "cyclotomic_order": 24,
+    "input_cyclotomic_order": 24,
+    "P": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "-1",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "1/2",
+        "1/2",
+        "-1/2",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "-1/2",
+        "-1/2",
+        "1/2"
+      ]
+    ],
+    "convention": "P^-1 * G_catalogue * P = G_polynomial"
+  },
+  "173": {
+    "cyclotomic_order": 24,
+    "input_cyclotomic_order": 24,
+    "P": [
+      [
+        "1/2",
+        "0",
+        "1/2",
+        "0"
+      ],
+      [
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2"
+      ],
+      [
+        "0",
+        "1/2",
+        "1/2",
+        "0"
+      ],
+      [
+        "1/2",
+        "1/2",
+        "0",
+        "0"
+      ]
+    ],
+    "convention": "P^-1 * G_catalogue * P = G_polynomial"
+  },
+  "174": {
+    "cyclotomic_order": 12,
+    "input_cyclotomic_order": 12,
+    "P": [
+      [
+        "1",
+        "0",
+        "0",
+        "-1"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "2"
+      ],
+      [
+        "0",
+        "0",
+        "-1",
+        "-1"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "-1"
+      ]
+    ],
+    "convention": "P^-1 * G_catalogue * P = G_polynomial"
+  },
+  "177": {
+    "cyclotomic_order": 4,
+    "input_cyclotomic_order": 4,
+    "P": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "-1",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2"
+      ],
+      [
+        "1/2",
+        "-1/2",
+        "-1/2",
+        "1/2"
+      ]
+    ],
+    "convention": "P^-1 * G_catalogue * P = G_polynomial"
+  },
+  "178": {
+    "cyclotomic_order": 24,
+    "input_cyclotomic_order": 24,
+    "P": [
+      [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      [
+        "-2",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-2",
+        "0"
+      ],
+      [
+        "1",
+        "-1",
+        "-1",
+        "-1"
+      ]
+    ],
+    "convention": "P^-1 * G_catalogue * P = G_polynomial"
+  },
+  "179": {
+    "cyclotomic_order": 24,
+    "input_cyclotomic_order": 24,
+    "P": [
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "-1",
+        "0",
+        "-1"
+      ],
+      [
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "1/2",
+        "-1/2",
+        "1/2"
+      ]
+    ],
+    "convention": "P^-1 * G_catalogue * P = G_polynomial"
+  },
+  "194": {
+    "cyclotomic_order": 6,
+    "input_cyclotomic_order": 6,
+    "P": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "convention": "P^-1 * G_catalogue * P = G_polynomial"
+  },
+  "206": {
+    "cyclotomic_order": 6,
+    "input_cyclotomic_order": 6,
+    "P": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "convention": "P^-1 * G_catalogue * P = G_polynomial"
+  },
+  "221": {
+    "cyclotomic_order": 12,
+    "input_cyclotomic_order": 12,
+    "P": [
+      [
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "zeta^2",
+        "0",
+        "-zeta^2 + 1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "-zeta^2 + 1",
+        "0",
+        "zeta^2"
+      ]
+    ],
+    "convention": "P^-1 * G_catalogue * P = G_polynomial"
+  },
+  "222": {
+    "cyclotomic_order": 6,
+    "input_cyclotomic_order": 6,
+    "P": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "convention": "P^-1 * G_catalogue * P = G_polynomial"
+  },
+  "227": {
+    "cyclotomic_order": 12,
+    "input_cyclotomic_order": 12,
+    "P": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "convention": "P^-1 * G_catalogue * P = G_polynomial"
+  },
+  "243": {
+    "cyclotomic_order": 12,
+    "input_cyclotomic_order": 12,
+    "P": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "convention": "P^-1 * G_catalogue * P = G_polynomial"
+  }
+}

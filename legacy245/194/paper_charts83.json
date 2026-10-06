@@ -1,0 +1,133 @@
+{
+  "case": 194,
+  "presentation_id": "paper83",
+  "character": [
+    1,
+    -2,
+    -4
+  ],
+  "raw_character": [
+    -4,
+    -2,
+    -4
+  ],
+  "charts": [
+    {
+      "support": [
+        8,
+        9,
+        10
+      ],
+      "gauge": [
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "support": [
+        5,
+        6,
+        9,
+        10,
+        11
+      ],
+      "gauge": [
+        5,
+        6,
+        9
+      ]
+    },
+    {
+      "support": [
+        8,
+        9,
+        11,
+        12,
+        14
+      ],
+      "gauge": [
+        8,
+        9,
+        11
+      ]
+    },
+    {
+      "support": [
+        8,
+        10,
+        15
+      ],
+      "gauge": [
+        8,
+        10,
+        15
+      ]
+    },
+    {
+      "support": [
+        6,
+        11,
+        15
+      ],
+      "gauge": [
+        6,
+        11,
+        15
+      ]
+    },
+    {
+      "support": [
+        8,
+        11,
+        15
+      ],
+      "gauge": [
+        8,
+        11,
+        15
+      ]
+    }
+  ],
+  "first_slice_free_coordinates": [
+    "u11",
+    "u12",
+    "e2",
+    "e3"
+  ],
+  "first_slice_parameters": [
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "first_slice_images": [
+    "-a*b+c",
+    "(zeta-1)*(b^2-c)",
+    "-2*a*b^2+a*c+b*c",
+    "-2*b^3-a*c+3*b*c",
+    "b-a",
+    "a^2-3*a*b+2*c",
+    "-a*b-b^2+2*c",
+    "1",
+    "1",
+    "1",
+    "a",
+    "b",
+    "4*a*b^3+a^2*c-6*a*b*c-3*b^2*c+4*c^2",
+    "c",
+    "d"
+  ],
+  "admissible_invariant_degree_witness": {
+    "indices": [
+      1,
+      9,
+      10
+    ],
+    "coefficients": [
+      1,
+      2,
+      2
+    ]
+  }
+}
