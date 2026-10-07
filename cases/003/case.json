@@ -1,0 +1,136 @@
+{
+  "case": 3,
+  "decision": "YES",
+  "order": 2,
+  "primary_sieve": "B",
+  "sieves": [
+    "B",
+    "C"
+  ],
+  "source_legacy_index": 3,
+  "legacy_indices": [
+    3,
+    4,
+    5
+  ],
+  "classical_class": {
+    "system": 3,
+    "qclass": 1,
+    "global_qclass": 6
+  },
+  "junior_classes": 1,
+  "age2_classes": 0,
+  "actual_generators": [
+    [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        -1
+      ]
+    ]
+  ],
+  "legacy_steps": [
+    "catalogue",
+    "criteria",
+    "representatives",
+    "geometry"
+  ],
+  "extensions": [
+    {
+      "id": "abelian-lattice",
+      "scope": "Recompute the quotient lattice from the actual matrix character.",
+      "runtime": "python",
+      "entrypoint": "extensions/abelian/verify.py",
+      "arguments": [
+        "--legacy-case",
+        "3"
+      ]
+    }
+  ],
+  "inputs": [
+    "manuscript106/catalogue/catalogue.json",
+    "manuscript106/catalogue/catalogue_reduced.json",
+    "manuscript106/catalogue/conjugacy_certificates.json",
+    "legacy245/catalogue.json",
+    "legacy245/criteria_incidence.csv",
+    "legacy245/abelian_characters.csv",
+    "legacy245/3/triangulation.json"
+  ],
+  "proofs": [
+    {
+      "sieve": "B",
+      "scope": "Compute the common fixed subspace. A positive dimension reduces the quotient to a resolved quotient of dimension at most three.",
+      "reference_key": "BKR"
+    },
+    {
+      "sieve": "C",
+      "scope": "Bind the actual character lattice and check a coherent unimodular triangulation covering the complete junior simplex.",
+      "reference_key": "DHZ"
+    }
+  ],
+  "recorded_additional_applications": [
+    {
+      "family": "B",
+      "case": "3",
+      "outcome": "YES",
+      "original_indices": "3 4 5"
+    },
+    {
+      "family": "C",
+      "case": "3",
+      "outcome": "YES",
+      "original_indices": "3 4 5"
+    },
+    {
+      "family": "product",
+      "case": "3",
+      "outcome": "YES",
+      "original_indices": "3 4 5"
+    },
+    {
+      "family": "cyclic",
+      "case": "3",
+      "outcome": "YES",
+      "original_indices": "3 4 5"
+    },
+    {
+      "family": "fujiki_oka",
+      "case": "3",
+      "outcome": "YES",
+      "original_indices": "3 4 5"
+    }
+  ],
+  "verification_status": "PROGRAMS_AND_INPUTS_INDEXED; mathematical execution is reported separately",
+  "limitations": [
+    "A stored YES/NO label and the existence of program files do not constitute a fresh proof run.",
+    "The cited geometric theorems and their mathematical deductions remain part of the proof."
+  ],
+  "age_profile": [
+    1,
+    1,
+    0
+  ],
+  "conjugacy_class_count": 2,
+  "age_polynomial": "1 + t",
+  "age_profile_interpretation": "Betti numbers b0,b2,b4 of a projective crepant resolution",
+  "poincare_polynomial": "1 + q²"
+}

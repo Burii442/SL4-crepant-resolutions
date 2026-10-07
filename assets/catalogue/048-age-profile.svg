@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="348" viewBox="0 0 720 348" role="img" aria-labelledby="title desc" data-case="48" data-decision="NO">
+<title id="title">Case 048 · Age profile</title>
+<desc id="desc">Case 048. Decision NO. Age zero: 1. Age one: 3. Age two: 7. These are conjugacy-class counts only; no resolution Betti numbers are assigned.</desc>
+<rect x="1" y="1" width="718" height="346" rx="16" fill="#fffefa" stroke="#dce2dd"/>
+<rect x="30" y="30" width="4" height="50" rx="2" fill="#895b36"/>
+<text x="49" y="49" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="25">Case 048 · Age profile</text>
+<text x="49" y="73" fill="#68746e" font-family="Arial,sans-serif" font-size="13">Conjugacy classes of the quotient representation</text>
+<line x1="32" y1="96" x2="688" y2="96" stroke="#e2e6e1"/>
+<text x="360" y="120" text-anchor="middle" fill="#895b36" font-family="Arial,sans-serif" font-size="10.5" letter-spacing="1.4">NO PROJECTIVE CREPANT RESOLUTION</text>
+<rect x="47" y="141" width="178" height="110" rx="12" fill="#f7f0e8"/>
+<text x="136" y="165" text-anchor="middle" fill="#895b36" font-family="Arial,sans-serif" font-size="10.5" letter-spacing="1.3">AGE 0</text>
+<text data-age="0" x="136" y="218" text-anchor="middle" fill="#895b36" font-family="Georgia,Times New Roman,serif" font-size="46">1</text>
+<rect x="271" y="141" width="178" height="110" rx="12" fill="#f7f0e8"/>
+<text x="360" y="165" text-anchor="middle" fill="#895b36" font-family="Arial,sans-serif" font-size="10.5" letter-spacing="1.3">AGE 1 · JUNIORS</text>
+<text data-age="1" x="360" y="218" text-anchor="middle" fill="#895b36" font-family="Georgia,Times New Roman,serif" font-size="46">3</text>
+<rect x="495" y="141" width="178" height="110" rx="12" fill="#f7f0e8"/>
+<text x="584" y="165" text-anchor="middle" fill="#895b36" font-family="Arial,sans-serif" font-size="10.5" letter-spacing="1.3">AGE 2</text>
+<text data-age="2" x="584" y="218" text-anchor="middle" fill="#895b36" font-family="Georgia,Times New Roman,serif" font-size="46">7</text>
+<text x="360" y="287" text-anchor="middle" fill="#344c3e" font-family="Georgia,Times New Roman,serif" font-size="20">A_G(t) = 1 + 3t + 7t²</text>
+<text x="360" y="318" text-anchor="middle" fill="#718076" font-family="Arial,sans-serif" font-size="11.5">Age classes are recorded for every group, independently of existence.</text>
+</svg>

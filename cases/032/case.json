@@ -1,0 +1,183 @@
+{
+  "case": 32,
+  "decision": "YES",
+  "order": 16,
+  "primary_sieve": "C",
+  "sieves": [
+    "C"
+  ],
+  "source_legacy_index": 105,
+  "legacy_indices": [
+    105,
+    106
+  ],
+  "classical_class": {
+    "system": 19,
+    "qclass": 2,
+    "global_qclass": 85
+  },
+  "junior_classes": 6,
+  "age2_classes": 9,
+  "actual_generators": [
+    [
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        0,
+        2,
+        -1
+      ]
+    ],
+    [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        1
+      ],
+      [
+        0,
+        0,
+        -2,
+        1
+      ]
+    ],
+    [
+      [
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        -1
+      ]
+    ],
+    [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        -1
+      ]
+    ]
+  ],
+  "legacy_steps": [
+    "catalogue",
+    "criteria",
+    "representatives",
+    "geometry"
+  ],
+  "extensions": [
+    {
+      "id": "abelian-lattice",
+      "scope": "Recompute the quotient lattice from the actual matrix character.",
+      "runtime": "python",
+      "entrypoint": "extensions/abelian/verify.py",
+      "arguments": [
+        "--legacy-case",
+        "105"
+      ]
+    }
+  ],
+  "inputs": [
+    "manuscript106/catalogue/catalogue.json",
+    "manuscript106/catalogue/catalogue_reduced.json",
+    "manuscript106/catalogue/conjugacy_certificates.json",
+    "legacy245/catalogue.json",
+    "legacy245/criteria_incidence.csv",
+    "legacy245/abelian_characters.csv",
+    "legacy245/105/triangulation.json"
+  ],
+  "proofs": [
+    {
+      "sieve": "C",
+      "scope": "Bind the actual character lattice and check a coherent unimodular triangulation covering the complete junior simplex.",
+      "reference_key": "DHZ"
+    }
+  ],
+  "recorded_additional_applications": [
+    {
+      "family": "C",
+      "case": "32",
+      "outcome": "YES",
+      "original_indices": "105 106"
+    }
+  ],
+  "verification_status": "PROGRAMS_AND_INPUTS_INDEXED; mathematical execution is reported separately",
+  "limitations": [
+    "A stored YES/NO label and the existence of program files do not constitute a fresh proof run.",
+    "The cited geometric theorems and their mathematical deductions remain part of the proof."
+  ],
+  "age_profile": [
+    1,
+    6,
+    9
+  ],
+  "conjugacy_class_count": 16,
+  "age_polynomial": "1 + 6t + 9t²",
+  "age_profile_interpretation": "Betti numbers b0,b2,b4 of a projective crepant resolution",
+  "poincare_polynomial": "1 + 6q² + 9q⁴"
+}

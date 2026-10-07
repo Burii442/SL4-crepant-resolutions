@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="238" viewBox="0 0 920 238" role="img" aria-labelledby="title desc">
+<title id="title">The 106 quotient classes</title>
+<desc id="desc">Complex conjugacy classes admitting integral representatives in SL4. 106 cases, 61 with and 45 without projective crepant resolutions. Ten sieves.</desc>
+<rect x="1" y="1" width="918" height="236" rx="16" fill="#fffefa" stroke="#dce2dd"/>
+<text x="38" y="47" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="29">The 106 quotient classes</text>
+<text x="39" y="72" fill="#6c776e" font-family="Arial,sans-serif" font-size="13">Four-dimensional quotient representations admitting integral matrices</text>
+<line x1="38" y1="91" x2="882" y2="91" stroke="#e2e6e1"/>
+<text x="116" y="161" text-anchor="middle" fill="#344c3e" font-family="Georgia,Times New Roman,serif" font-size="47">106</text>
+<text x="116" y="191" text-anchor="middle" fill="#6c776e" font-family="Arial,sans-serif" font-size="11" letter-spacing="1.2">QUOTIENT CLASSES</text>
+<rect x="234" y="108" width="214" height="106" rx="11" fill="#edf5f1"/>
+<text x="341" y="161" text-anchor="middle" fill="#176b58" font-family="Georgia,Times New Roman,serif" font-size="47">61</text>
+<text x="341" y="191" text-anchor="middle" fill="#176b58" font-family="Arial,sans-serif" font-size="11" letter-spacing="1.2">YES · RESOLUTIONS</text>
+<rect x="464" y="108" width="214" height="106" rx="11" fill="#f7f0e8"/>
+<text x="571" y="161" text-anchor="middle" fill="#895b36" font-family="Georgia,Times New Roman,serif" font-size="47">45</text>
+<text x="571" y="191" text-anchor="middle" fill="#895b36" font-family="Arial,sans-serif" font-size="11" letter-spacing="1.2">NO · OBSTRUCTIONS</text>
+<text x="793" y="161" text-anchor="middle" fill="#344c3e" font-family="Georgia,Times New Roman,serif" font-size="47">10</text>
+<text x="793" y="191" text-anchor="middle" fill="#6c776e" font-family="Arial,sans-serif" font-size="11" letter-spacing="1.2">SIEVES A–J</text>
+</svg>

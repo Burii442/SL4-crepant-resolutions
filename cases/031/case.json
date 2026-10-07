@@ -1,0 +1,174 @@
+{
+  "case": 31,
+  "decision": "YES",
+  "order": 16,
+  "primary_sieve": "H",
+  "sieves": [
+    "H"
+  ],
+  "source_legacy_index": 100,
+  "legacy_indices": [
+    100,
+    101,
+    102,
+    103,
+    104
+  ],
+  "classical_class": {
+    "system": 18,
+    "qclass": 4,
+    "global_qclass": 82
+  },
+  "junior_classes": 6,
+  "age2_classes": 3,
+  "actual_generators": [
+    [
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        -1
+      ]
+    ],
+    [
+      [
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        -1
+      ]
+    ],
+    [
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        -1
+      ]
+    ],
+    [
+      [
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        -2,
+        1
+      ]
+    ]
+  ],
+  "legacy_steps": [
+    "catalogue",
+    "criteria",
+    "representatives",
+    "criteria-geometry"
+  ],
+  "extensions": [],
+  "inputs": [
+    "manuscript106/catalogue/catalogue.json",
+    "manuscript106/catalogue/catalogue_reduced.json",
+    "manuscript106/catalogue/conjugacy_certificates.json",
+    "legacy245/catalogue.json",
+    "legacy245/criteria_incidence.csv",
+    "legacy245/criteria_geometry/README.md"
+  ],
+  "proofs": [
+    {
+      "sieve": "H",
+      "scope": "Identify the even-sign model, verify the coherent equivariant fan and the fixed-stratum calculation.",
+      "reference_key": "manuscript Sieve H"
+    }
+  ],
+  "recorded_additional_applications": [
+    {
+      "family": "H",
+      "case": "31",
+      "outcome": "YES",
+      "original_indices": "100 101 102 103 104"
+    }
+  ],
+  "verification_status": "PROGRAMS_AND_INPUTS_INDEXED; mathematical execution is reported separately",
+  "limitations": [
+    "A stored YES/NO label and the existence of program files do not constitute a fresh proof run.",
+    "The cited geometric theorems and their mathematical deductions remain part of the proof."
+  ],
+  "age_profile": [
+    1,
+    6,
+    3
+  ],
+  "conjugacy_class_count": 10,
+  "age_polynomial": "1 + 6t + 3t²",
+  "age_profile_interpretation": "Betti numbers b0,b2,b4 of a projective crepant resolution",
+  "poincare_polynomial": "1 + 6q² + 3q⁴"
+}

@@ -1,16 +1,61 @@
-# Case 078 — NO
+[← Case 077](../077/README.md) · [All 106 cases](../README.md) · [Case 079 →](../079/README.md)
 
-Current manuscript number **78**, group order **24**. Printed sieve(s): **D**.
+# Case 078 · NO
 
-The ordered integral generators are copied from old catalogue entry **202**. All old entries in this complex-conjugacy class: 202, 203.
+No projective crepant resolution exists. Primary sieve: [D — Cotangent reflection representations](../../docs/methods.md#sieve-d).
 
-CrystCat class: system 30, Q-class 4 (global Q-class 174).
+![Case 078: age profile (1, 2, 6); conjugacy-class counts only](../../assets/catalogue/078-age-profile.svg)
 
-Junior conjugacy classes: 2; age-two classes: 6.
+## Invariants
 
-## Inputs and matrix transfer
+| Invariant | Value |
+|---|---|
+| Group order $\lvert G\rvert$ | 24 |
+| Junior conjugacy classes | 2 |
+| Age-two conjugacy classes | 6 |
+| Total conjugacy classes | 9 |
+| Applicable sieves | [D](../../docs/methods.md#sieve-d) |
+| Legacy source | [202](../../legacy245/catalogue.json) |
+| All legacy integral representatives | 202, 203 |
+| CrystCat reference | System 30; Q-class 4; global Q-class 174 |
 
-The machine-readable [case index](../../cases/index.json) contains the ordered generators and the complete execution plan. [The reduction verifier](../../manuscript106/catalogue/verify_reduction.py) checks the full conjugating group sets.
+The age polynomial records conjugacy classes:
+
+$$
+A_G(t) = 1 + 2t + 6t^{2}.
+$$
+
+The displayed numbers count conjugacy classes by age. This case has no projective crepant resolution, so no resolution Betti numbers are assigned. See [the age-profile guide](../../docs/catalogue.md#age-profiles).
+
+## Exact generators
+
+These ordered integral matrices define the displayed representation. The [matrix-transfer certificates](../../manuscript106/catalogue/conjugacy_certificates.json) identify all its legacy representatives.
+
+$$
+g_{1}=\begin{pmatrix}0&0&1&-1\\0&0&0&-1\\-1&1&0&0\\0&1&0&0\end{pmatrix}\qquad g_{2}=\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&-1&0\\0&0&0&-1\end{pmatrix}.
+$$
+
+$$
+g_{3}=\begin{pmatrix}1&-1&0&0\\1&0&0&0\\0&0&1&-1\\0&0&1&0\end{pmatrix}\qquad g_{4}=\begin{pmatrix}-1&1&0&0\\-1&0&0&0\\0&0&-1&1\\0&0&-1&0\end{pmatrix}.
+$$
+
+## Verify this case
+
+Run from the repository root:
+
+```sh
+python3 verify.py --case 78 --plan
+python3 verify.py --case 78 --output-dir ../sl4-results/case-078
+```
+
+The case runner combines its assigned legacy stages and extensions. Results are written to a new directory outside the checkout. The [full reproduction guide](../../docs/reproducibility.md) covers installation, shared checks, long computations and resumable runs.
+
+<details>
+<summary>Exact inputs, proof scope and additional checks</summary>
+
+### Input files
+
+[This case as JSON](case.json) · [Complete machine index](../index.json) · [245-to-106 reduction verifier](../../manuscript106/catalogue/verify_reduction.py)
 
 - [manuscript106/catalogue/catalogue.json](../../manuscript106/catalogue/catalogue.json)
 - [manuscript106/catalogue/catalogue_reduced.json](../../manuscript106/catalogue/catalogue_reduced.json)
@@ -19,19 +64,22 @@ The machine-readable [case index](../../cases/index.json) contains the ordered g
 - [legacy245/criteria_incidence.csv](../../legacy245/criteria_incidence.csv)
 - [legacy245/criteria_geometry/README.md](../../legacy245/criteria_geometry/README.md)
 
-## Mathematical checks
+### Applicable arguments
 
-- **Sieve D.** Check the actual cotangent/reflection representation and its model identification; apply the cited positive or negative classification theorem. Reference key: `BellamyV3`.
+- **[Sieve D](../../docs/methods.md#sieve-d).** Check the actual cotangent/reflection representation and its model identification; apply the cited positive or negative classification theorem. Manuscript reference: `BellamyV3`.
 
-Run the supported old-catalogue stages from the repository root:
+### Execution stages
 
-```sh
-python3 legacy245/run_verification.py --steps catalogue,criteria,representatives,criteria-geometry --output-dir /tmp/sl4-case-078
-```
+`catalogue, criteria, representatives, criteria-geometry`
 
-The selected global stages also check other entries. For Cox cases the order binding → Cox → endpoint is intentional; ordinary invariant generation must be checked with the same inputs.
+Some selected stages also check other cases. Cox cases run binding, full Cox generation and endpoint geometry in that order with the same exact inputs.
 
-## Scope
+### Reading the result
 
-- A stored YES/NO label and the existence of program files do not constitute a fresh proof run.
-- The cited geometric theorems and their mathematical deductions remain part of the proof.
+Use the execution report to distinguish completed exact calculations from the cited geometric theorem inputs. The catalogue labels and this page are a navigation layer.
+
+</details>
+
+---
+
+[← Case 077](../077/README.md) · [All 106 cases](../README.md) · [Case 079 →](../079/README.md)

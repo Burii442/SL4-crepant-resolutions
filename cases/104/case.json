@@ -1,0 +1,179 @@
+{
+  "case": 104,
+  "decision": "YES",
+  "order": 24,
+  "primary_sieve": "F",
+  "sieves": [
+    "F"
+  ],
+  "source_legacy_index": 241,
+  "legacy_indices": [
+    241,
+    242
+  ],
+  "classical_class": {
+    "system": 20,
+    "qclass": 7,
+    "global_qclass": 96
+  },
+  "junior_classes": 5,
+  "age2_classes": 3,
+  "actual_generators": [
+    [
+      [
+        1,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        -1
+      ]
+    ],
+    [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        -1,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        1,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ]
+  ],
+  "legacy_steps": [
+    "catalogue",
+    "criteria",
+    "representatives",
+    "geometry"
+  ],
+  "extensions": [
+    {
+      "id": "sieve-f",
+      "scope": "Additional full matrix binding, square completion, reduced branch factors, and all double-cover resolution models.",
+      "runtime": "sage",
+      "entrypoint": "extensions/geometry/verify_F.py",
+      "arguments": []
+    }
+  ],
+  "inputs": [
+    "manuscript106/catalogue/catalogue.json",
+    "manuscript106/catalogue/catalogue_reduced.json",
+    "manuscript106/catalogue/conjugacy_certificates.json",
+    "legacy245/catalogue.json",
+    "legacy245/criteria_incidence.csv",
+    "legacy245/241/invariant_ring/ring_certificate.json"
+  ],
+  "proofs": [
+    {
+      "sieve": "F",
+      "scope": "Check complete invariant presentations, double-cover branch models and the admissible resolution calculation.",
+      "reference_key": "CynkSzembergDoubleCovers"
+    }
+  ],
+  "recorded_additional_applications": [
+    {
+      "family": "F",
+      "case": "104",
+      "outcome": "YES",
+      "original_indices": "241 242"
+    }
+  ],
+  "verification_status": "PROGRAMS_AND_INPUTS_INDEXED; mathematical execution is reported separately",
+  "limitations": [
+    "A stored YES/NO label and the existence of program files do not constitute a fresh proof run.",
+    "The cited geometric theorems and their mathematical deductions remain part of the proof."
+  ],
+  "age_profile": [
+    1,
+    5,
+    3
+  ],
+  "conjugacy_class_count": 9,
+  "age_polynomial": "1 + 5t + 3t²",
+  "age_profile_interpretation": "Betti numbers b0,b2,b4 of a projective crepant resolution",
+  "poincare_polynomial": "1 + 5q² + 3q⁴"
+}

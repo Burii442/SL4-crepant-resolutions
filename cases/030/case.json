@@ -1,0 +1,170 @@
+{
+  "case": 30,
+  "decision": "NO",
+  "order": 16,
+  "primary_sieve": "D",
+  "sieves": [
+    "D"
+  ],
+  "source_legacy_index": 98,
+  "legacy_indices": [
+    98,
+    99
+  ],
+  "classical_class": {
+    "system": 32,
+    "qclass": 4,
+    "global_qclass": 194
+  },
+  "junior_classes": 3,
+  "age2_classes": 6,
+  "actual_generators": [
+    [
+      [
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        -1
+      ]
+    ],
+    [
+      [
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        1,
+        0,
+        2
+      ],
+      [
+        -1,
+        -1,
+        0,
+        -1
+      ],
+      [
+        0,
+        -1,
+        0,
+        -1
+      ]
+    ],
+    [
+      [
+        0,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        0,
+        1,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        0
+      ],
+      [
+        -1,
+        -1,
+        -1,
+        0
+      ]
+    ]
+  ],
+  "legacy_steps": [
+    "catalogue",
+    "criteria",
+    "representatives",
+    "criteria-geometry"
+  ],
+  "extensions": [],
+  "inputs": [
+    "manuscript106/catalogue/catalogue.json",
+    "manuscript106/catalogue/catalogue_reduced.json",
+    "manuscript106/catalogue/conjugacy_certificates.json",
+    "legacy245/catalogue.json",
+    "legacy245/criteria_incidence.csv",
+    "legacy245/criteria_geometry/README.md"
+  ],
+  "proofs": [
+    {
+      "sieve": "D",
+      "scope": "Check the actual cotangent/reflection representation and its model identification; apply the cited positive or negative classification theorem.",
+      "reference_key": "BellamyV3"
+    }
+  ],
+  "recorded_additional_applications": [
+    {
+      "family": "D",
+      "case": "30",
+      "outcome": "NO",
+      "original_indices": "98 99"
+    }
+  ],
+  "verification_status": "PROGRAMS_AND_INPUTS_INDEXED; mathematical execution is reported separately",
+  "limitations": [
+    "A stored YES/NO label and the existence of program files do not constitute a fresh proof run.",
+    "The cited geometric theorems and their mathematical deductions remain part of the proof."
+  ],
+  "age_profile": [
+    1,
+    3,
+    6
+  ],
+  "conjugacy_class_count": 10,
+  "age_polynomial": "1 + 3t + 6t²",
+  "age_profile_interpretation": "Conjugacy-class counts by age only"
+}

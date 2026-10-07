@@ -1,16 +1,73 @@
-# Case 065 — NO
+[← Case 064](../064/README.md) · [All 106 cases](../README.md) · [Case 066 →](../066/README.md)
 
-Current manuscript number **65**, group order **288**. Printed sieve(s): **I**.
+# Case 065 · NO
 
-The ordered integral generators are copied from old catalogue entry **178**. All old entries in this complex-conjugacy class: 178.
+No projective crepant resolution exists. Primary sieve: [I — Cox rings and GIT](../../docs/methods.md#sieve-i).
 
-CrystCat class: system 33, Q-class 13 (global Q-class 224).
+![Case 065: age profile (1, 5, 19); conjugacy-class counts only](../../assets/catalogue/065-age-profile.svg)
 
-Junior conjugacy classes: 5; age-two classes: 19.
+## Invariants
 
-## Inputs and matrix transfer
+| Invariant | Value |
+|---|---|
+| Group order $\lvert G\rvert$ | 288 |
+| Junior conjugacy classes | 5 |
+| Age-two conjugacy classes | 19 |
+| Total conjugacy classes | 25 |
+| Applicable sieves | [I](../../docs/methods.md#sieve-i) |
+| Legacy source | [178](../../legacy245/catalogue.json) |
+| All legacy integral representatives | 178 |
+| CrystCat reference | System 33; Q-class 13; global Q-class 224 |
 
-The machine-readable [case index](../../cases/index.json) contains the ordered generators and the complete execution plan. [The reduction verifier](../../manuscript106/catalogue/verify_reduction.py) checks the full conjugating group sets.
+The age polynomial records conjugacy classes:
+
+$$
+A_G(t) = 1 + 5t + 19t^{2}.
+$$
+
+The displayed numbers count conjugacy classes by age. This case has no projective crepant resolution, so no resolution Betti numbers are assigned. See [the age-profile guide](../../docs/catalogue.md#age-profiles).
+
+## In the manuscript
+
+A complete intersection without a projective crepant resolution (CE-01).
+
+## Exact generators
+
+These ordered integral matrices define the displayed representation. The [matrix-transfer certificates](../../manuscript106/catalogue/conjugacy_certificates.json) identify all its legacy representatives.
+
+$$
+g_{1}=\begin{pmatrix}0&0&0&-1\\0&1&0&2\\0&0&1&-1\\1&0&0&-1\end{pmatrix}\qquad g_{2}=\begin{pmatrix}-1&0&0&0\\0&-1&0&0\\0&0&-1&0\\0&0&0&-1\end{pmatrix}.
+$$
+
+$$
+g_{3}=\begin{pmatrix}-1&-1&0&-1\\1&0&-1&1\\-1&0&1&0\\-1&0&0&0\end{pmatrix}\qquad g_{4}=\begin{pmatrix}1&1&0&0\\0&-1&0&0\\0&1&1&0\\0&0&0&-1\end{pmatrix}.
+$$
+
+$$
+g_{5}=\begin{pmatrix}-1&0&0&0\\0&-1&0&0\\0&1&1&0\\0&1&0&1\end{pmatrix}\qquad g_{6}=\begin{pmatrix}0&-1&-1&-1\\0&1&2&0\\0&0&-1&0\\-1&-1&-1&0\end{pmatrix}.
+$$
+
+$$
+g_{7}=\begin{pmatrix}0&1&1&1\\0&-1&0&-2\\-1&0&0&1\\0&1&0&1\end{pmatrix}.
+$$
+
+## Verify this case
+
+Run from the repository root:
+
+```sh
+python3 verify.py --case 65 --plan
+python3 verify.py --case 65 --output-dir ../sl4-results/case-065
+```
+
+The case runner combines its assigned legacy stages and extensions. Results are written to a new directory outside the checkout. The [full reproduction guide](../../docs/reproducibility.md) covers installation, shared checks, long computations and resumable runs.
+
+<details>
+<summary>Exact inputs, proof scope and additional checks</summary>
+
+### Input files
+
+[This case as JSON](case.json) · [Complete machine index](../index.json) · [245-to-106 reduction verifier](../../manuscript106/catalogue/verify_reduction.py)
 
 - [manuscript106/catalogue/catalogue.json](../../manuscript106/catalogue/catalogue.json)
 - [manuscript106/catalogue/catalogue_reduced.json](../../manuscript106/catalogue/catalogue_reduced.json)
@@ -20,26 +77,26 @@ The machine-readable [case index](../../cases/index.json) contains the ordered g
 - [legacy245/178/model.json](../../legacy245/178/model.json)
 - [legacy245/178/invariants.json](../../legacy245/178/invariants.json)
 
-## Mathematical checks
+### Applicable arguments
 
-- **Sieve I.** Bind the actual representation, prove complete Cox generation including ordinary invariant generation, and verify the positive charts or negative geometric obstruction. Reference key: `Yamagishi;ADHL;SchmittMUVAK`.
+- **[Sieve I](../../docs/methods.md#sieve-i).** Bind the actual representation, prove complete Cox generation including ordinary invariant generation, and verify the positive charts or negative geometric obstruction. Manuscript reference: `Yamagishi;ADHL;SchmittMUVAK`.
 
-Run the supported old-catalogue stages from the repository root:
+### Execution stages
 
-```sh
-python3 legacy245/run_verification.py --steps catalogue,criteria,representatives,binding-178,cox-178,endpoint-178 --output-dir /tmp/sl4-case-065
-```
+`catalogue, criteria, representatives, binding-178, cox-178, endpoint-178`
 
-The selected global stages also check other entries. For Cox cases the order binding → Cox → endpoint is intentional; ordinary invariant generation must be checked with the same inputs.
+Some selected stages also check other cases. Cox cases run binding, full Cox generation and endpoint geometry in that order with the same exact inputs.
 
-Additional checks required for the complete indexed scope:
+### Included extensions
 
-- `dhz`: Enhanced complete-intersection and singular-point obstruction certificates for the four DHZ counterexamples. Entry point: [extensions/dhz/verify.py](../../extensions/dhz/verify.py).
+- **dhz.** Enhanced complete-intersection and singular-point obstruction certificates for the four DHZ counterexamples. [Program](../../extensions/dhz/verify.py) (sage).
 
-The repository runner combines these additional checks with the legacy stages. The legacy-only command above does not run extensions.
+### Reading the result
 
-## Scope
+Use the execution report to distinguish completed exact calculations from the cited geometric theorem inputs. The catalogue labels and this page are a navigation layer.
 
-- A stored YES/NO label and the existence of program files do not constitute a fresh proof run.
-- The cited geometric theorems and their mathematical deductions remain part of the proof.
-- Run binding, full Cox and endpoint in this order in the same fresh run so that the exact Hilbert–Molien generation comparison is performed; case 194 uses its dedicated paper83 argument.
+</details>
+
+---
+
+[← Case 064](../064/README.md) · [All 106 cases](../README.md) · [Case 066 →](../066/README.md)

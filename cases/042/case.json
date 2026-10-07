@@ -1,0 +1,184 @@
+{
+  "case": 42,
+  "decision": "YES",
+  "order": 24,
+  "primary_sieve": "E",
+  "sieves": [
+    "E"
+  ],
+  "source_legacy_index": 132,
+  "legacy_indices": [
+    132,
+    133,
+    134,
+    135,
+    136,
+    137
+  ],
+  "classical_class": {
+    "system": 24,
+    "qclass": 2,
+    "global_qclass": 139
+  },
+  "junior_classes": 4,
+  "age2_classes": 3,
+  "actual_generators": [
+    [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        -1
+      ]
+    ],
+    [
+      [
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        -1
+      ]
+    ],
+    [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ]
+    ],
+    [
+      [
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        -1
+      ]
+    ]
+  ],
+  "legacy_steps": [
+    "catalogue",
+    "criteria",
+    "representatives",
+    "geometry",
+    "geometry-132"
+  ],
+  "extensions": [
+    {
+      "id": "sieve-e",
+      "scope": "Additional matrix-to-invariant-ring binding, blow-up chart and discrepancy checks from the current Sieve E audit.",
+      "runtime": "sage",
+      "entrypoint": "extensions/geometry/verify_E.py",
+      "arguments": []
+    }
+  ],
+  "inputs": [
+    "manuscript106/catalogue/catalogue.json",
+    "manuscript106/catalogue/catalogue_reduced.json",
+    "manuscript106/catalogue/conjugacy_certificates.json",
+    "legacy245/catalogue.json",
+    "legacy245/criteria_incidence.csv",
+    "legacy245/geometry_proofs/132"
+  ],
+  "proofs": [
+    {
+      "sieve": "E",
+      "scope": "Check complete invariant presentations and the stated blow-up charts, including the separate 132, 234 and 236 geometric packages.",
+      "reference_key": "manuscript Sieve E"
+    }
+  ],
+  "recorded_additional_applications": [
+    {
+      "family": "E",
+      "case": "42",
+      "outcome": "YES",
+      "original_indices": "132 133 134 135 136 137"
+    }
+  ],
+  "verification_status": "PROGRAMS_AND_INPUTS_INDEXED; mathematical execution is reported separately",
+  "limitations": [
+    "A stored YES/NO label and the existence of program files do not constitute a fresh proof run.",
+    "The cited geometric theorems and their mathematical deductions remain part of the proof."
+  ],
+  "age_profile": [
+    1,
+    4,
+    3
+  ],
+  "conjugacy_class_count": 8,
+  "age_polynomial": "1 + 4t + 3t²",
+  "age_profile_interpretation": "Betti numbers b0,b2,b4 of a projective crepant resolution",
+  "poincare_polynomial": "1 + 4q² + 3q⁴"
+}

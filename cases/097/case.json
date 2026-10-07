@@ -1,0 +1,123 @@
+{
+  "case": 97,
+  "decision": "YES",
+  "order": 10,
+  "primary_sieve": "I",
+  "sieves": [
+    "I"
+  ],
+  "source_legacy_index": 231,
+  "legacy_indices": [
+    231,
+    232
+  ],
+  "classical_class": {
+    "system": 27,
+    "qclass": 3,
+    "global_qclass": 158
+  },
+  "junior_classes": 1,
+  "age2_classes": 2,
+  "actual_generators": [
+    [
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ]
+  ],
+  "legacy_steps": [
+    "catalogue",
+    "criteria",
+    "representatives",
+    "binding-231",
+    "cox-231",
+    "endpoint-231"
+  ],
+  "extensions": [],
+  "inputs": [
+    "manuscript106/catalogue/catalogue.json",
+    "manuscript106/catalogue/catalogue_reduced.json",
+    "manuscript106/catalogue/conjugacy_certificates.json",
+    "legacy245/catalogue.json",
+    "legacy245/criteria_incidence.csv",
+    "legacy245/231/model.json",
+    "legacy245/231/invariants.json"
+  ],
+  "proofs": [
+    {
+      "sieve": "I",
+      "scope": "Bind the actual representation, prove complete Cox generation including ordinary invariant generation, and verify the positive charts or negative geometric obstruction.",
+      "reference_key": "Yamagishi;ADHL;SchmittMUVAK"
+    }
+  ],
+  "recorded_additional_applications": [
+    {
+      "family": "I",
+      "case": "97",
+      "outcome": "YES",
+      "original_indices": "231 232"
+    }
+  ],
+  "verification_status": "PROGRAMS_AND_INPUTS_INDEXED; mathematical execution is reported separately",
+  "limitations": [
+    "A stored YES/NO label and the existence of program files do not constitute a fresh proof run.",
+    "The cited geometric theorems and their mathematical deductions remain part of the proof.",
+    "Run binding, full Cox and endpoint in this order in the same fresh run so that the exact Hilbert–Molien generation comparison is performed; case 194 uses its dedicated paper83 argument."
+  ],
+  "age_profile": [
+    1,
+    1,
+    2
+  ],
+  "conjugacy_class_count": 4,
+  "age_polynomial": "1 + t + 2t²",
+  "age_profile_interpretation": "Betti numbers b0,b2,b4 of a projective crepant resolution",
+  "poincare_polynomial": "1 + q² + 2q⁴"
+}

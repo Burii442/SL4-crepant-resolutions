@@ -1,0 +1,174 @@
+{
+  "case": 86,
+  "decision": "YES",
+  "order": 36,
+  "primary_sieve": "J",
+  "sieves": [
+    "J"
+  ],
+  "source_legacy_index": 214,
+  "legacy_indices": [
+    214,
+    215,
+    216,
+    217,
+    218
+  ],
+  "classical_class": {
+    "system": 29,
+    "qclass": 3,
+    "global_qclass": 164
+  },
+  "junior_classes": 4,
+  "age2_classes": 4,
+  "actual_generators": [
+    [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        -1,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        -1,
+        1,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        1
+      ],
+      [
+        0,
+        0,
+        -1,
+        0
+      ]
+    ],
+    [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        1,
+        -1
+      ]
+    ]
+  ],
+  "legacy_steps": [
+    "catalogue",
+    "criteria",
+    "representatives",
+    "criteria-geometry"
+  ],
+  "extensions": [],
+  "inputs": [
+    "manuscript106/catalogue/catalogue.json",
+    "manuscript106/catalogue/catalogue_reduced.json",
+    "manuscript106/catalogue/conjugacy_certificates.json",
+    "legacy245/catalogue.json",
+    "legacy245/criteria_incidence.csv",
+    "legacy245/criteria_geometry/README.md"
+  ],
+  "proofs": [
+    {
+      "sieve": "J",
+      "scope": "Identify the full group with its Hilbert-square tower model; apply the stated geometric construction.",
+      "reference_key": "Baird"
+    }
+  ],
+  "recorded_additional_applications": [
+    {
+      "family": "J",
+      "case": "86",
+      "outcome": "YES",
+      "original_indices": "214 215 216 217 218"
+    }
+  ],
+  "verification_status": "PROGRAMS_AND_INPUTS_INDEXED; mathematical execution is reported separately",
+  "limitations": [
+    "A stored YES/NO label and the existence of program files do not constitute a fresh proof run.",
+    "The cited geometric theorems and their mathematical deductions remain part of the proof."
+  ],
+  "age_profile": [
+    1,
+    4,
+    4
+  ],
+  "conjugacy_class_count": 9,
+  "age_polynomial": "1 + 4t + 4t²",
+  "age_profile_interpretation": "Betti numbers b0,b2,b4 of a projective crepant resolution",
+  "poincare_polynomial": "1 + 4q² + 4q⁴"
+}

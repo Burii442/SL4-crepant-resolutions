@@ -11,6 +11,10 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
+      - name: Check all catalogue pages and links
+        run: python3 tools/build_case_index.py --check
+      - name: Recompute all 106 conjugacy-class age profiles
+        run: python3 tools/verify_age_profiles.py
       - name: Test portability and runner contracts
         run: python3 -m unittest discover -s tests -v
       - name: Reconstruct the catalogues, sieve cover and CE-03/CE-07

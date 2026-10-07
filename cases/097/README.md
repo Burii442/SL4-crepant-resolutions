@@ -1,16 +1,67 @@
-# Case 097 — YES
+[← Case 096](../096/README.md) · [All 106 cases](../README.md) · [Case 098 →](../098/README.md)
 
-Current manuscript number **97**, group order **10**. Printed sieve(s): **I**.
+# Case 097 · YES
 
-The ordered integral generators are copied from old catalogue entry **231**. All old entries in this complex-conjugacy class: 231, 232.
+A projective crepant resolution exists. Primary sieve: [I — Cox rings and GIT](../../docs/methods.md#sieve-i).
 
-CrystCat class: system 27, Q-class 3 (global Q-class 158).
+![Case 097: age profile (1, 1, 2); resolution Betti numbers](../../assets/catalogue/097-age-profile.svg)
 
-Junior conjugacy classes: 1; age-two classes: 2.
+## Invariants
 
-## Inputs and matrix transfer
+| Invariant | Value |
+|---|---|
+| Group order $\lvert G\rvert$ | 10 |
+| Junior conjugacy classes | 1 |
+| Age-two conjugacy classes | 2 |
+| Total conjugacy classes | 4 |
+| Applicable sieves | [I](../../docs/methods.md#sieve-i) |
+| Legacy source | [231](../../legacy245/catalogue.json) |
+| All legacy integral representatives | 231, 232 |
+| CrystCat reference | System 27; Q-class 3; global Q-class 158 |
 
-The machine-readable [case index](../../cases/index.json) contains the ordered generators and the complete execution plan. [The reduction verifier](../../manuscript106/catalogue/verify_reduction.py) checks the full conjugating group sets.
+The age polynomial records conjugacy classes:
+
+$$
+A_G(t) = 1 + t + 2t^{2}.
+$$
+
+For a projective crepant resolution $Y \to \mathbb{C}^4/G$, the ordinary rational Poincaré polynomial is
+
+$$
+P_Y(q) = 1 + q^{2} + 2q^{4}.
+$$
+
+Thus $(b_0,b_2,b_4)=(1,1,2)$; all odd Betti numbers and all $b_k$ with $k>4$ vanish. This follows from [Batyrev’s cohomological McKay theorem](../../docs/catalogue.md#age-profiles).
+
+## In the manuscript
+
+The cohomology of a crepant resolution requires degree-four generators (CE-03).
+
+## Exact generators
+
+These ordered integral matrices define the displayed representation. The [matrix-transfer certificates](../../manuscript106/catalogue/conjugacy_certificates.json) identify all its legacy representatives.
+
+$$
+g_{1}=\begin{pmatrix}0&0&1&0\\0&0&0&1\\-1&-1&-1&-1\\1&0&0&0\end{pmatrix}\qquad g_{2}=\begin{pmatrix}0&0&0&1\\0&0&1&0\\0&1&0&0\\1&0&0&0\end{pmatrix}.
+$$
+
+## Verify this case
+
+Run from the repository root:
+
+```sh
+python3 verify.py --case 97 --plan
+python3 verify.py --case 97 --output-dir ../sl4-results/case-097
+```
+
+The case runner combines its assigned legacy stages and extensions. Results are written to a new directory outside the checkout. The [full reproduction guide](../../docs/reproducibility.md) covers installation, shared checks, long computations and resumable runs.
+
+<details>
+<summary>Exact inputs, proof scope and additional checks</summary>
+
+### Input files
+
+[This case as JSON](case.json) · [Complete machine index](../index.json) · [245-to-106 reduction verifier](../../manuscript106/catalogue/verify_reduction.py)
 
 - [manuscript106/catalogue/catalogue.json](../../manuscript106/catalogue/catalogue.json)
 - [manuscript106/catalogue/catalogue_reduced.json](../../manuscript106/catalogue/catalogue_reduced.json)
@@ -20,20 +71,22 @@ The machine-readable [case index](../../cases/index.json) contains the ordered g
 - [legacy245/231/model.json](../../legacy245/231/model.json)
 - [legacy245/231/invariants.json](../../legacy245/231/invariants.json)
 
-## Mathematical checks
+### Applicable arguments
 
-- **Sieve I.** Bind the actual representation, prove complete Cox generation including ordinary invariant generation, and verify the positive charts or negative geometric obstruction. Reference key: `Yamagishi;ADHL;SchmittMUVAK`.
+- **[Sieve I](../../docs/methods.md#sieve-i).** Bind the actual representation, prove complete Cox generation including ordinary invariant generation, and verify the positive charts or negative geometric obstruction. Manuscript reference: `Yamagishi;ADHL;SchmittMUVAK`.
 
-Run the supported old-catalogue stages from the repository root:
+### Execution stages
 
-```sh
-python3 legacy245/run_verification.py --steps catalogue,criteria,representatives,binding-231,cox-231,endpoint-231 --output-dir /tmp/sl4-case-097
-```
+`catalogue, criteria, representatives, binding-231, cox-231, endpoint-231`
 
-The selected global stages also check other entries. For Cox cases the order binding → Cox → endpoint is intentional; ordinary invariant generation must be checked with the same inputs.
+Some selected stages also check other cases. Cox cases run binding, full Cox generation and endpoint geometry in that order with the same exact inputs.
 
-## Scope
+### Reading the result
 
-- A stored YES/NO label and the existence of program files do not constitute a fresh proof run.
-- The cited geometric theorems and their mathematical deductions remain part of the proof.
-- Run binding, full Cox and endpoint in this order in the same fresh run so that the exact Hilbert–Molien generation comparison is performed; case 194 uses its dedicated paper83 argument.
+Use the execution report to distinguish completed exact calculations from the cited geometric theorem inputs. The catalogue labels and this page are a navigation layer.
+
+</details>
+
+---
+
+[← Case 096](../096/README.md) · [All 106 cases](../README.md) · [Case 098 →](../098/README.md)

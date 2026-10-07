@@ -179,54 +179,409 @@ def build(paper_path=None):
             'cases': cases}
 
 
+METHOD_TITLES = {
+    'A': 'Junior-generation obstruction',
+    'B': 'A fixed factor',
+    'C': 'Abelian junior-simplex geometry',
+    'D': 'Cotangent reflection representations',
+    'E': 'Complete-intersection blow-ups',
+    'F': 'Double covers',
+    'G': 'Determinant extensions',
+    'H': 'A toric resolution and an involution',
+    'I': 'Cox rings and GIT',
+    'J': 'Hilbert-square towers',
+}
+
+HIGHLIGHTS = {
+    2: 'The scalar involution illustrates failures of proposed existence criteria (CE-09–CE-11).',
+    7: 'A maximal cyclic subgroup without juniors occurs inside a group whose quotient has a crepant resolution (CE-02).',
+    27: 'Junior generation does not imply existence of a projective crepant resolution (CE-04).',
+    31: 'The choice of the intermediate equivariant fan matters (CE-13).',
+}
+for _case in [35, 38, 55, 64, 97, 98]:
+    HIGHLIGHTS[_case] = 'The cohomology of a crepant resolution requires degree-four generators (CE-03).'
+for _case in [45, 65, 66, 105]:
+    HIGHLIGHTS[_case] = 'A complete intersection without a projective crepant resolution (CE-01).'
+
+
+def polynomial(coefficients, variable='t', step=1, tex=True):
+    terms = []
+    for age, coefficient in enumerate(coefficients):
+        if not coefficient:
+            continue
+        power = age * step
+        if not power:
+            terms.append(str(coefficient))
+            continue
+        exponent = '' if power == 1 else ('^{' + str(power) + '}' if tex else {2: '²', 4: '⁴'}[power])
+        terms.append(('' if coefficient == 1 else str(coefficient)) + variable + exponent)
+    return ' + '.join(terms) or '0'
+
+
+def presentation_scope(text):
+    return text.replace('every rank-two element', 'every element with rank(g − I₄) = 2')
+
+
+def age_profile(row):
+    values = [1, row['junior_classes'], row['age2_classes']]
+    require(all(type(v) is int and v >= 0 for v in values), f'{row["case"]}: invalid age classes')
+    return values
+
+
+def case_json(row):
+    result = dict(row)
+    result['age_profile'] = age_profile(row)
+    result['conjugacy_class_count'] = sum(result['age_profile'])
+    result['age_polynomial'] = polynomial(result['age_profile'], tex=False)
+    result['age_profile_interpretation'] = 'Betti numbers b0,b2,b4 of a projective crepant resolution' if row['decision'] == 'YES' else 'Conjugacy-class counts by age only'
+    if row['decision'] == 'YES':
+        result['poincare_polynomial'] = polynomial(result['age_profile'], 'q', 2, tex=False)
+    return result
+
+
+def matrix_tex(matrix):
+    return r'\begin{pmatrix}' + r'\\'.join('&'.join(map(str, line)) for line in matrix) + r'\end{pmatrix}'
+
+
+def navigation(i):
+    previous = f'[← Case {i-1:03d}](../{i-1:03d}/README.md)' if i > 1 else '← First case'
+    following = f'[Case {i+1:03d} →](../{i+1:03d}/README.md)' if i < 106 else 'Last case →'
+    return previous + ' · [All 106 cases](../README.md) · ' + following
+
+
+def sieve_links(sieves, prefix='../../docs/'):
+    return ', '.join(f'[{s}]({prefix}methods.md#sieve-{s.lower()})' for s in sieves)
+
+
 def case_readme(row):
     i, old = row['case'], row['source_legacy_index']
-    lines = [f'# Case {i:03d} — {row["decision"]}', '',
-             f'Current manuscript number **{i}**, group order **{row["order"]}**. Printed sieve(s): **' + ', '.join(row['sieves']) + '**.', '',
-             f'The ordered integral generators are copied from old catalogue entry **{old}**. All old entries in this complex-conjugacy class: ' + ', '.join(map(str, row['legacy_indices'])) + '.', '',
-             'CrystCat class: system {system}, Q-class {qclass} (global Q-class {global_qclass}).'.format(**row['classical_class']), '',
-             f'Junior conjugacy classes: {row["junior_classes"]}; age-two classes: {row["age2_classes"]}.', '',
-             '## Inputs and matrix transfer', '',
-             'The machine-readable ' + link('cases/index.json', 'case index') + ' contains the ordered generators and the complete execution plan. ' + link('manuscript106/catalogue/verify_reduction.py', 'The reduction verifier') + ' checks the full conjugating group sets.', '']
-    lines.extend('- ' + link(p) for p in row['inputs'])
-    lines.extend(['', '## Mathematical checks', ''])
-    lines.extend('- **Sieve ' + p['sieve'] + '.** ' + p['scope'] + ' Reference key: `' + p['reference_key'] + '`.' for p in row['proofs'])
-    lines.extend(['', 'Run the supported old-catalogue stages from the repository root:', '', '```sh',
-                  'python3 legacy245/run_verification.py --steps ' + ','.join(row['legacy_steps']) + f' --output-dir /tmp/sl4-case-{i:03d}', '```', '',
-                  'The selected global stages also check other entries. For Cox cases the order binding → Cox → endpoint is intentional; ordinary invariant generation must be checked with the same inputs.'])
+    yes = row['decision'] == 'YES'
+    values = age_profile(row)
+    result = 'A projective crepant resolution exists.' if yes else 'No projective crepant resolution exists.'
+    lines = [navigation(i), '', f'# Case {i:03d} · {row["decision"]}', '',
+             result + f' Primary sieve: [{row["primary_sieve"]} — {METHOD_TITLES[row["primary_sieve"]]}](../../docs/methods.md#sieve-{row["primary_sieve"].lower()}).', '',
+             f'![Case {i:03d}: age profile ({", ".join(map(str, values))}); {"resolution Betti numbers" if yes else "conjugacy-class counts only"}](../../assets/catalogue/{i:03d}-age-profile.svg)', '',
+             '## Invariants', '',
+             '| Invariant | Value |', '|---|---|',
+             f'| Group order $\\lvert G\\rvert$ | {row["order"]} |',
+             f'| Junior conjugacy classes | {row["junior_classes"]} |',
+             f'| Age-two conjugacy classes | {row["age2_classes"]} |',
+             f'| Total conjugacy classes | {sum(values)} |',
+             f'| Applicable sieves | {sieve_links(row["sieves"])} |',
+             f'| Legacy source | [{old}](../../legacy245/catalogue.json) |',
+             '| All legacy integral representatives | ' + ', '.join(map(str, row['legacy_indices'])) + ' |',
+             '| CrystCat reference | System {system}; Q-class {qclass}; global Q-class {global_qclass} |'.format(**row['classical_class']), '',
+             'The age polynomial records conjugacy classes:', '',
+             '$$', 'A_G(t) = ' + polynomial(values) + '.', '$$', '']
+    if yes:
+        lines += ['For a projective crepant resolution $Y \\to \\mathbb{C}^4/G$, the ordinary rational Poincaré polynomial is', '',
+                  '$$', 'P_Y(q) = ' + polynomial(values, 'q', 2) + '.', '$$', '',
+                  'Thus $(b_0,b_2,b_4)=(' + ','.join(map(str, values)) + ')$; all odd Betti numbers and all $b_k$ with $k>4$ vanish. This follows from [Batyrev’s cohomological McKay theorem](../../docs/catalogue.md#age-profiles).', '']
+    else:
+        lines += ['The displayed numbers count conjugacy classes by age. This case has no projective crepant resolution, so no resolution Betti numbers are assigned. See [the age-profile guide](../../docs/catalogue.md#age-profiles).', '']
+    if i in HIGHLIGHTS:
+        lines += ['## In the manuscript', '', HIGHLIGHTS[i], '']
+    lines += ['## Exact generators', '',
+              'These ordered integral matrices define the displayed representation. The [matrix-transfer certificates](../../manuscript106/catalogue/conjugacy_certificates.json) identify all its legacy representatives.', '']
+    generators = row['actual_generators']
+    if not generators:
+        require(i == 1 and row['order'] == 1, 'Only the trivial case may have no generators')
+        identity = [[int(a == b) for b in range(4)] for a in range(4)]
+        lines += ['The group is trivial; its identity matrix is', '', '$$', 'I_4=' + matrix_tex(identity) + '.', '$$', '']
+    else:
+        for k in range(0, len(generators), 2):
+            matrices = [f'g_{{{j+1}}}=' + matrix_tex(generators[j]) for j in range(k, min(k+2, len(generators)))]
+            lines += ['$$', r'\qquad '.join(matrices) + '.', '$$', '']
+    lines += ['## Verify this case', '', 'Run from the repository root:', '', '```sh',
+              f'python3 verify.py --case {i} --plan',
+              f'python3 verify.py --case {i} --output-dir ../sl4-results/case-{i:03d}', '```', '',
+              'The case runner combines its assigned legacy stages and extensions. Results are written to a new directory outside the checkout. The [full reproduction guide](../../docs/reproducibility.md) covers installation, shared checks, long computations and resumable runs.', '',
+              '<details>', '<summary>Exact inputs, proof scope and additional checks</summary>', '',
+              '### Input files', '',
+              '[This case as JSON](case.json) · [Complete machine index](../index.json) · [245-to-106 reduction verifier](../../manuscript106/catalogue/verify_reduction.py)', '']
+    lines += ['- ' + link(p) for p in row['inputs']]
+    lines += ['', '### Applicable arguments', '']
+    lines += ['- **[Sieve ' + p['sieve'] + '](../../docs/methods.md#sieve-' + p['sieve'].lower() + ').** ' + presentation_scope(p['scope']) + ' Manuscript reference: `' + p['reference_key'] + '`.' for p in row['proofs']]
+    lines += ['', '### Execution stages', '', '`' + ', '.join(row['legacy_steps']) + '`', '',
+              'Some selected stages also check other cases. Cox cases run binding, full Cox generation and endpoint geometry in that order with the same exact inputs.']
     if row['extensions']:
-        lines.extend(['', 'Additional checks required for the complete indexed scope:', ''])
+        lines += ['', '### Included extensions', '']
         for ext in row['extensions']:
-            text = '- `' + ext['id'] + '`: ' + ext['scope']
-            if ext.get('entrypoint'):
-                text += ' Entry point: ' + link(ext['entrypoint']) + '.'
-            lines.append(text)
-        lines.extend(['', 'The repository runner combines these additional checks with the legacy stages. The legacy-only command above does not run extensions.'])
-    lines.extend(['', '## Scope', ''])
-    lines.extend(['- ' + s for s in row['limitations']] + [''])
+            lines.append('- **' + ext['id'] + '.** ' + ext['scope'] + ' ' + link(ext['entrypoint'], 'Program') + ' (' + ext['runtime'] + ').')
+    lines += ['', '### Reading the result', '',
+              'Use the execution report to distinguish completed exact calculations from the cited geometric theorem inputs. The catalogue labels and this page are a navigation layer.']
+    lines += ['', '</details>', '', '---', '', navigation(i), '']
     return '\n'.join(lines)
+
+
+def profile_svg(row):
+    from html import escape
+    i = row['case']; yes = row['decision'] == 'YES'; vals = age_profile(row)
+    accent, tint = ('#176b58', '#edf5f1') if yes else ('#895b36', '#f7f0e8')
+    title = f'Case {i:03d} · Age profile'
+    subtitle = 'Cohomology of a projective crepant resolution' if yes else 'Conjugacy classes of the quotient representation'
+    mode = 'CREPANT RESOLUTION · YES' if yes else 'NO PROJECTIVE CREPANT RESOLUTION'
+    desc = f'Case {i:03d}. Decision {row["decision"]}. Age zero: 1. Age one: {vals[1]}. Age two: {vals[2]}. '
+    desc += 'These are b0, b2 and b4 of a projective crepant resolution.' if yes else 'These are conjugacy-class counts only; no resolution Betti numbers are assigned.'
+    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="720" height="348" viewBox="0 0 720 348" role="img" aria-labelledby="title desc" data-case="{i}" data-decision="{row["decision"]}">',
+             f'<title id="title">{escape(title)}</title>', f'<desc id="desc">{escape(desc)}</desc>',
+             '<rect x="1" y="1" width="718" height="346" rx="16" fill="#fffefa" stroke="#dce2dd"/>',
+             f'<rect x="30" y="30" width="4" height="50" rx="2" fill="{accent}"/>',
+             f'<text x="49" y="49" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="25">{escape(title)}</text>',
+             f'<text x="49" y="73" fill="#68746e" font-family="Arial,sans-serif" font-size="13">{escape(subtitle)}</text>',
+             '<line x1="32" y1="96" x2="688" y2="96" stroke="#e2e6e1"/>',
+             f'<text x="360" y="120" text-anchor="middle" fill="{accent}" font-family="Arial,sans-serif" font-size="10.5" letter-spacing="1.4">{mode}</text>']
+    for age, (x, value) in enumerate(zip([136, 360, 584], vals)):
+        parts += [f'<rect x="{x-89}" y="141" width="178" height="110" rx="12" fill="{tint}"/>',
+                  f'<text x="{x}" y="165" text-anchor="middle" fill="{accent}" font-family="Arial,sans-serif" font-size="10.5" letter-spacing="1.3">AGE {age}' + (' · JUNIORS' if age == 1 else '') + '</text>',
+                  f'<text data-age="{age}" x="{x}" y="218" text-anchor="middle" fill="{accent}" font-family="Georgia,Times New Roman,serif" font-size="46">{value}</text>']
+        if yes:
+            parts.append(f'<text x="{x}" y="240" text-anchor="middle" fill="#6d7d72" font-family="Georgia,Times New Roman,serif" font-size="13">b{["₀","₂","₄"][age]}</text>')
+    pol = ('P_Y(q) = ' + polynomial(vals, 'q', 2, False)) if yes else ('A_G(t) = ' + polynomial(vals, tex=False))
+    foot = 'Batyrev’s cohomological McKay theorem · ordinary rational cohomology' if yes else 'Age classes are recorded for every group, independently of existence.'
+    parts += [f'<text x="360" y="287" text-anchor="middle" fill="#344c3e" font-family="Georgia,Times New Roman,serif" font-size="20">{escape(pol)}</text>',
+              f'<text x="360" y="318" text-anchor="middle" fill="#718076" font-family="Arial,sans-serif" font-size="11.5">{escape(foot)}</text>', '</svg>']
+    return '\n'.join(parts) + '\n'
+
+
+def tile_svg(row):
+    yes = row['decision'] == 'YES';accent,tint = ('#176b58','#edf5f1') if yes else ('#895b36','#f7f0e8')
+    i=row['case']
+    return '\n'.join([
+        '<svg xmlns="http://www.w3.org/2000/svg" width="82" height="62" viewBox="0 0 82 62" role="img" aria-labelledby="title">',
+        f'<title id="title">Case {i:03d}, {row["decision"]}, order {row["order"]}, primary sieve {row["primary_sieve"]}</title>',
+        f'<rect x="1" y="1" width="80" height="60" rx="7" fill="{tint}" stroke="{accent}" stroke-opacity="0.18"/>',
+        f'<text x="41" y="31" text-anchor="middle" fill="{accent}" font-family="Georgia,Times New Roman,serif" font-size="25">{i:03d}</text>',
+        f'<text x="41" y="49" text-anchor="middle" fill="{accent}" font-family="Arial,sans-serif" font-size="9" letter-spacing="1.3">{row["decision"]} · {row["primary_sieve"]}</text>', '</svg>', ''])
+
+
+def overview_svg():
+    return '\n'.join([
+        '<svg xmlns="http://www.w3.org/2000/svg" width="920" height="238" viewBox="0 0 920 238" role="img" aria-labelledby="title desc">',
+        '<title id="title">The 106 quotient classes</title>',
+        '<desc id="desc">Complex conjugacy classes admitting integral representatives in SL4. 106 cases, 61 with and 45 without projective crepant resolutions. Ten sieves.</desc>',
+        '<rect x="1" y="1" width="918" height="236" rx="16" fill="#fffefa" stroke="#dce2dd"/>',
+        '<text x="38" y="47" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="29">The 106 quotient classes</text>',
+        '<text x="39" y="72" fill="#6c776e" font-family="Arial,sans-serif" font-size="13">Four-dimensional quotient representations admitting integral matrices</text>',
+        '<line x1="38" y1="91" x2="882" y2="91" stroke="#e2e6e1"/>',
+        '<text x="116" y="161" text-anchor="middle" fill="#344c3e" font-family="Georgia,Times New Roman,serif" font-size="47">106</text>',
+        '<text x="116" y="191" text-anchor="middle" fill="#6c776e" font-family="Arial,sans-serif" font-size="11" letter-spacing="1.2">QUOTIENT CLASSES</text>',
+        '<rect x="234" y="108" width="214" height="106" rx="11" fill="#edf5f1"/>',
+        '<text x="341" y="161" text-anchor="middle" fill="#176b58" font-family="Georgia,Times New Roman,serif" font-size="47">61</text>',
+        '<text x="341" y="191" text-anchor="middle" fill="#176b58" font-family="Arial,sans-serif" font-size="11" letter-spacing="1.2">YES · RESOLUTIONS</text>',
+        '<rect x="464" y="108" width="214" height="106" rx="11" fill="#f7f0e8"/>',
+        '<text x="571" y="161" text-anchor="middle" fill="#895b36" font-family="Georgia,Times New Roman,serif" font-size="47">45</text>',
+        '<text x="571" y="191" text-anchor="middle" fill="#895b36" font-family="Arial,sans-serif" font-size="11" letter-spacing="1.2">NO · OBSTRUCTIONS</text>',
+        '<text x="793" y="161" text-anchor="middle" fill="#344c3e" font-family="Georgia,Times New Roman,serif" font-size="47">10</text>',
+        '<text x="793" y="191" text-anchor="middle" fill="#6c776e" font-family="Arial,sans-serif" font-size="11" letter-spacing="1.2">SIEVES A–J</text>', '</svg>', ''])
+
+
+def index_table(rows):
+    text = '| Case | Decision | Order | Juniors | Age two | Classes | Sieves | Legacy source | All legacy representatives | CrystCat (system, Q-class; global) |\n'
+    text += '|---|---|---:|---:|---:|---:|---|---:|---|---|\n'
+    for r in rows:
+        c = r['classical_class']
+        text += f'| [{r["case"]:03d}]({r["case"]:03d}/README.md) | {r["decision"]} | {r["order"]} | {r["junior_classes"]} | {r["age2_classes"]} | {sum(age_profile(r))} | {sieve_links(r["sieves"], "../docs/")} | {r["source_legacy_index"]} | ' + ', '.join(map(str,r['legacy_indices'])) + f' | ({c["system"]}, {c["qclass"]}; {c["global_qclass"]}) |\n'
+    return text
+
+
+def case_index(rows, decision=None):
+    selected = [r for r in rows if decision is None or r['decision'] == decision]
+    title = 'All 106 quotient classes' if decision is None else f'{len(selected)} {decision} cases'
+    lines = [f'# {title}', '', '[All 106](README.md) · [61 YES](yes.md) · [45 NO](no.md) · [Catalogue guide](../docs/catalogue.md) · [Sieves A–J](../docs/methods.md)', '']
+    if decision is None:
+        lines += ['![106 quotient classes: 61 YES, 45 NO, ten sieves](../assets/catalogue/overview.svg)', '',
+                  'These are the **106 complex conjugacy classes admitting an integral representative** in $\\mathrm{SL}_4(\\mathbb{Z})$. Each card opens its exact matrices, age profile and verification command.', '']
+    else:
+        lines += [('A projective crepant resolution exists for every case below.' if decision == 'YES' else 'Every case below has an obstruction to a projective crepant resolution.'), '']
+    lines += ['## Browse the cases', '', 'Green cards mark YES; brown cards mark NO. The letter names the primary sieve. The [full table](#full-table) lists every applicable sieve.', '',
+              '| ' + ' | '.join(['']*10) + ' |', '| ' + ' | '.join([':---:']*10) + ' |']
+    for start in range(0, len(selected), 10):
+        cells = [f'[![{r["case"]:03d} {r["decision"]}](../assets/catalogue/{r["case"]:03d}-card.svg)]({r["case"]:03d}/README.md)' for r in selected[start:start+10]]
+        lines.append('| ' + ' | '.join(cells + ['']*(10-len(cells))) + ' |')
+    lines += ['', '<a id="full-table"></a>', '## Full table', '', index_table(selected).rstrip(), '',
+              'The age columns count conjugacy classes. For YES cases, $(1,\\mathrm{juniors},\\mathrm{age\ two})=(b_0,b_2,b_4)$ for a projective crepant resolution. [Interpretation and theorem](../docs/catalogue.md#age-profiles).', '']
+    return '\n'.join(lines)
+
+
+def catalogue_guide():
+    return r'''# Reading the catalogue
+
+[All 106 cases](../cases/README.md) · [61 YES](../cases/yes.md) · [45 NO](../cases/no.md) · [Sieves A–J](methods.md)
+
+The catalogue contains **106 complex conjugacy classes of four-dimensional finite quotient representations admitting an integral representative in $\mathrm{SL}_4(\mathbb{Z})$**. They arise from the 245 integral catalogue entries. Exact conjugating matrices certify this reduction; the original numbering is retained for polynomial inputs and earlier programs.
+
+A **YES** means that $\mathbb{C}^4/G$ admits a projective crepant resolution. A **NO** means that the stated sieve gives an obstruction to such a resolution. Here projectivity is relative to the affine quotient: the resolving variety $Y$ need not be compact or projective over a point. Each page presents its actual ordered matrices, the applicable arguments and a case-specific execution plan.
+
+<a id="age-profiles"></a>
+## Age profiles
+
+Write the eigenvalues of an element $g$ of order $r$ as $\exp(2\pi i a_k/r)$, with $0\leq a_k<r$. Its age is
+
+$$
+\operatorname{age}(g)=\frac{a_1+a_2+a_3+a_4}{r}.
+$$
+
+For these real representations,
+
+$$
+\operatorname{age}(g)=\frac{1}{2}\operatorname{rank}(g-I_4).
+$$
+
+Consequently the only ages are $0,1,2$, and age zero consists of the identity. A *junior* is an element of age one. The three numbers on a card count **conjugacy classes**, not individual group elements:
+
+$$
+A_G(t)=1+j(G)t+a_2(G)t^2.
+$$
+
+Their sum is the total number of conjugacy classes. It is not the ordinary Euler characteristic of the affine quotient, which is contractible.
+
+For a **YES** case and a projective crepant resolution $Y\to\mathbb{C}^4/G$, Batyrev’s cohomological McKay theorem gives
+
+$$
+(b_0(Y),b_2(Y),b_4(Y))=(1,j(G),a_2(G)),\qquad
+P_Y(q)=1+j(G)q^2+a_2(G)q^4.
+$$
+
+All odd cohomology vanishes, and $H^{2i}(Y,\mathbb{Q})$ is pure of Hodge type $(i,i)$. Here the higher Betti numbers also vanish because no conjugacy class has age greater than two. Thus $e(Y)=1+j(G)+a_2(G)$.
+
+For a **NO** case, the card gives only the age-class counts and the formal age polynomial. Existence of a projective crepant resolution is established or excluded by the sieves, separately from these numerical invariants.
+
+Reference: V. Batyrev, *Non-Archimedean integrals and stringy Euler numbers of log-terminal pairs*, Theorem 8.4 ([journal DOI](https://doi.org/10.1007/PL00011158), [author’s paper](https://arxiv.org/pdf/math/9803071)). The cards concern affine quotients and their resolution cohomology; they are not compact Hodge diamonds.
+
+## Matrices and numbering
+
+Generators appear as exact integer matrices, with at most two in each display. The trivial case shows $I_4$. No abstract-group label is substituted for the representation: different representations can have different resolution behavior.
+
+- **Case number:** the current manuscript number, 001–106.
+- **Legacy source:** the earlier entry whose ordered matrices are displayed.
+- **Legacy representatives:** all integral entries identified with this complex class.
+- **CrystCat reference:** the crystallographic system, rational class and global rational-class identifier recorded in the exact comparison.
+
+The [machine index](../cases/index.json), [classification comparison](../classification/case_map.json) and [conjugacy certificates](../manuscript106/catalogue/conjugacy_certificates.json) retain the complete correspondence. Each case also has a `case.json` file containing its indexed data and derived age profile.
+
+## Verification
+
+From the repository root, inspect a case plan and run it into a new directory outside the checkout:
+
+```sh
+python3 verify.py --case 35 --plan
+python3 verify.py --case 35 --output-dir ../sl4-results/case-035
+```
+
+The runner includes the assigned legacy stages and extensions. The [full reproduction guide](reproducibility.md) explains dependencies, the complete shared suite, resumable execution and report interpretation. A page’s YES/NO label records the mathematical classification; a fresh execution report records which calculations were actually completed.
+
+The catalogue itself is generated with the Python standard library:
+
+```sh
+python3 tools/build_case_index.py
+python3 tools/build_case_index.py --check
+```
+
+Recompute the conjugacy classes and ages directly from the matrices with the independent exact verifier:
+
+```sh
+python3 tools/verify_age_profiles.py
+python3 tools/verify_age_profiles.py --case 35
+```
+
+The catalogue check compares every generated page, per-case JSON record and SVG with the exact distributed inputs, validates the SVG age entries, and checks relative links. It preserves the existing machine-index schema and does not execute the geometric proof calculations.
+'''
+
+
+def methods_guide(rows):
+    lines = ['# Sieves A–J', '', '[Browse all 106 cases](../cases/README.md) · [Catalogue guide](catalogue.md)', '',
+             'The manuscript uses ten sieves to classify the 106 quotient representations: **61 YES and 45 NO**. A case may have more than one applicable sieve; the ten lists contain 112 assignments. The primary sieve is the one printed beside its matrix presentation.', '',
+             '| Sieve | Argument | Outcome |', '|---|---|---|']
+    for s in METHOD_TITLES:
+        outcomes = '/'.join(v for v in ['YES','NO'] if any(s in r['sieves'] and r['decision']==v for r in rows))
+        lines.append(f'| [{s}](#sieve-{s.lower()}) | {METHOD_TITLES[s]} | {outcomes} |')
+    for s,title in METHOD_TITLES.items():
+        assigned = [r for r in rows if s in r['sieves']]
+        refs = sorted({p['reference_key'] for r in assigned for p in r['proofs'] if p['sieve']==s})
+        lines += ['', f'<a id="sieve-{s.lower()}"></a>', f'## Sieve {s} · {title}', '', presentation_scope(SCOPES[s]), '',
+                  'Manuscript reference key' + ('s' if len(refs)>1 else '') + ': ' + '; '.join('`'+r+'`' for r in refs) + '.', '']
+        for decision in ['YES','NO']:
+            selection = [r for r in assigned if r['decision']==decision]
+            if selection:
+                lines.append('**' + decision + f' ({len(selection)}):** ' + ', '.join(f'[{r["case"]:03d}](../cases/{r["case"]:03d}/README.md)' for r in selection) + '.')
+            if selection:
+                lines.append('')
+    lines += ['', '## Reproducing an application', '',
+              'Each linked case page exposes its exact input files, supported program stages and additional checks. Use the case runner for that execution plan and the [full reproduction guide](reproducibility.md) for the complete current suite. Matrix identifications, invariant presentations, Cox generation and chart calculations support the stated geometric arguments; the cited theorems remain part of those arguments.', '']
+    return '\n'.join(lines)
+
+
+def generated_files(data):
+    files = {'cases/index.json': json.dumps(data, indent=2, ensure_ascii=False) + '\n'}
+    for row in data['cases']:
+        i = row['case']
+        files[f'cases/{i:03d}/README.md'] = case_readme(row)
+        files[f'cases/{i:03d}/case.json'] = json.dumps(case_json(row), indent=2, ensure_ascii=False) + '\n'
+        files[f'assets/catalogue/{i:03d}-age-profile.svg'] = profile_svg(row)
+        files[f'assets/catalogue/{i:03d}-card.svg'] = tile_svg(row)
+    files['cases/README.md'] = case_index(data['cases'])
+    files['cases/yes.md'] = case_index(data['cases'], 'YES')
+    files['cases/no.md'] = case_index(data['cases'], 'NO')
+    files['assets/catalogue/overview.svg'] = overview_svg()
+    files['docs/catalogue.md'] = catalogue_guide()
+    files['docs/methods.md'] = methods_guide(data['cases'])
+    return files
+
+
+def validate_generated(files, data):
+    from urllib.parse import unquote, urlsplit
+    from xml.etree import ElementTree as ET
+    for row in data['cases']:
+        name = f'assets/catalogue/{row["case"]:03d}-age-profile.svg'
+        svg = ET.fromstring(files[name])
+        entries = {int(x.attrib['data-age']): int(x.text) for x in svg.iter() if 'data-age' in x.attrib}
+        require(entries == dict(enumerate(age_profile(row))), f'{name}: SVG age entries differ')
+        require(svg.attrib['data-decision'] == row['decision'], f'{name}: SVG decision differs')
+    for name,text in files.items():
+        require(all(ord(c) >= 32 or ord(c) == 10 for c in text), f'{name}: unexpected control character')
+        if name.endswith('.svg'):
+            ET.fromstring(text)
+        if not name.endswith('.md'):
+            continue
+        for target in re.findall(r'\]\(([^\s)]+)(?:\s+"[^"]*")?\)', text):
+            parsed = urlsplit(target)
+            if parsed.scheme or target.startswith('//'):
+                continue
+            decoded = unquote(parsed.path)
+            path = (ROOT / name).parent / decoded if decoded else ROOT / name
+            path = path.resolve()
+            require(path == ROOT or ROOT in path.parents, f'{name}: link leaves repository: {target}')
+            relative = path.relative_to(ROOT).as_posix()
+            require(relative in files or path.exists(), f'{name}: broken relative link: {target}')
+            if parsed.fragment and relative in files and relative.endswith('.md'):
+                body = files[relative]
+                fragment = unquote(parsed.fragment)
+                explicit = re.findall(r'<a\s+id="([^"]+)"', body)
+                headings = [re.sub(r'[^\w\- ]', '', h.strip().lower()).replace(' ', '-') for h in re.findall(r'^#+\s+(.+)$', body, re.M)]
+                require(fragment in explicit + headings, f'{name}: missing local anchor: {target}')
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--check', action='store_true', help='Compare generated content without writing it')
+    ap.add_argument('--check', action='store_true', help='Compare every generated catalogue page, JSON record and SVG without writing them')
     ap.add_argument('--paper', type=Path, help='Also compare an external manuscript against all 106 catalogue entries')
     args = ap.parse_args()
     if args.paper is not None and not args.paper.is_file():
         ap.error('The supplied manuscript must be an existing file')
     data = build(args.paper)
-    files = {'cases/index.json': json.dumps(data, indent=2, ensure_ascii=False) + '\n'}
-    for row in data['cases']:
-        files[f'cases/{row["case"]:03d}/README.md'] = case_readme(row)
-    files['cases/README.md'] = '# The 106 quotient classes\n\nAll numbers below use the current manuscript. Each case links to its old integral representatives, exact inputs and supported program stages. The 245-to-106 transfer is certified separately; shared computations are not duplicated.\n\n| Case | Order | Decision | Sieve(s) | Old source | All old entries |\n|---|---:|---|---|---:|---|\n' + ''.join(f'| [{r["case"]}](./{r["case"]:03d}/README.md) | {r["order"]} | {r["decision"]} | {", ".join(r["sieves"])} | {r["source_legacy_index"]} | {", ".join(map(str,r["legacy_indices"]))} |\n' for r in data['cases'])
+    files = generated_files(data)
+    validate_generated(files, data)
     for name, text in files.items():
         p = ROOT / name
         if args.check:
-            require(p.is_file() and p.read_text() == text, f'Outdated generated index: {name}')
+            require(p.is_file() and p.read_text() == text, f'Outdated generated catalogue: {name}')
         else:
             p.parent.mkdir(parents=True, exist_ok=True)
             p.write_text(text)
-    print(json.dumps({'status': 'PASS', 'operation': 'check' if args.check else 'build', 'files': len(files), 'manuscript_comparison': 'checked' if args.paper else 'not_requested', **data['counts']}))
+    print(json.dumps({'status': 'PASS', 'operation': 'check' if args.check else 'build', 'files': len(files),
+                      'age_profile_svgs': len(data['cases']), 'relative_links': 'checked',
+                      'manuscript_comparison': 'checked' if args.paper else 'not_requested', **data['counts']}))
 
 
 if __name__ == '__main__':
