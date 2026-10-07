@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="252" viewBox="0 0 720 252" role="img" aria-labelledby="title desc" data-case="95" data-generators="1">
+<title id="title">Case 095 · Ordered generators</title>
+<desc id="desc">1 ordered integral generators, acting on column vectors.</desc>
+<rect x="1" y="1" width="718" height="250" rx="16" fill="#fffefa" stroke="#dce2dd"/>
+<text x="28" y="38" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="24">Case 095 · Ordered generators</text>
+<text x="29" y="60" fill="#68746e" font-family="Arial,sans-serif" font-size="12">1 ordered integral generators, acting on column vectors.</text>
+<g data-matrix="1">
+<rect x="14" y="76" width="338" height="145" rx="10" fill="#f3f6f2"/>
+<text x="33" y="155" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">g₁ =</text>
+<path d="M 109 91 Q 92 148 109 209" fill="none" stroke="#344c3e" stroke-width="1.8"/>
+<path d="M 274 91 Q 291 148 274 209" fill="none" stroke="#344c3e" stroke-width="1.8"/>
+<text data-generator="1" data-row="0" data-column="0" x="129" y="113" text-anchor="middle" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">0</text>
+<text data-generator="1" data-row="0" data-column="1" x="170" y="113" text-anchor="middle" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">0</text>
+<text data-generator="1" data-row="0" data-column="2" x="211" y="113" text-anchor="middle" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">1</text>
+<text data-generator="1" data-row="0" data-column="3" x="252" y="113" text-anchor="middle" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">0</text>
+<text data-generator="1" data-row="1" data-column="0" x="129" y="141" text-anchor="middle" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">0</text>
+<text data-generator="1" data-row="1" data-column="1" x="170" y="141" text-anchor="middle" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">0</text>
+<text data-generator="1" data-row="1" data-column="2" x="211" y="141" text-anchor="middle" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">0</text>
+<text data-generator="1" data-row="1" data-column="3" x="252" y="141" text-anchor="middle" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">1</text>
+<text data-generator="1" data-row="2" data-column="0" x="129" y="169" text-anchor="middle" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">-1</text>
+<text data-generator="1" data-row="2" data-column="1" x="170" y="169" text-anchor="middle" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">-1</text>
+<text data-generator="1" data-row="2" data-column="2" x="211" y="169" text-anchor="middle" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">-1</text>
+<text data-generator="1" data-row="2" data-column="3" x="252" y="169" text-anchor="middle" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">-1</text>
+<text data-generator="1" data-row="3" data-column="0" x="129" y="197" text-anchor="middle" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">1</text>
+<text data-generator="1" data-row="3" data-column="1" x="170" y="197" text-anchor="middle" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">0</text>
+<text data-generator="1" data-row="3" data-column="2" x="211" y="197" text-anchor="middle" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">0</text>
+<text data-generator="1" data-row="3" data-column="3" x="252" y="197" text-anchor="middle" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">0</text>
+</g>
+</svg>

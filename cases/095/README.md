@@ -31,9 +31,16 @@ The displayed numbers count conjugacy classes by age, as in the manuscript. [Def
 
 These ordered integral matrices define the displayed representation. The [matrix-transfer certificates](../../manuscript106/catalogue/conjugacy_certificates.json) identify all its legacy representatives.
 
-$$
-g_{1}=\begin{pmatrix}0&0&1&0\\0&0&0&1\\-1&-1&-1&-1\\1&0&0&0\end{pmatrix}.
-$$
+![Case 095: ordered generating matrices](../../assets/catalogue/095-generators.svg)
+
+<details>
+<summary>Copyable matrix notation</summary>
+
+```latex
+g_{1}=\begin{pmatrix}0&0&1&0\\0&0&0&1\\-1&-1&-1&-1\\1&0&0&0\end{pmatrix}
+```
+
+</details>
 
 ## Verify this case
 

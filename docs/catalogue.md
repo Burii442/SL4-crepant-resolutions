@@ -31,7 +31,7 @@ Their sum is the total number of conjugacy classes. The manuscript uses these ag
 
 ## Matrices and numbering
 
-Generators appear as exact integer matrices, with at most two in each display. The trivial case shows $I_4$. No abstract-group label is substituted for the representation: different representations can have different resolution behavior.
+Generators appear as exact integer matrices in vector diagrams, with at most two in each row. Every displayed entry is checked against the catalogue, and copyable LaTeX is available below each diagram. The trivial case shows $I_4$. No abstract-group label is substituted for the representation: different representations can have different resolution behavior.
 
 - **Case number:** the current manuscript number, 001–106.
 - **Legacy source:** the earlier entry whose ordered matrices are displayed.

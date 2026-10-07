@@ -31,13 +31,28 @@ The displayed numbers count conjugacy classes by age, as in the manuscript. [Def
 
 These ordered integral matrices define the displayed representation. The [matrix-transfer certificates](../../manuscript106/catalogue/conjugacy_certificates.json) identify all its legacy representatives.
 
-$$
-g_{1}=\begin{pmatrix}1&0&0&0\\0&1&0&2\\0&0&-1&0\\0&0&0&-1\end{pmatrix}\qquad g_{2}=\begin{pmatrix}-1&0&0&0\\0&-1&0&0\\0&0&-1&0\\0&0&0&-1\end{pmatrix}.
-$$
+![Case 042: ordered generating matrices](../../assets/catalogue/042-generators.svg)
 
-$$
-g_{3}=\begin{pmatrix}1&0&0&0\\0&0&-1&-1\\0&-1&0&-1\\0&0&1&0\end{pmatrix}\qquad g_{4}=\begin{pmatrix}-1&0&0&0\\0&1&0&2\\0&0&1&0\\0&0&0&-1\end{pmatrix}.
-$$
+<details>
+<summary>Copyable matrix notation</summary>
+
+```latex
+g_{1}=\begin{pmatrix}1&0&0&0\\0&1&0&2\\0&0&-1&0\\0&0&0&-1\end{pmatrix}
+```
+
+```latex
+g_{2}=\begin{pmatrix}-1&0&0&0\\0&-1&0&0\\0&0&-1&0\\0&0&0&-1\end{pmatrix}
+```
+
+```latex
+g_{3}=\begin{pmatrix}1&0&0&0\\0&0&-1&-1\\0&-1&0&-1\\0&0&1&0\end{pmatrix}
+```
+
+```latex
+g_{4}=\begin{pmatrix}-1&0&0&0\\0&1&0&2\\0&0&1&0\\0&0&0&-1\end{pmatrix}
+```
+
+</details>
 
 ## Verify this case
 
