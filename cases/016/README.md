@@ -4,7 +4,7 @@
 
 No projective crepant resolution exists. Primary sieve: [A — Junior-generation obstruction](../../docs/methods.md#sieve-a).
 
-![Case 016: age profile (1, 0, 4); conjugacy-class counts only](../../assets/catalogue/016-age-profile.svg)
+![Case 016: age profile (1, 0, 4); conjugacy-class counts](../../assets/catalogue/016-age-profile.svg)
 
 ## Invariants
 
@@ -25,7 +25,7 @@ $$
 A_G(t) = 1 + 4t^{2}.
 $$
 
-The displayed numbers count conjugacy classes by age. This case has no projective crepant resolution, so no resolution Betti numbers are assigned. See [the age-profile guide](../../docs/catalogue.md#age-profiles).
+The displayed numbers count conjugacy classes by age, as in the manuscript. [Definition of the age polynomial](../../docs/catalogue.md#age-profiles).
 
 ## Exact generators
 

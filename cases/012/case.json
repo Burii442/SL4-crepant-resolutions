@@ -124,5 +124,5 @@
   ],
   "conjugacy_class_count": 6,
   "age_polynomial": "1 + 2t + 3t²",
-  "age_profile_interpretation": "Conjugacy-class counts by age only"
+  "age_profile_interpretation": "Conjugacy-class counts by age"
 }

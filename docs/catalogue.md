@@ -2,7 +2,7 @@
 
 [All 106 cases](../cases/README.md) · [61 YES](../cases/yes.md) · [45 NO](../cases/no.md) · [Sieves A–J](methods.md)
 
-The catalogue contains **106 complex conjugacy classes of four-dimensional finite quotient representations admitting an integral representative in $\mathrm{SL}_4(\mathbb{Z})$**. They arise from the 245 integral catalogue entries. Exact conjugating matrices certify this reduction; the original numbering is retained for polynomial inputs and earlier programs.
+This catalogue accompanies *Crepant resolutions of four-dimensional finite quotients* (`arxiv_3`). It contains **106 complex conjugacy classes of four-dimensional finite quotient representations admitting an integral representative in $\mathrm{SL}_4(\mathbb{Z})$**. They arise from the 245 integral catalogue entries. Exact conjugating matrices certify this reduction; the original numbering is retained for polynomial inputs and earlier programs.
 
 A **YES** means that $\mathbb{C}^4/G$ admits a projective crepant resolution. A **NO** means that the stated sieve gives an obstruction to such a resolution. Here projectivity is relative to the affine quotient: the resolving variety $Y$ need not be compact or projective over a point. Each page presents its actual ordered matrices, the applicable arguments and a case-specific execution plan.
 
@@ -27,20 +27,7 @@ $$
 A_G(t)=1+j(G)t+a_2(G)t^2.
 $$
 
-Their sum is the total number of conjugacy classes. It is not the ordinary Euler characteristic of the affine quotient, which is contractible.
-
-For a **YES** case and a projective crepant resolution $Y\to\mathbb{C}^4/G$, Batyrev’s cohomological McKay theorem gives
-
-$$
-(b_0(Y),b_2(Y),b_4(Y))=(1,j(G),a_2(G)),\qquad
-P_Y(q)=1+j(G)q^2+a_2(G)q^4.
-$$
-
-All odd cohomology vanishes, and $H^{2i}(Y,\mathbb{Q})$ is pure of Hodge type $(i,i)$. Here the higher Betti numbers also vanish because no conjugacy class has age greater than two. Thus $e(Y)=1+j(G)+a_2(G)$.
-
-For a **NO** case, the card gives only the age-class counts and the formal age polynomial. Existence of a projective crepant resolution is established or excluded by the sieves, separately from these numerical invariants.
-
-Reference: V. Batyrev, *Non-Archimedean integrals and stringy Euler numbers of log-terminal pairs*, Theorem 8.4 ([journal DOI](https://doi.org/10.1007/PL00011158), [author’s paper](https://arxiv.org/pdf/math/9803071)). The cards concern affine quotients and their resolution cohomology; they are not compact Hodge diamonds.
+Their sum is the total number of conjugacy classes. The manuscript uses these age counts and the age polynomial alongside the YES/NO classification. The decision follows from the indicated sieve.
 
 ## Matrices and numbering
 

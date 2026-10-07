@@ -233,9 +233,7 @@ def case_json(row):
     result['age_profile'] = age_profile(row)
     result['conjugacy_class_count'] = sum(result['age_profile'])
     result['age_polynomial'] = polynomial(result['age_profile'], tex=False)
-    result['age_profile_interpretation'] = 'Betti numbers b0,b2,b4 of a projective crepant resolution' if row['decision'] == 'YES' else 'Conjugacy-class counts by age only'
-    if row['decision'] == 'YES':
-        result['poincare_polynomial'] = polynomial(result['age_profile'], 'q', 2, tex=False)
+    result['age_profile_interpretation'] = 'Conjugacy-class counts by age'
     return result
 
 
@@ -260,7 +258,7 @@ def case_readme(row):
     result = 'A projective crepant resolution exists.' if yes else 'No projective crepant resolution exists.'
     lines = [navigation(i), '', f'# Case {i:03d} · {row["decision"]}', '',
              result + f' Primary sieve: [{row["primary_sieve"]} — {METHOD_TITLES[row["primary_sieve"]]}](../../docs/methods.md#sieve-{row["primary_sieve"].lower()}).', '',
-             f'![Case {i:03d}: age profile ({", ".join(map(str, values))}); {"resolution Betti numbers" if yes else "conjugacy-class counts only"}](../../assets/catalogue/{i:03d}-age-profile.svg)', '',
+             f'![Case {i:03d}: age profile ({", ".join(map(str, values))}); conjugacy-class counts](../../assets/catalogue/{i:03d}-age-profile.svg)', '',
              '## Invariants', '',
              '| Invariant | Value |', '|---|---|',
              f'| Group order $\\lvert G\\rvert$ | {row["order"]} |',
@@ -273,12 +271,7 @@ def case_readme(row):
              '| CrystCat reference | System {system}; Q-class {qclass}; global Q-class {global_qclass} |'.format(**row['classical_class']), '',
              'The age polynomial records conjugacy classes:', '',
              '$$', 'A_G(t) = ' + polynomial(values) + '.', '$$', '']
-    if yes:
-        lines += ['For a projective crepant resolution $Y \\to \\mathbb{C}^4/G$, the ordinary rational Poincaré polynomial is', '',
-                  '$$', 'P_Y(q) = ' + polynomial(values, 'q', 2) + '.', '$$', '',
-                  'Thus $(b_0,b_2,b_4)=(' + ','.join(map(str, values)) + ')$; all odd Betti numbers and all $b_k$ with $k>4$ vanish. This follows from [Batyrev’s cohomological McKay theorem](../../docs/catalogue.md#age-profiles).', '']
-    else:
-        lines += ['The displayed numbers count conjugacy classes by age. This case has no projective crepant resolution, so no resolution Betti numbers are assigned. See [the age-profile guide](../../docs/catalogue.md#age-profiles).', '']
+    lines += ['The displayed numbers count conjugacy classes by age, as in the manuscript. [Definition of the age polynomial](../../docs/catalogue.md#age-profiles).', '']
     if i in HIGHLIGHTS:
         lines += ['## In the manuscript', '', HIGHLIGHTS[i], '']
     lines += ['## Exact generators', '',
@@ -319,10 +312,10 @@ def profile_svg(row):
     i = row['case']; yes = row['decision'] == 'YES'; vals = age_profile(row)
     accent, tint = ('#176b58', '#edf5f1') if yes else ('#895b36', '#f7f0e8')
     title = f'Case {i:03d} · Age profile'
-    subtitle = 'Cohomology of a projective crepant resolution' if yes else 'Conjugacy classes of the quotient representation'
+    subtitle = 'Conjugacy classes of the quotient representation'
     mode = 'CREPANT RESOLUTION · YES' if yes else 'NO PROJECTIVE CREPANT RESOLUTION'
     desc = f'Case {i:03d}. Decision {row["decision"]}. Age zero: 1. Age one: {vals[1]}. Age two: {vals[2]}. '
-    desc += 'These are b0, b2 and b4 of a projective crepant resolution.' if yes else 'These are conjugacy-class counts only; no resolution Betti numbers are assigned.'
+    desc += 'The numbers count conjugacy classes by age.'
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="720" height="348" viewBox="0 0 720 348" role="img" aria-labelledby="title desc" data-case="{i}" data-decision="{row["decision"]}">',
              f'<title id="title">{escape(title)}</title>', f'<desc id="desc">{escape(desc)}</desc>',
              '<rect x="1" y="1" width="718" height="346" rx="16" fill="#fffefa" stroke="#dce2dd"/>',
@@ -335,10 +328,8 @@ def profile_svg(row):
         parts += [f'<rect x="{x-89}" y="141" width="178" height="110" rx="12" fill="{tint}"/>',
                   f'<text x="{x}" y="165" text-anchor="middle" fill="{accent}" font-family="Arial,sans-serif" font-size="10.5" letter-spacing="1.3">AGE {age}' + (' · JUNIORS' if age == 1 else '') + '</text>',
                   f'<text data-age="{age}" x="{x}" y="218" text-anchor="middle" fill="{accent}" font-family="Georgia,Times New Roman,serif" font-size="46">{value}</text>']
-        if yes:
-            parts.append(f'<text x="{x}" y="240" text-anchor="middle" fill="#6d7d72" font-family="Georgia,Times New Roman,serif" font-size="13">b{["₀","₂","₄"][age]}</text>')
-    pol = ('P_Y(q) = ' + polynomial(vals, 'q', 2, False)) if yes else ('A_G(t) = ' + polynomial(vals, tex=False))
-    foot = 'Batyrev’s cohomological McKay theorem · ordinary rational cohomology' if yes else 'Age classes are recorded for every group, independently of existence.'
+    pol = 'A_G(t) = ' + polynomial(vals, tex=False)
+    foot = 'Order ' + str(row['order']) + ' · Sieve ' + row['primary_sieve'] + ' · ' + str(sum(vals)) + ' conjugacy classes'
     parts += [f'<text x="360" y="287" text-anchor="middle" fill="#344c3e" font-family="Georgia,Times New Roman,serif" font-size="20">{escape(pol)}</text>',
               f'<text x="360" y="318" text-anchor="middle" fill="#718076" font-family="Arial,sans-serif" font-size="11.5">{escape(foot)}</text>', '</svg>']
     return '\n'.join(parts) + '\n'
@@ -400,7 +391,7 @@ def case_index(rows, decision=None):
         cells = [f'[![{r["case"]:03d} {r["decision"]}](../assets/catalogue/{r["case"]:03d}-card.svg)]({r["case"]:03d}/README.md)' for r in selected[start:start+10]]
         lines.append('| ' + ' | '.join(cells + ['']*(10-len(cells))) + ' |')
     lines += ['', '<a id="full-table"></a>', '## Full table', '', index_table(selected).rstrip(), '',
-              'The age columns count conjugacy classes. For YES cases, $(1,\\mathrm{juniors},\\mathrm{age\ two})=(b_0,b_2,b_4)$ for a projective crepant resolution. [Interpretation and theorem](../docs/catalogue.md#age-profiles).', '']
+              'The age columns count conjugacy classes. [Definition of the age polynomial](../docs/catalogue.md#age-profiles).', '']
     return '\n'.join(lines)
 
 
@@ -409,7 +400,7 @@ def catalogue_guide():
 
 [All 106 cases](../cases/README.md) · [61 YES](../cases/yes.md) · [45 NO](../cases/no.md) · [Sieves A–J](methods.md)
 
-The catalogue contains **106 complex conjugacy classes of four-dimensional finite quotient representations admitting an integral representative in $\mathrm{SL}_4(\mathbb{Z})$**. They arise from the 245 integral catalogue entries. Exact conjugating matrices certify this reduction; the original numbering is retained for polynomial inputs and earlier programs.
+This catalogue accompanies *Crepant resolutions of four-dimensional finite quotients* (`arxiv_3`). It contains **106 complex conjugacy classes of four-dimensional finite quotient representations admitting an integral representative in $\mathrm{SL}_4(\mathbb{Z})$**. They arise from the 245 integral catalogue entries. Exact conjugating matrices certify this reduction; the original numbering is retained for polynomial inputs and earlier programs.
 
 A **YES** means that $\mathbb{C}^4/G$ admits a projective crepant resolution. A **NO** means that the stated sieve gives an obstruction to such a resolution. Here projectivity is relative to the affine quotient: the resolving variety $Y$ need not be compact or projective over a point. Each page presents its actual ordered matrices, the applicable arguments and a case-specific execution plan.
 
@@ -434,20 +425,7 @@ $$
 A_G(t)=1+j(G)t+a_2(G)t^2.
 $$
 
-Their sum is the total number of conjugacy classes. It is not the ordinary Euler characteristic of the affine quotient, which is contractible.
-
-For a **YES** case and a projective crepant resolution $Y\to\mathbb{C}^4/G$, Batyrev’s cohomological McKay theorem gives
-
-$$
-(b_0(Y),b_2(Y),b_4(Y))=(1,j(G),a_2(G)),\qquad
-P_Y(q)=1+j(G)q^2+a_2(G)q^4.
-$$
-
-All odd cohomology vanishes, and $H^{2i}(Y,\mathbb{Q})$ is pure of Hodge type $(i,i)$. Here the higher Betti numbers also vanish because no conjugacy class has age greater than two. Thus $e(Y)=1+j(G)+a_2(G)$.
-
-For a **NO** case, the card gives only the age-class counts and the formal age polynomial. Existence of a projective crepant resolution is established or excluded by the sieves, separately from these numerical invariants.
-
-Reference: V. Batyrev, *Non-Archimedean integrals and stringy Euler numbers of log-terminal pairs*, Theorem 8.4 ([journal DOI](https://doi.org/10.1007/PL00011158), [author’s paper](https://arxiv.org/pdf/math/9803071)). The cards concern affine quotients and their resolution cohomology; they are not compact Hodge diamonds.
+Their sum is the total number of conjugacy classes. The manuscript uses these age counts and the age polynomial alongside the YES/NO classification. The decision follows from the indicated sieve.
 
 ## Matrices and numbering
 

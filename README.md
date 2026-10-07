@@ -17,8 +17,8 @@ Each case has its own page with an age-profile diagram, exact generating
 matrices, the applicable methods and commands for verification. The catalogue
 classifies the complex representations arising from finite subgroups of
 $\mathrm{SL}_4(\mathbb Z)$; it retains the correspondence with all 245
-integral representations. For a YES case, the age profile also gives the
-ordinary Betti numbers of a crepant resolution.
+integral representations. The age diagrams display the conjugacy-class
+counts and age polynomials used in the manuscript.
 Throughout the catalogue, resolutions are projective over $\mathbb C^4/G$;
 the resolving variety is noncompact.
 

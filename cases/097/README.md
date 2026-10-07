@@ -4,7 +4,7 @@
 
 A projective crepant resolution exists. Primary sieve: [I — Cox rings and GIT](../../docs/methods.md#sieve-i).
 
-![Case 097: age profile (1, 1, 2); resolution Betti numbers](../../assets/catalogue/097-age-profile.svg)
+![Case 097: age profile (1, 1, 2); conjugacy-class counts](../../assets/catalogue/097-age-profile.svg)
 
 ## Invariants
 
@@ -25,13 +25,7 @@ $$
 A_G(t) = 1 + t + 2t^{2}.
 $$
 
-For a projective crepant resolution $Y \to \mathbb{C}^4/G$, the ordinary rational Poincaré polynomial is
-
-$$
-P_Y(q) = 1 + q^{2} + 2q^{4}.
-$$
-
-Thus $(b_0,b_2,b_4)=(1,1,2)$; all odd Betti numbers and all $b_k$ with $k>4$ vanish. This follows from [Batyrev’s cohomological McKay theorem](../../docs/catalogue.md#age-profiles).
+The displayed numbers count conjugacy classes by age, as in the manuscript. [Definition of the age polynomial](../../docs/catalogue.md#age-profiles).
 
 ## In the manuscript
 

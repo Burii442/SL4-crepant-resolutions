@@ -67,4 +67,4 @@ Green cards mark YES; brown cards mark NO. The letter names the primary sieve. T
 | [102](102/README.md) | NO | 12 | 3 | 8 | 12 | [A](../docs/methods.md#sieve-a) | 239 | 239 | (20, 2; 91) |
 | [105](105/README.md) | NO | 24 | 4 | 4 | 9 | [I](../docs/methods.md#sieve-i) | 243 | 243, 244 | (20, 11; 100) |
 
-The age columns count conjugacy classes. For YES cases, $(1,\mathrm{juniors},\mathrm{age\ two})=(b_0,b_2,b_4)$ for a projective crepant resolution. [Interpretation and theorem](../docs/catalogue.md#age-profiles).
+The age columns count conjugacy classes. [Definition of the age polynomial](../docs/catalogue.md#age-profiles).

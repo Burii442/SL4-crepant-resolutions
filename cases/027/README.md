@@ -4,7 +4,7 @@
 
 No projective crepant resolution exists. Primary sieve: [D — Cotangent reflection representations](../../docs/methods.md#sieve-d).
 
-![Case 027: age profile (1, 2, 3); conjugacy-class counts only](../../assets/catalogue/027-age-profile.svg)
+![Case 027: age profile (1, 2, 3); conjugacy-class counts](../../assets/catalogue/027-age-profile.svg)
 
 ## Invariants
 
@@ -25,7 +25,7 @@ $$
 A_G(t) = 1 + 2t + 3t^{2}.
 $$
 
-The displayed numbers count conjugacy classes by age. This case has no projective crepant resolution, so no resolution Betti numbers are assigned. See [the age-profile guide](../../docs/catalogue.md#age-profiles).
+The displayed numbers count conjugacy classes by age, as in the manuscript. [Definition of the age polynomial](../../docs/catalogue.md#age-profiles).
 
 ## In the manuscript
 

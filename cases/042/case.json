@@ -179,6 +179,5 @@
   ],
   "conjugacy_class_count": 8,
   "age_polynomial": "1 + 4t + 3t²",
-  "age_profile_interpretation": "Betti numbers b0,b2,b4 of a projective crepant resolution",
-  "poincare_polynomial": "1 + 4q² + 3q⁴"
+  "age_profile_interpretation": "Conjugacy-class counts by age"
 }
