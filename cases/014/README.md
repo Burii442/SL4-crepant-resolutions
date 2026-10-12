@@ -4,8 +4,6 @@
 
 A projective crepant resolution exists. Primary sieve: [D — Cotangent reflection representations](../../docs/methods.md#sieve-d).
 
-![Case 014: age profile (1, 1, 1); conjugacy-class counts](../../assets/catalogue/014-age-profile.svg)
-
 ## Invariants
 
 | Invariant | Value |

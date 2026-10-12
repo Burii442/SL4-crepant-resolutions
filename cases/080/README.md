@@ -4,8 +4,6 @@
 
 A projective crepant resolution exists. Primary sieve: [I — Cox rings and GIT](../../docs/methods.md#sieve-i).
 
-![Case 080: age profile (1, 6, 5); conjugacy-class counts](../../assets/catalogue/080-age-profile.svg)
-
 ## Invariants
 
 | Invariant | Value |

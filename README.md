@@ -13,11 +13,11 @@ An electronic catalogue and verification programs for the manuscript by
 [YES cases](cases/yes.md) · [NO cases](cases/no.md) ·
 [Methods A–J](docs/methods.md) · [Reading the catalogue](docs/catalogue.md)
 
-Each case has its own page with an age-profile diagram, exact generating
-matrices, the applicable methods and commands for verification. The catalogue
+Each case has its own page with tabulated invariants, exact generating
+matrices in LaTeX, the applicable methods and commands for verification. The catalogue
 classifies the complex representations arising from finite subgroups of
 $\mathrm{SL}_4(\mathbb Z)$; it retains the correspondence with all 245
-integral representations. The age diagrams display the conjugacy-class
+integral representations. The pages display the conjugacy-class
 counts and age polynomials used in the manuscript.
 Throughout the catalogue, resolutions are projective over $\mathbb C^4/G$;
 the resolving variety is noncompact.
@@ -111,7 +111,7 @@ The earlier catalogue has **245 integral representations**. Files under
 depend on their inputs. Consult [the number map](cases/index.json) before
 interchanging manuscript and legacy numbers.
 
-The diagrams have a separate exact check requiring only Python:
+The catalogue has a separate exact check requiring only Python:
 
 ```sh
 python3 tools/build_case_index.py --check
@@ -127,8 +127,8 @@ the complete reproduction suite.
 
 | Directory | Contents |
 |---|---|
-| [cases/](cases/README.md) | Illustrated pages, exact matrices and verification commands for cases 001–106 |
-| [assets/catalogue/](assets/catalogue/) | Reproducible vector diagrams for the catalogue |
+| [cases/](cases/README.md) | Case pages, exact matrices and verification commands for cases 001–106 |
+| [assets/catalogue/](assets/catalogue/) | Overview and navigation cards for the catalogue grid |
 | [manuscript106/](manuscript106/README.md) | Matrix catalogue, conjugating matrices and finite sieve-cover inputs |
 | [legacy245/](legacy245/README.md) | Cox, binding, endpoint, toric, invariant-ring and geometric verification programs and inputs |
 | [classification/](classification/README.md) | CrystCat enumeration and independent catalogue comparison |

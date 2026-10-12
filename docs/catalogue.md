@@ -21,7 +21,7 @@ $$
 \operatorname{age}(g)=\frac{1}{2}\operatorname{rank}(g-I_4).
 $$
 
-Consequently the only ages are $0,1,2$, and age zero consists of the identity. A *junior* is an element of age one. The three numbers on a card count **conjugacy classes**, not individual group elements:
+Consequently the only ages are $0,1,2$, and age zero consists of the identity. A *junior* is an element of age one. The coefficients of the age polynomial count **conjugacy classes**, not individual group elements:
 
 $$
 A_G(t)=1+j(G)t+a_2(G)t^2.
@@ -65,4 +65,4 @@ python3 tools/verify_age_profiles.py
 python3 tools/verify_age_profiles.py --case 35
 ```
 
-The catalogue check compares every generated page, per-case JSON record and SVG with the exact distributed inputs, validates the age diagrams and native LaTeX matrix entries, and checks relative links. It preserves the existing machine-index schema and does not execute the geometric proof calculations.
+The catalogue check compares every generated page, per-case JSON record and SVG with the exact distributed inputs, validates the tabulated age counts and native LaTeX matrix entries, and checks relative links. It preserves the existing machine-index schema and does not execute the geometric proof calculations.

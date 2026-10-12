@@ -4,8 +4,6 @@
 
 A projective crepant resolution exists. Primary sieve: [H — A toric resolution and an involution](../../docs/methods.md#sieve-h).
 
-![Case 031: age profile (1, 6, 3); conjugacy-class counts](../../assets/catalogue/031-age-profile.svg)
-
 ## Invariants
 
 | Invariant | Value |

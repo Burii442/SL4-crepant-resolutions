@@ -258,7 +258,6 @@ def case_readme(row):
     result = 'A projective crepant resolution exists.' if yes else 'No projective crepant resolution exists.'
     lines = [navigation(i), '', f'# Case {i:03d} · {row["decision"]}', '',
              result + f' Primary sieve: [{row["primary_sieve"]} — {METHOD_TITLES[row["primary_sieve"]]}](../../docs/methods.md#sieve-{row["primary_sieve"].lower()}).', '',
-             f'![Case {i:03d}: age profile ({", ".join(map(str, values))}); conjugacy-class counts](../../assets/catalogue/{i:03d}-age-profile.svg)', '',
              '## Invariants', '',
              '| Invariant | Value |', '|---|---|',
              f'| Group order $\\lvert G\\rvert$ | {row["order"]} |',
@@ -305,34 +304,6 @@ def case_readme(row):
     lines += ['', '</details>', '', '---', '', navigation(i), '']
     return '\n'.join(lines)
 
-
-
-def profile_svg(row):
-    from html import escape
-    i = row['case']; yes = row['decision'] == 'YES'; vals = age_profile(row)
-    accent, tint = ('#176b58', '#edf5f1') if yes else ('#895b36', '#f7f0e8')
-    title = f'Case {i:03d} · Age profile'
-    subtitle = 'Conjugacy classes of the quotient representation'
-    mode = 'CREPANT RESOLUTION · YES' if yes else 'NO PROJECTIVE CREPANT RESOLUTION'
-    desc = f'Case {i:03d}. Decision {row["decision"]}. Age zero: 1. Age one: {vals[1]}. Age two: {vals[2]}. '
-    desc += 'The numbers count conjugacy classes by age.'
-    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="720" height="348" viewBox="0 0 720 348" role="img" aria-labelledby="title desc" data-case="{i}" data-decision="{row["decision"]}">',
-             f'<title id="title">{escape(title)}</title>', f'<desc id="desc">{escape(desc)}</desc>',
-             '<rect x="1" y="1" width="718" height="346" rx="16" fill="#fffefa" stroke="#dce2dd"/>',
-             f'<rect x="30" y="30" width="4" height="50" rx="2" fill="{accent}"/>',
-             f'<text x="49" y="49" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="25">{escape(title)}</text>',
-             f'<text x="49" y="73" fill="#68746e" font-family="Arial,sans-serif" font-size="13">{escape(subtitle)}</text>',
-             '<line x1="32" y1="96" x2="688" y2="96" stroke="#e2e6e1"/>',
-             f'<text x="360" y="120" text-anchor="middle" fill="{accent}" font-family="Arial,sans-serif" font-size="10.5" letter-spacing="1.4">{mode}</text>']
-    for age, (x, value) in enumerate(zip([136, 360, 584], vals)):
-        parts += [f'<rect x="{x-89}" y="141" width="178" height="110" rx="12" fill="{tint}"/>',
-                  f'<text x="{x}" y="165" text-anchor="middle" fill="{accent}" font-family="Arial,sans-serif" font-size="10.5" letter-spacing="1.3">AGE {age}' + (' · JUNIORS' if age == 1 else '') + '</text>',
-                  f'<text data-age="{age}" x="{x}" y="218" text-anchor="middle" fill="{accent}" font-family="Georgia,Times New Roman,serif" font-size="46">{value}</text>']
-    pol = 'A_G(t) = ' + polynomial(vals, tex=False)
-    foot = 'Order ' + str(row['order']) + ' · Sieve ' + row['primary_sieve'] + ' · ' + str(sum(vals)) + ' conjugacy classes'
-    parts += [f'<text x="360" y="287" text-anchor="middle" fill="#344c3e" font-family="Georgia,Times New Roman,serif" font-size="20">{escape(pol)}</text>',
-              f'<text x="360" y="318" text-anchor="middle" fill="#718076" font-family="Arial,sans-serif" font-size="11.5">{escape(foot)}</text>', '</svg>']
-    return '\n'.join(parts) + '\n'
 
 
 def tile_svg(row):
@@ -419,7 +390,7 @@ $$
 \operatorname{age}(g)=\frac{1}{2}\operatorname{rank}(g-I_4).
 $$
 
-Consequently the only ages are $0,1,2$, and age zero consists of the identity. A *junior* is an element of age one. The three numbers on a card count **conjugacy classes**, not individual group elements:
+Consequently the only ages are $0,1,2$, and age zero consists of the identity. A *junior* is an element of age one. The coefficients of the age polynomial count **conjugacy classes**, not individual group elements:
 
 $$
 A_G(t)=1+j(G)t+a_2(G)t^2.
@@ -463,7 +434,7 @@ python3 tools/verify_age_profiles.py
 python3 tools/verify_age_profiles.py --case 35
 ```
 
-The catalogue check compares every generated page, per-case JSON record and SVG with the exact distributed inputs, validates the age diagrams and native LaTeX matrix entries, and checks relative links. It preserves the existing machine-index schema and does not execute the geometric proof calculations.
+The catalogue check compares every generated page, per-case JSON record and SVG with the exact distributed inputs, validates the tabulated age counts and native LaTeX matrix entries, and checks relative links. It preserves the existing machine-index schema and does not execute the geometric proof calculations.
 '''
 
 
@@ -496,7 +467,6 @@ def generated_files(data):
         i = row['case']
         files[f'cases/{i:03d}/README.md'] = case_readme(row)
         files[f'cases/{i:03d}/case.json'] = json.dumps(case_json(row), indent=2, ensure_ascii=False) + '\n'
-        files[f'assets/catalogue/{i:03d}-age-profile.svg'] = profile_svg(row)
         files[f'assets/catalogue/{i:03d}-card.svg'] = tile_svg(row)
     files['cases/README.md'] = case_index(data['cases'])
     files['cases/yes.md'] = case_index(data['cases'], 'YES')
@@ -511,13 +481,15 @@ def validate_generated(files, data):
     from urllib.parse import unquote, urlsplit
     from xml.etree import ElementTree as ET
     for row in data['cases']:
-        name = f'assets/catalogue/{row["case"]:03d}-age-profile.svg'
-        svg = ET.fromstring(files[name])
-        entries = {int(x.attrib['data-age']): int(x.text) for x in svg.iter() if 'data-age' in x.attrib}
-        require(entries == dict(enumerate(age_profile(row))), f'{name}: SVG age entries differ')
-        require(svg.attrib['data-decision'] == row['decision'], f'{name}: SVG decision differs')
         page_name = f'cases/{row["case"]:03d}/README.md'
         page = files[page_name]
+        values = age_profile(row)
+        for label, value in [('Junior conjugacy classes', values[1]),
+                             ('Age-two conjugacy classes', values[2]),
+                             ('Total conjugacy classes', sum(values))]:
+            require(f'| {label} | {value} |' in page, f'{page_name}: age count differs')
+        require('A_G(t) = ' + polynomial(values) + '.' in page, f'{page_name}: age polynomial differs')
+        require('-age-profile.svg' not in page, f'{page_name}: obsolete age-profile image')
         blocks = re.findall(r'^```math\n(.*?)\n```$', page, re.M | re.S)
         generators = row['actual_generators']
         expected = generators or [[[int(r == c) for c in range(4)] for r in range(4)]]
@@ -573,7 +545,7 @@ def main():
             p.parent.mkdir(parents=True, exist_ok=True)
             p.write_text(text)
     print(json.dumps({'status': 'PASS', 'operation': 'check' if args.check else 'build', 'files': len(files),
-                      'age_profile_svgs': len(data['cases']), 'relative_links': 'checked',
+                      'age_profiles_checked': len(data['cases']), 'relative_links': 'checked',
                       'manuscript_comparison': 'checked' if args.paper else 'not_requested', **data['counts']}))
 
 

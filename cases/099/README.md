@@ -4,8 +4,6 @@
 
 A projective crepant resolution exists. Primary sieve: [E — Complete-intersection blow-ups](../../docs/methods.md#sieve-e).
 
-![Case 099: age profile (1, 2, 2); conjugacy-class counts](../../assets/catalogue/099-age-profile.svg)
-
 ## Invariants
 
 | Invariant | Value |

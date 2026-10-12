@@ -4,8 +4,6 @@
 
 A projective crepant resolution exists. Primary sieve: [J — Hilbert-square towers](../../docs/methods.md#sieve-j).
 
-![Case 057: age profile (1, 7, 8); conjugacy-class counts](../../assets/catalogue/057-age-profile.svg)
-
 ## Invariants
 
 | Invariant | Value |

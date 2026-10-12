@@ -4,8 +4,6 @@
 
 A projective crepant resolution exists. Primary sieve: [F — Double covers](../../docs/methods.md#sieve-f).
 
-![Case 106: age profile (1, 9, 8); conjugacy-class counts](../../assets/catalogue/106-age-profile.svg)
-
 ## Invariants
 
 | Invariant | Value |

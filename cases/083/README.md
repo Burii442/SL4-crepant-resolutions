@@ -4,8 +4,6 @@
 
 A projective crepant resolution exists. Primary sieve: [C — Abelian junior-simplex geometry](../../docs/methods.md#sieve-c).
 
-![Case 083: age profile (1, 10, 25); conjugacy-class counts](../../assets/catalogue/083-age-profile.svg)
-
 ## Invariants
 
 | Invariant | Value |

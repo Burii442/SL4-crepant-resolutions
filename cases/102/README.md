@@ -4,8 +4,6 @@
 
 No projective crepant resolution exists. Primary sieve: [A — Junior-generation obstruction](../../docs/methods.md#sieve-a).
 
-![Case 102: age profile (1, 3, 8); conjugacy-class counts](../../assets/catalogue/102-age-profile.svg)
-
 ## Invariants
 
 | Invariant | Value |
