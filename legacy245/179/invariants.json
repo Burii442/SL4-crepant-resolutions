@@ -904,7 +904,6 @@
     "-u7^2*u11^2 + 1/2*u1*u7*u11*u18 + 1/8*u18*u21 + 23040*u31",
     "-u1*u3^2*u6^2 - 1/16*u1*u5^2*u7^2 - 1/192*u1^2*u5^2*u10 - 1/6*u1^2*u6^2*u11 - 3/32*u5^2*u13 + 3/4*u6^2*u14 + 1/18432*u3*u7*u24 - 1/110592*u1*u10*u24 - 1/55296*u1*u11*u24 + 1/49152*u30"
   ],
-  "source_input": "ASL4_OPEN_ATTACK_2026_09_11/remaining/cox178_179/179_p10_general_input.json",
   "polynomial_coordinate_order": [
     "x1",
     "x2",

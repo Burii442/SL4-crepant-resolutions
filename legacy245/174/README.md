@@ -1,4 +1,6 @@
-# Case 174
+# Legacy case 174
+
+This calculation supports [manuscript case 63](../../cases/063/README.md). All indices below use the legacy 245-entry catalogue.
 
 Catalogue entries: 174, 175, 176. Final decision: **YES**.
 
@@ -8,10 +10,10 @@ The invariant and junior data available directly in the normalized input include
 
 ## Run the verification
 
-From the supplement directory, run:
+From the `legacy245/` directory, run:
 
 ```sh
-python3 run_verification.py --steps binding-174,cox-174,endpoint-174 --output-dir /tmp/asl4-case-174
+python3 run_verification.py --steps binding-174,cox-174,endpoint-174 --output-dir /tmp/sl4-legacy-174
 ```
 
 Use a new or empty output directory. This runs the complete representation binding, full polynomial-map criterion and geometric endpoint, and compares the fresh commutator Molien and complete-kernel Hilbert series. The isolated input hashes, actual completed scopes and logs are recorded in the result. See `../COX_README.md` for conventions and exact scope.

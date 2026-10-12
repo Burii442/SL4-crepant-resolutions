@@ -2854,13 +2854,5 @@
     ]
   ],
   "invariant_polynomial_degrees": [],
-  "definition": "u_j = F_j product_l(t_l^(-nu_l(F_j))); e_l = t_l^(r_l). Columns use exactly coordinate_order; no implicit permutation.",
-  "source_definition": [
-    "ASL4_OPEN_FOLLOWUP_2026_09_06/final/233_chamber_B_7_5.sing",
-    "ASL4_OPEN_FOLLOWUP_2026_09_06/233_base_kernel.sing",
-    "ASL4_OPEN_FOLLOWUP_2026_09_06/prerequisites/asl4_233_yamagishi_1.sing",
-    "ASL4_OPEN_FOLLOWUP_2026_09_06/prerequisites/asl4_233_yamagishi_2.sing",
-    "ASL4_OPEN_FOLLOWUP_2026_09_06/prerequisites/asl4_233_compatibility_1_2.sing"
-  ],
-  "presentation_export": "export_model.sing"
+  "definition": "u_j = F_j product_l(t_l^(-nu_l(F_j))); e_l = t_l^(r_l). Columns use exactly coordinate_order; no implicit permutation."
 }

@@ -132,14 +132,14 @@ sequentially. A quiet log does not, by itself, indicate a stopped process.
 
 ## Scope and interpreting results
 
-The default full profile comprises 47 stages. It includes all 77 earlier
-checks and the current cross-case CE checks, the Gachet age calculation,
-fresh CrystCat enumeration and the abelian, E/F and DHZ extensions. Five
-labelled inherited stages concern additional compact/Kummer calculations.
-The [coverage map](../verification/coverage.json) gives the correspondence.
+The default full profile comprises 42 stages for `arxiv_3`. It includes the
+72 legacy checks and the current cross-case CE checks, the Gachet age
+calculation, fresh CrystCat enumeration and the abelian, E/F and DHZ
+extensions. The [coverage map](../verification/coverage.json) gives the
+correspondence between these stages and their mathematical scope.
 
 To compare the matrices with an externally supplied manuscript, add
-`--paper /path/to/manuscript.tex` when creating the run. This adds a 48th stage.
+`--paper /path/to/manuscript.tex` when creating the run. This adds a 43rd stage.
 No PDF or LaTeX source is needed to reproduce the distributed computations.
 
 `PASS` for the whole run requires all selected stages to pass. `FAILED` means

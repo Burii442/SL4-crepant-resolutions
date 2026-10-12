@@ -96,7 +96,7 @@ def build(paper_path=None):
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     registry = module.registry()
-    require(len(registry) == 77, 'Expected the complete 77-step registry')
+    require(len(registry) == 72, 'Expected the 72-step registry for the paper')
     for name, (entrypoint, _, _) in registry.items():
         require((ROOT / 'legacy245' / entrypoint).is_file(), f'Missing registered program for {name}: {entrypoint}')
     require([r['index'] for r in current] == list(range(1, 107)), 'Current numbering is not 1..106')

@@ -555,11 +555,5 @@
     ]
   ],
   "invariant_polynomial_degrees": [],
-  "definition": "u_j = F_j product_l(t_l^(-nu_l(F_j))); e_l = t_l^(r_l). Columns use exactly coordinate_order; no implicit permutation.",
-  "source_definition": [
-    "ASL4_report/revision_2026_09_11/cox231_independent_review/repro_with_full_outputs.sing",
-    "ASL4_report/revision_2026_09_11/cox231_independent_review/check_character_homogenization.sing",
-    "tmp/pdfs/d10_markov_ideal.inc.sing"
-  ],
-  "presentation_export": "export_model.sing"
+  "definition": "u_j = F_j product_l(t_l^(-nu_l(F_j))); e_l = t_l^(r_l). Columns use exactly coordinate_order; no implicit permutation."
 }

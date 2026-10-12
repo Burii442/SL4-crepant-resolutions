@@ -197,7 +197,6 @@
   ],
   "cyclotomic_minpoly": "zeta^4 - zeta^2 + 1",
   "case": 138,
-  "source_input": "ASL4_MUVAK_BCS_APPLICATION_2026_09_06/input_certificate.json",
   "polynomial_coordinate_order": [
     "z1",
     "z2",

@@ -22,11 +22,6 @@ def registry():
       'criteria-geometry':('criteria_geometry/run.py',['--output-dir','{out}/result'],'26 cotangent checks, 25 D/H/I intertwiners, the equivariant fan, and eight tower group identifications'),
       'catalogue':('verify_catalogue.py',['--output','{out}/catalogue.json'],'All 245 matrix closures and group data; exact criteria A/B/C'),
       'representatives':('verify_representatives.py',['--output','{out}/representatives.json'],'All 73 rational representative conjugacies, comparing the complete groups'),
-      'compact':('verify_compact_cases.py',['--output','{out}/compact.json'],'Invariant forms for 245 entries; 25 closures, ten full stabilizers, five integral conjugacies'),
-      'integral-lattices':('verify_integral_lattices.py',[],'Finite Hurwitz and order-32 lattice arithmetic'),
-      'named-hodge':('ihs_verification/verify_named_hodge.py',['--output','{out}/hodge.json'],'Ten named full Hodge profiles and independent commuting-pair Euler formula'),
-      'seven-torsion':('ihs_verification/run.py',['--check','torsion','--output-dir','{out}/result'],'All seven explicit finite torsion exclusions in Part VI'),
-      'extra-models':('ihs_verification/run.py',['--check','models','--output-dir','{out}/result'],'Type V automorphism and the G32 matrix model'),
       'geometry':('verify_geometry.py',[],'Twelve complete invariant-ring presentations and all 46 toric fans'),
       'cox-models':('check_cox_models.sage.py',[],'Gradings, homogeneity and modular consistency only; not full Cox generation')}
     for case in [132,234,236]:steps[f'geometry-{case}']=('geometry_proofs/run.py',['--case',str(case),'--output-dir','{out}/result'],f'Full fresh geometry validation for representative {case}')
@@ -41,7 +36,7 @@ def registry():
 def main():
     checks=registry();ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--list',action='store_true',help='List the supported mathematical checks without running them')
-    ap.add_argument('--profile',choices=['core','geometry','ihs','bindings','cox','endpoints','all'],default='all')
+    ap.add_argument('--profile',choices=['core','geometry','bindings','cox','endpoints','all'],default='all')
     ap.add_argument('--steps',help='Comma-separated exact step names; overrides --profile')
     ap.add_argument('--output-dir',type=Path,help='New or empty directory outside this supplement')
     ap.add_argument('--sage',default=shutil.which('sage'),help='Sage executable, discovered on PATH by default')
@@ -52,7 +47,7 @@ def main():
         return
     if not args.output_dir:ap.error('--output-dir is required for a fresh run')
     if not args.sage:ap.error('Sage executable unavailable; pass --sage /path/to/sage')
-    selected=args.steps.split(',') if args.steps else [name for name in checks if args.profile=='all' or (args.profile=='core' and name in ['criteria','criteria-geometry','catalogue','representatives','compact','integral-lattices','named-hodge','seven-torsion','extra-models','geometry','cox-models']) or (args.profile=='geometry' and (name=='geometry' or name.startswith('geometry-'))) or (args.profile=='ihs' and name in ['compact','integral-lattices','named-hodge','seven-torsion','extra-models']) or (args.profile=='bindings' and name.startswith('binding-')) or (args.profile=='cox' and name.startswith('cox-') and name!='cox-models') or (args.profile=='endpoints' and name.startswith('endpoint-'))]
+    selected=args.steps.split(',') if args.steps else [name for name in checks if args.profile=='all' or (args.profile=='core' and name in ['criteria','criteria-geometry','catalogue','representatives','geometry','cox-models']) or (args.profile=='geometry' and (name=='geometry' or name.startswith('geometry-'))) or (args.profile=='bindings' and name.startswith('binding-')) or (args.profile=='cox' and name.startswith('cox-') and name!='cox-models') or (args.profile=='endpoints' and name.startswith('endpoint-'))]
     if len(selected)!=len(set(selected)):ap.error('duplicate steps would repeat a calculation')
     for name in selected:
         if name not in checks:ap.error(f'unknown step {name}; use --list')

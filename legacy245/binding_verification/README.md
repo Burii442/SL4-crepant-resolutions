@@ -1,6 +1,6 @@
 # Exact representation and polynomial binding
 
-From the supplement directory:
+All case numbers here are legacy indices. From the `legacy245/` directory:
 
 ```sh
 sage -python binding_verification/verify_binding.py --case 179 --output /tmp/binding-179.json
@@ -40,5 +40,5 @@ of the entire invariant algebra is a separate assertion: the fresh complete
 ordinary-kernel Hilbert series must match the freshly recomputed Molien
 series, or another complete generation proof must be supplied. The unified
 `all` profile and the documented comparison of isolated fresh runs perform
-this additional check. The article's case 194 uses its separate paper83
+this additional check. Legacy case 194 (manuscript case 75) uses its separate paper83
 certificate; the uniform binding of its older model does not replace it.

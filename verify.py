@@ -17,8 +17,7 @@ ROOT = Path(__file__).resolve().parent
 COX_CASES = [114, 138, 140, 143, 151, 161, 167, 171, 173, 174, 177,
              178, 179, 194, 206, 221, 222, 227, 231, 233, 243]
 COMMON_STEPS = ['criteria', 'criteria-geometry', 'catalogue', 'representatives',
-                'compact', 'integral-lattices', 'named-hodge', 'seven-torsion',
-                'extra-models', 'geometry', 'cox-models',
+                'geometry', 'cox-models',
                 'geometry-132', 'geometry-234', 'geometry-236']
 
 

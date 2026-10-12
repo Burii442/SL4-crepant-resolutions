@@ -118,7 +118,6 @@
     "u1^2 + 4*u2^2 - u4^2",
     "4*u3^3 - 27*u5^2 - u6^2"
   ],
-  "source_input": "ASL4_MUVAK_CONTINUATION_2026_09_06/243_general_input.json",
   "polynomial_coordinate_order": [
     "x1",
     "x2",

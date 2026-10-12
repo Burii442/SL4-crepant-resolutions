@@ -270,7 +270,6 @@
     "u18-(1/2*u2*u13 + 1/2*u1*u15)",
     "u19-(1/2*u1*u13 + 1/2*u2*u15)"
   ],
-  "source_input": "ASL4_OPEN_ATTACK_2026_09_11/remaining/227_lowmin_compact_general_input.json",
   "polynomial_coordinate_order": [
     "x1",
     "x2",

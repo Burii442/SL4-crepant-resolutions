@@ -173,7 +173,6 @@
   ],
   "cyclotomic_minpoly": "zeta^4 + 1",
   "case": 114,
-  "source_input": "ASL4_MUVAK_BCS_APPLICATION_2026_09_06/input_certificate.json",
   "polynomial_coordinate_order": [
     "z1",
     "z2",

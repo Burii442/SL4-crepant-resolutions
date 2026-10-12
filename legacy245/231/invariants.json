@@ -345,12 +345,6 @@
     "2*w^5",
     "-10*w^4*z"
   ],
-  "source_hashes": {
-    "ASL4.txt": "b1a631e8755718f4c298f6551bdbe7fed82abb9cf2ede28bcadc77d028f881e2",
-    "ASL4_report/revision_2026_09_11/cox231_independent_review/physical_binding.py": "c0388631c9444cfe48d44039d3a6ed2c6340d25e84f396edbd1bffe42ffbcf06",
-    "ASL4_report/revision_2026_09_11/cox231_independent_review/pilot_replay.sing": "ed2e1166a1d84999e9b2c6d1f93e0d534d24e363edf8aaec3eb81be15299d3f9",
-    "ASL4_report/revision_2026_09_11/cox231_independent_review/check_toric_kernel.sing": "0db2f7a543a5e4355036ae92932016e54cc37dcb209b2590e89c7c5cea612726"
-  },
   "generator_polynomials": [
     "x2^1*x3^1",
     "x1^1*x4^1",
@@ -390,7 +384,6 @@
   ],
   "cyclotomic_minpoly": null,
   "case": 231,
-  "source_input": "ASL4_report/revision_2026_09_11/cox231_independent_review/physical_binding_certificate.json",
   "polynomial_coordinate_order": [
     "x1",
     "x2",

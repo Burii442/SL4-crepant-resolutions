@@ -206,7 +206,6 @@
     "2*u9^3 - 2*u8^2*u10 + u6*u8*u11 - 27*u10*u11^2 + u5*u8*u12 - 9*u9*u11*u12",
     "u7^3 - u6^2*u8 + 27*u8*u10^2 - 54*u6*u10*u11 - 9*u7*u12^2"
   ],
-  "source_input": "ASL4_MUVAK_CONTINUATION_2026_09_06/194_general_input.json",
   "polynomial_coordinate_order": [
     "x1",
     "x2",

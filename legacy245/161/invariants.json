@@ -279,7 +279,6 @@
     "u18-(-72/5*u4^2*u15^2 + 192/5*u3*u4^2 + 18/5*u4*u6*u15 + u6^2)",
     "u19-(-27*u4*u15^4 + u2^3 + 45*u2^2*u4 + 2916*u2*u4^2 + 6912*u4^3 + 729/2*u5*u6)"
   ],
-  "source_input": "ASL4_OPEN_ATTACK_2026_09_11/remaining/root_161_17/161_aug1_general_input.json",
   "polynomial_coordinate_order": [
     "x1",
     "x2",

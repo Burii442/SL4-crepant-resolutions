@@ -486,7 +486,6 @@
     "u15-(-1/4*u7^2 + 1/4*u8^2)",
     "u16-(1/4*u8^2 - 1/4*u9^2)"
   ],
-  "source_input": "ASL4_MUVAK_CONTINUATION_2026_09_06/143_aug1_general_input.json",
   "polynomial_coordinate_order": [
     "x1",
     "x2",

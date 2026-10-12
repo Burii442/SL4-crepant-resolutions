@@ -1,5 +1,4 @@
 {
-  "source_certificate": "ASL4_OPEN_ATTACK_2026_09_11/remaining/cox161_endpoint/fixed_smoothness/fixed_015.json",
   "source_sha256": "5301eeeb8d134e5f87e4ca0f4d68723bec44da1e0bbf79d324298f24a78f161a",
   "helper_sha256": "75b8f955d9d7fca25f0a43501ed33f99cbc66c7798771fd160d611717e481145",
   "required_residual_rank": 1,

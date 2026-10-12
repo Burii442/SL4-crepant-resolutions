@@ -145,7 +145,6 @@
   ],
   "cyclotomic_minpoly": null,
   "case": 233,
-  "source_input": "ASL4_OPEN_FOLLOWUP_2026_09_06/verified_inputs.json",
   "polynomial_coordinate_order": [
     "x1",
     "x2",

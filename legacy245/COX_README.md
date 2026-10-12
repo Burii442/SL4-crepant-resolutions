@@ -1,19 +1,19 @@
 # Cox presentations and computational proofs
 
-Each numbered directory is a representative in the ASL4 catalogue. `cox_index.json` gives the other catalogue entries covered by the same calculation. The paper refers to these directories as **Computational Supplement, Case N**.
+Numbered directories use the **legacy 245-entry catalogue**. `cox_index.json` gives the other integral entries covered by the same calculation. Use the [current case catalogue](../cases/README.md) and [numbering map](../cases/index.json) to locate the corresponding manuscript case among the 106 quotient classes. All case numbers below are legacy indices unless stated otherwise.
 
 The directly readable files are the current mathematical data:
 
-**Case 194 is an explicit exception to the uniform filenames:** the article uses
+**Legacy case 194 (manuscript case 75) is an exception to the uniform filenames:** its supported calculation uses
 `194/paper_model83.json`, `194/paper_invariants83.json` and
 `194/paper_charts83.json`. Its `model.json` and `invariants.json` retain the
 different 51-relation presentation. Equal coordinate names in those two
 presentations do not denote equal functions. The supported Cox and endpoint
-steps for the printed proof use only the dedicated paper83 data and verifier.
+steps use only the dedicated paper83 data and verifier.
 
 - `N/model.json` gives the complete list of relation polynomials, the exact order of the Cox coordinates, the valuation grading, and the primitive integral grading. Each entry of `equations` is set equal to zero. Relations need not form a minimal generating set.
 - `N/invariants.json` gives the ordered invariant polynomials, their polynomial coordinate names, junior orders, and valuations. Whenever present, `junior_initial_generators` records the initial polynomials used in the complete generation tests. Extra matrix and coordinate-change fields retain the exact representation binding.
-- `N/README.md` identifies the presentation and verification commands. `N/export_model.sing`, where present, exports the four presentations originally specified by Singular programs.
+- `N/README.md` identifies the presentation and verification commands. The remaining `N/export_model.sing` files regenerate their associated polynomial inputs.
 
 ## Coordinate convention
 
@@ -35,14 +35,12 @@ Cases 114 and 138 retain explicit `junior_eigenbases` and `junior_full_generator
 
 ## Supported fresh checks
 
-Run the supported checks from this directory:
+Run from the `legacy245/` directory. Each command uses a fresh isolated copy and writes its results outside the checkout:
 
 ```sh
-sage -python check_cox_models.sage.py
-sage -python binding_verification/verify_binding.py --case 161 --output /tmp/binding-161.json
-sage -python full_verification/verify_cox.py --case 161 --output-dir /tmp/cox-161
-sage -python endpoint_verification/verify_endpoints.py --case 161 --output-dir /tmp/endpoint-161
-sage -python 194/verify194.py --output-dir /tmp/cox-194
+python3 run_verification.py --steps cox-models --output-dir /tmp/sl4-cox-gradings
+python3 run_verification.py --steps binding-161,cox-161,endpoint-161 --output-dir /tmp/sl4-legacy-161
+python3 run_verification.py --steps binding-194,cox-194,endpoint-194 --output-dir /tmp/sl4-legacy-194
 ```
 
 Prefer the unified `run_verification.py` described in the main README when running several cases. It copies inputs into a new directory and saves commands, scopes, input hashes and live logs. The Cox profile uses the dedicated validator for 194 and the full polynomial-map validator for the other representatives. Endpoint calculations are separate steps.
@@ -68,4 +66,4 @@ These calculations have separate logical prerequisites: the ordinary generators 
 
 The endpoint validator recomputes the required chart equations, Jacobian or minor identities, full support covers, and negative point/cone witnesses for each supported representative. Its result concerns the geometric end of the proof, conditional on the algebra and representation identification. In particular a smooth chart calculation cannot repair an incorrect presentation.
 
-The dedicated Case 194 validator uses the ordered 83-relation presentation printed in the article, and checks the input binding and all six slices. Do not substitute a previous 51-relation coordinate ordering into those printed formulas.
+The dedicated legacy case 194 validator supports manuscript case 75 using its ordered 83-relation presentation, and checks the input binding and all six slices. The alternative 51-relation presentation has a different coordinate ordering and must be checked separately.

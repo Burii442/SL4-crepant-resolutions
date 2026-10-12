@@ -23,28 +23,34 @@ The manuscript's 245 entries are not used as a source of completeness.
 
 ## Reproduce
 
-From this directory, with GAP and CrystCat installed:
+From the repository root, with Python 3, GAP and CrystCat installed:
 
 ```sh
-gap -q --quitonbreak count_crystcat.g
-python3 compare_catalogue.py ../manuscript106/catalogue/catalogue.json
+python3 verification/run_classical.py --repo . --gap gap --output-dir ../sl4-results/classification-001
 ```
 
-The first command writes `all_qclasses.json`, with all 227 classes, their
-matrix generators, determinant lists, orders and Z-class counts. Its output:
+Choose a new or empty output directory outside the repository. The wrapper
+copies the classification programs there and runs both the GAP enumeration
+and the exact Python comparison. It leaves the distributed data unchanged.
+Use an absolute executable path instead of `gap` if required.
+
+The enumeration writes `classification/all_qclasses.json` in that output
+directory, with all 227 classes, their matrix generators, determinant lists,
+orders and Z-class counts. Its output:
 
 ```text
 ALL_Q=227 ALL_Z=710 SL4_Q=106 SL4_Z=245
 ```
 
-The second command uses only the Python standard library. It checks
+The comparison uses only the Python standard library. It checks
 integer determinants again, reconstructs all 106 selected finite groups
 by exact multiplication (4211 elements in total), and computes each
 characteristic-polynomial distribution using Newton identities. It also
 reconstructs every manuscript group. The distributions are pairwise
-distinct on both sides and coincide as sets. The result is `comparison.json`,
-including the complete bijection between manuscript case numbers and
-classical `[dimension, system, qclass, zclass=1]` references.
+distinct on both sides and coincide as sets. The output directory contains
+`report.json` and `classification/comparison.json`, including the complete
+bijection between manuscript case numbers and classical
+`[dimension, system, qclass, zclass=1]` references.
 
 ## Meaning of the equivalence relations
 

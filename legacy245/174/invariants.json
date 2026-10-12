@@ -394,7 +394,6 @@
     "u24-(1/8*u10*u13 - 1/8*u3*u17)",
     "u25-(1/3*u3*u8*u13 - 1/9*u9*u18)"
   ],
-  "source_input": "ASL4_OPEN_ATTACK_2026_09_11/a5_geometry/rotation_groups/174_c25t_general_input.json",
   "polynomial_coordinate_order": [
     "x1",
     "x2",

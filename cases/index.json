@@ -8,7 +8,7 @@
     "YES": 61,
     "NO": 45,
     "printed_sieve_assignments": 112,
-    "legacy_registered_steps": 77
+    "legacy_registered_steps": 72
   },
   "input_sha256": {
     "manuscript106/catalogue/catalogue.json": "8a9896f0f7565bbe84b7f54e0a849d0db4846e243e635d2c1bcfb01709db88a8",
@@ -19,7 +19,7 @@
     "manuscript106/sieves/recorded_applications.csv": "151c540a71485638f911464b7bf5b75b63386516b7e338a3569d6ea5102ace4e",
     "legacy245/catalogue.json": "1b4bfdb9f1b1ae1005c942609b7611649eb4a4677c2e81d905d0cc6962799484",
     "legacy245/cox_index.json": "276d055bd0694ec883dbc0f9fabb0fc72e46bec089777ef839dd9917abc79ab9",
-    "legacy245/run_verification.py": "508b370a7a5f9bf56bb6187768f97694bdefcfe87635ea271829859c5fe5be83",
+    "legacy245/run_verification.py": "826a365bde8a7b5f25174762de7cd9619bed2b0fc598728c968e486f6112dada",
     "classification/case_map.json": "fbb5c4cdfd1725eaeeb21c7a9a71726a008e35bf6ec68288c7f8cf6e99f3dbe7"
   },
   "legacy_step_registry": {
@@ -51,47 +51,6 @@
         "{out}/representatives.json"
       ],
       "scope": "All 73 rational representative conjugacies, comparing the complete groups"
-    },
-    "compact": {
-      "entrypoint": "legacy245/verify_compact_cases.py",
-      "arguments": [
-        "--output",
-        "{out}/compact.json"
-      ],
-      "scope": "Invariant forms for 245 entries; 25 closures, ten full stabilizers, five integral conjugacies"
-    },
-    "integral-lattices": {
-      "entrypoint": "legacy245/verify_integral_lattices.py",
-      "arguments": [],
-      "scope": "Finite Hurwitz and order-32 lattice arithmetic"
-    },
-    "named-hodge": {
-      "entrypoint": "legacy245/ihs_verification/verify_named_hodge.py",
-      "arguments": [
-        "--output",
-        "{out}/hodge.json"
-      ],
-      "scope": "Ten named full Hodge profiles and independent commuting-pair Euler formula"
-    },
-    "seven-torsion": {
-      "entrypoint": "legacy245/ihs_verification/run.py",
-      "arguments": [
-        "--check",
-        "torsion",
-        "--output-dir",
-        "{out}/result"
-      ],
-      "scope": "All seven explicit finite torsion exclusions in Part VI"
-    },
-    "extra-models": {
-      "entrypoint": "legacy245/ihs_verification/run.py",
-      "arguments": [
-        "--check",
-        "models",
-        "--output-dir",
-        "{out}/result"
-      ],
-      "scope": "Type V automorphism and the G32 matrix model"
     },
     "geometry": {
       "entrypoint": "legacy245/verify_geometry.py",

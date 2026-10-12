@@ -273,6 +273,5 @@
   ],
   "invariant_polynomial_degrees": [],
   "definition": "u_j = F_j product_l(t_l^(-nu_l(F_j))); e_l = t_l^(r_l). Columns use exactly coordinate_order; no implicit permutation.",
-  "source_definition": "ASL4_MODERN_TOOLS_2026_09_06/138_hs_fixed_minimal_bayer_candidate.sing",
   "presentation_export": "export_model.sing"
 }

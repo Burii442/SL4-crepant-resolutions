@@ -1,5 +1,4 @@
 {
-  "source_certificate": "ASL4_OPEN_ATTACK_2026_09_11/cox221/pruned2_25/fixed_strata/fixed_020.json",
   "source_sha256": "c24730bc0ca2126c71b1ada92a47e84517883ad02ec4e71a9b5cfec043f48ab3",
   "helper_sha256": "75b8f955d9d7fca25f0a43501ed33f99cbc66c7798771fd160d611717e481145",
   "required_residual_rank": 1,

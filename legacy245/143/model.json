@@ -638,11 +638,5 @@
     4,
     4
   ],
-  "definition": "u_j = F_j product_l(t_l^(-nu_l(F_j))); e_l = t_l^(r_l). Columns use exactly coordinate_order; no implicit permutation.",
-  "source_model": "ASL4_MUVAK_CONTINUATION_2026_09_06/143_aug1_full_cox.json",
-  "source_input": "ASL4_MUVAK_CONTINUATION_2026_09_06/143_aug1_general_input.json",
-  "source_sha256": {
-    "ASL4_MUVAK_CONTINUATION_2026_09_06/143_aug1_full_cox.json": "a26799b0eaa9d6be7282e77ae14396e18fadf48cab0960950f035f297199d60a",
-    "ASL4_MUVAK_CONTINUATION_2026_09_06/143_aug1_general_input.json": "391926b35a7952a4f65828fcfa32c1a68cc99a3098503614c042680258ec2796"
-  }
+  "definition": "u_j = F_j product_l(t_l^(-nu_l(F_j))); e_l = t_l^(r_l). Columns use exactly coordinate_order; no implicit permutation."
 }

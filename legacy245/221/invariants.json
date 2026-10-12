@@ -954,7 +954,6 @@
     "u4^2*u5 + 1/2*u24 - 1/2*u25",
     "-u4^2*u5 - 1/2*u24 + 1/2*u25"
   ],
-  "source_input": "ASL4_OPEN_ATTACK_2026_09_11/cox221/pruned2_25/221_general_input.json",
   "polynomial_coordinate_order": [
     "x1",
     "x2",

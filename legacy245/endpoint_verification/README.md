@@ -1,17 +1,17 @@
 # Complete geometric endpoint verification
 
-Run one representative, or omit `--case` to run all 21:
+Case numbers below are legacy indices; use the [case catalogue](../../cases/README.md) for manuscript numbering. From the repository root, run one representative or omit `--case` to run all 21:
 
-```
-sage -python verify_endpoints.py --case 143 --output-dir /tmp/endpoint143
-sage -python verify_endpoints.py --output-dir /tmp/all-endpoints
+```sh
+sage -python legacy245/endpoint_verification/verify_endpoints.py --case 143 --output-dir ../sl4-results/legacy-143-endpoint
+sage -python legacy245/endpoint_verification/verify_endpoints.py --output-dir ../sl4-results/all-endpoints
 ```
 
-Requirements: SageMath (tested with 10.9), its Singular installation, and a C++17 compiler (`c++`, `g++`, or `clang++`). All inputs are included in this supplement. There are no imports or data dependencies on an author's workspace, review directory, historical log, or unpacked source archive. The output directory can be anywhere writable; the installed input tree is not modified.
+Requirements: SageMath (tested with 10.9), its Singular installation, and a C++17 compiler (`c++`, `g++`, or `clang++`). All inputs are included in this supplement. There are no imports or data dependencies on an author's workspace, review directory, historical log, or unpacked source archive. Choose a new output directory outside the checkout; the installed input tree is not modified.
 
 A successful `report.json` has `status: ALL_REQUESTED_ENDPOINT_CHECKS_PASS`, `complete: true`, and exactly the requested cases. It records input and verifier hashes and rejects changes during a run. A failed or interrupted calculation cannot produce that status. Each case also emits its mathematical certificate and, where appropriate, fresh Singular programs and logs. Individual historical `status` fields in witness JSON files are not accepted as proof.
 
-This is the **geometric endpoint** of the argument. The independent full Cox-ring identification, invariant generation, ordinary kernels and simultaneous MUVAK tests are supplied by the algebra verification entrypoints. Case 194 explicitly uses its separately named `paper83` model; its full algebra-and-geometry entrypoint is `../194/verify194.py`.
+This is the **geometric endpoint** of the argument. The independent full Cox-ring identification, invariant generation, ordinary kernels and simultaneous MUVAK tests are supplied by the algebra verification entrypoints. Legacy case 194 (manuscript case 75) explicitly uses its separately named `paper83` model; its full algebra-and-geometry entrypoint is `../194/verify194.py`.
 
 ## What is recomputed
 

@@ -797,11 +797,5 @@
     12,
     12
   ],
-  "definition": "u_j = F_j product_l(t_l^(-nu_l(F_j))); e_l = t_l^(r_l). Columns use exactly coordinate_order; no implicit permutation.",
-  "source_model": "ASL4_OPEN_ATTACK_2026_09_11/remaining/root_161_17/161_full_cox.json",
-  "source_input": "ASL4_OPEN_ATTACK_2026_09_11/remaining/root_161_17/161_aug1_general_input.json",
-  "source_sha256": {
-    "ASL4_OPEN_ATTACK_2026_09_11/remaining/root_161_17/161_full_cox.json": "a16a3a51bf446893bdaf7b494cd4e0c3ac99a166e14b91d2f84fea4e62f17eb4",
-    "ASL4_OPEN_ATTACK_2026_09_11/remaining/root_161_17/161_aug1_general_input.json": "35a049161d1cc220efe2beb861ac3514d77d43a4596ae2d63ff52f4e8c73f542"
-  }
+  "definition": "u_j = F_j product_l(t_l^(-nu_l(F_j))); e_l = t_l^(r_l). Columns use exactly coordinate_order; no implicit permutation."
 }

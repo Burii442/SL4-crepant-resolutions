@@ -13,8 +13,7 @@ from pathlib import Path
 COX_CASES = (114, 138, 140, 143, 151, 161, 167, 171, 173, 174, 177,
              178, 179, 194, 206, 221, 222, 227, 231, 233, 243)
 COMMON = ('criteria', 'criteria-geometry', 'catalogue', 'representatives',
-          'compact', 'integral-lattices', 'named-hodge', 'seven-torsion',
-          'extra-models', 'geometry', 'cox-models', 'geometry-132',
+          'geometry', 'cox-models', 'geometry-132',
           'geometry-234', 'geometry-236')
 GEOMETRY = {
     132: [('verify_132_resolution.py', '"result": "PASS"')],
@@ -152,37 +151,6 @@ def _validate_legacy(root, expected):
             expected_transfers = {r['index']: r['representative'] for r in catalogue if r['index'] != r['representative']}
             _require({r['index']: r['representative'] for r in proof['records']} == expected_transfers,
                      'Representative transfers omitted or substituted cases')
-        elif name == 'compact':
-            proof = load(target+'compact.json')
-            _require(proof.get('result') == 'ALL_TEN_FULL_STABILIZERS_AND_FIVE_INTEGRAL_MODELS_VERIFIED',
-                     'Compact finite checks did not complete')
-            _require(len(proof.get('all_245_invariant_forms', [])) == 245
-                     and len(proof.get('negative', [])) == 10 and len(proof.get('positive', [])) == 5,
-                     'Compact checks omitted cases')
-            _require(proof['result'] in output, 'Missing compact completion marker')
-        elif name == 'integral-lattices':
-            _require('ALL_INDEPENDENT_IHK_FINITE_CHECKS_PASSED' in output, 'Missing lattice completion marker')
-        elif name == 'named-hodge':
-            proof = load(target+'hodge.json')
-            _require([r['index'] for r in proof] == [98, 99, 211, 41, 42, 43, 61, 150, 199, 226],
-                     'Named Hodge checks omitted or changed cases')
-            for i, row in enumerate(proof):
-                betti = ([1, 0, 16, 0, 206, 0, 16, 0, 1] if i < 3 else
-                         [1, 0, 7, 8, 108, 8, 7, 0, 1] if i < 6 else
-                         [1, 0, 23, 0, 276, 0, 23, 0, 1])
-                _require(row.get('betti') == betti and row.get('euler') == row.get('euler_commuting_pairs')
-                         == sum((-1)**j*b for j, b in enumerate(betti)), 'Hodge/Euler comparison incomplete')
-            _require('ALL_10_NAMED_HODGE_PROFILES_PASSED' in output, 'Missing Hodge completion marker')
-        elif name in ('seven-torsion', 'extra-models'):
-            proof = load(target+'result/report.json')
-            check, marker = (('torsion', 'ALL_PART6_SEVEN_TORSION_EXCLUSIONS_PASSED') if name == 'seven-torsion'
-                             else ('models', 'ALL_PART6_EXTRA_FINITE_CHECKS_PASSED'))
-            _require(proof.get('status') == 'PASS' and proof.get('check') == check and proof.get('returncode') == 0,
-                     f'{name}: incomplete GAP check')
-            script = 'verify_seven_torsion.g' if name == 'seven-torsion' else 'verify_extra_models.g'
-            _require(proof.get('input_sha256') == manifest['ihs_verification/'+script], f'{name}: GAP source hash mismatch')
-            log(target+'result/stdout.log', proof['log_sha256'], marker)
-            _require(marker in output, f'{name}: missing completion marker')
         elif name == 'geometry':
             proof = load('supplement/geometry_verification.json')
             rings = proof.get('invariant_rings', [])

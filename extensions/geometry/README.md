@@ -1,6 +1,6 @@
 # Exact geometry checks for E and F
 
-These SageMath programs reproduce the shortened paper's complete-intersection
+These SageMath programs reproduce the manuscript's complete-intersection
 and double-cover computations. Inputs come from this repository's `legacy245/`
 and `manuscript106/catalogue/`; no manuscript source, private directory or
 historical calculation archive is required.
@@ -22,7 +22,7 @@ use assertions for exact mathematical checks.
 Optional `--legacy-root PATH` replaces the legacy input directory. Repository
 defaults are resolved relative to the installed programs, independently of
 the working directory. The example matrices are always compared between the
-current and legacy catalogues. An optional `--paper /external/path/arxiv_2.tex`
+current and legacy catalogues. An optional `--paper /external/path/arxiv_3.tex`
 additionally checks the corresponding section's displayed matrices. The
 external paper must contain the appropriate `sec:sieve-E` or `sec:sieve-F`
 section label; missing, malformed or mismatching supplied files fail the check.
@@ -80,7 +80,6 @@ Current case 106 is old index 245. Its five generators have degrees
 2, 2, 4, 6, 10 and its relation has degree 20. Its branch factors are
 `c*(a^2-4*c)*(2*b^3-d)*(22*b^3-9*d)`. F checks its invariant ring and both
 plane branch constructions using `legacy245/245/invariant_ring/`.
-The original `obliczenia/245/pakiet/calculation.tar.gz` is not a runtime input.
 
 ## Numbering and scope
 
@@ -96,5 +95,6 @@ projectivity, global gluing and crepancy also use the geometric arguments
 stated there. Neither a full invariant-ring presentation alone nor a stored
 `PASS` label proves existence of a crepant resolution.
 
-For G, H and J, use the independently portable
-`legacy245/criteria_geometry/run.py`. See `../../docs/geometry-checks.md`.
+For D, G, H and J, use the
+[representation and geometry checks](../../legacy245/criteria_geometry/README.md).
+Their instructions run the calculations in an isolated output directory.

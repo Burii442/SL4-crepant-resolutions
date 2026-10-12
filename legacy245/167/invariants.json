@@ -305,7 +305,6 @@
     "-u1^3*u8 + u2*u6*u7 - 2*u2*u7^2 + 3/2*u3*u8 + 16*u8^2 - 1/2*u3*u9 + 12*u8*u9 - 1/12*u5*u13 + 1/48*u18",
     "-u1^3*u9 + 2*u2*u6^2 - u2*u6*u7 - 1/2*u3*u8 + 3/2*u3*u9 + 12*u8*u9 + 16*u9^2 - 1/12*u5*u11 + 1/48*u18"
   ],
-  "source_input": "ASL4_OPEN_ATTACK_2026_09_11/a5_geometry/rotation_groups/d4_cox/167_j_general_input.json",
   "polynomial_coordinate_order": [
     "x1",
     "x2",

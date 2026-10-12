@@ -1,12 +1,12 @@
 # Full polynomial-kernel verification
 
-Run from any working directory with SageMath 10.x:
+The case numbers in this directory are legacy indices; the [case catalogue](../../cases/README.md) gives the corresponding manuscript numbers. Run from the repository root with SageMath 10.x, using a new output directory outside the checkout:
 
-```
-sage -python full_verification/verify_cox.py --case 114 --output-dir verification-results/114
+```sh
+sage -python legacy245/full_verification/verify_cox.py --case 114 --output-dir ../sl4-results/legacy-114-cox
 ```
 
-The verifier reads the public `CASE/invariants.json` and `CASE/model.json`; it does not load the research archive, author's programs, old result flags, or purported complete initial ideals. The printed case194 model with 83 relations is checked separately by `194/verify194.py`; the generic entry point would instead check its alternate 51-relation presentation. There is no built-in time limit. `--junior N` selects one junior; omit it to check all. `--stage base`, `--stage initial`, and `--stage simultaneous` select the corresponding stages (`all` is the default). `--stage core` checks only the preliminary exact triangular identities and is not a full kernel check. `--direct` disables this optimization. `--resume` reuses local checkpoints only when the recorded public inputs, verifier dependencies and algorithm options match.
+The verifier reads the public `CASE/invariants.json` and `CASE/model.json`; it does not load the research archive, author's programs, old result flags, or purported complete initial ideals. The supported 83-relation model for legacy case 194 (manuscript case 75) is checked separately by `194/verify194.py`; the generic entry point would instead check its alternate 51-relation presentation. There is no built-in time limit. `--junior N` selects one junior; omit it to check all. `--stage base`, `--stage initial`, and `--stage simultaneous` select the corresponding stages (`all` is the default). `--stage core` checks only the preliminary exact triangular identities and is not a full kernel check. `--direct` disables this optimization. `--resume` reuses local checkpoints only when the recorded public inputs, verifier dependencies and algorithm options match.
 
 The generic graph route removes redundant variables using monic linear graph equations. Candidate equations come from the public ordinary relations or their valuation initials. Each selected identity is re-evaluated exactly on the supplied polynomials, and each tagged identity is checked for finite-character homogeneity. The remaining physical graph is eliminated completely; re-adjoining the checked triangular equations gives the full kernel. When the core forms descend to rational coefficients after nonzero rescaling, the graph is computed over QQ and those rescalings are reversed exactly. The larger cases also use the complete-intersection, localization and Hilbert-bound proofs described below. These are alternative proofs of complete kernels; a list of vanishing candidate relations alone is never accepted as a kernel.
 

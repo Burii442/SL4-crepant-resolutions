@@ -416,7 +416,6 @@
     "u24-(5/3*u4*u11*u21 + 5/3*u1*u12 - 2/3*u8*u17)",
     "u25-(-100/3*u4*u10*u21 - 50/3*u2*u12 + u8*u18)"
   ],
-  "source_input": "ASL4_OPEN_ATTACK_2026_09_11/remaining/173_step6simple_general_input.json",
   "polynomial_coordinate_order": [
     "x1",
     "x2",

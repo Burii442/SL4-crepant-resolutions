@@ -67,13 +67,13 @@ python3 reproduce.py --plan
 python3 reproduce.py --profile all --run-dir ../sl4-results/full-001
 ```
 
-The full profile has **47 stages**. It incorporates all **77 legacy checks**
-in 14 shared stages and 21 complete binding/Cox/endpoint bundles, together with
+The full profile has **42 stages**. It incorporates all **72 legacy checks**
+in nine shared stages and 21 complete binding/Cox/endpoint bundles, together with
 the current catalogue, cross-case counterexample, Gachet, abelian, E/F and DHZ
-checks. The [coverage map](verification/coverage.json) identifies the stages
-and labels five inherited compact/Kummer checks.
+checks used in `arxiv_3`. The [coverage map](verification/coverage.json)
+identifies each stage and its scope.
 
-An optional `--paper /path/to/manuscript.tex` adds a 48th stage comparing the
+An optional `--paper /path/to/manuscript.tex` adds a 43rd stage comparing the
 106 printed matrix blocks. A manuscript file is not required for the other
 calculations and is not distributed here.
 
@@ -148,7 +148,7 @@ recorded families of applications.
 GitHub Actions checks the generated catalogue and all 106 age profiles, and
 tests the portable profile, checkpoint reuse, runtime selection
 and small fresh Sage/GAP calculations. Its badges do not assert completion of
-the full 47-stage suite. Users with workflow permissions can run these checks
+the full 42-stage suite. Users with workflow permissions can run these checks
 from the Actions tab. Full calculations run on the user's own computer or
 server. CI does not upload calculation reports as artifacts.
 

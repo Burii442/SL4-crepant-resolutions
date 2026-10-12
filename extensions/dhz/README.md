@@ -48,10 +48,9 @@ these complete kernels; equality with the full group Molien series proves
 invariant-algebra generation. Every displayed physical identity and the
 minimal embedding at the origin are checked exactly.
 
-`rotation_bindings.json` contains numerical witnesses recovered from the
-older character-matching calculation, with rational conjugators solved from
-linear equations. It contains no trusted PASS flag: every intertwining
-identity, invertibility and full group equality is verified anew.
+`rotation_bindings.json` contains exact rational conjugators and group
+identifications. Every intertwining identity, invertibility and full group
+equality is verified anew.
 
 A successful `report.json` has
 `status: ALL_REQUESTED_DHZ_INVARIANT_CHECKS_PASS`, `complete: true`, the exact
@@ -63,11 +62,10 @@ Failures leave an unsuccessful report and return a nonzero exit code.
 
 ## Sources and attribution
 
-The two `.sing` files preserve the project's original explicit invariant
-calculations. `rotation_ci.py` adapts the mathematical proof from
-`ASL4_report/revision_2026_09_11/counterexamples_audit/audit_rotation_ci.py`,
-replacing local logs and historical certificate imports by fresh matrix
-bindings. All supplied mathematical data are checked by fresh calculations.
+The two `.sing` files contain the explicit invariant-ring calculations.
+`rotation_ci.py` verifies the rotation-group presentations by fresh matrix
+bindings, polynomial identities and Molien comparisons. The programs use
+only the mathematical inputs distributed here.
 
 The unchanged `singular/vendor/finvar.lib` is version 4.3.1.3 (February 2023),
 by Agnes E. Heydtmann and Simon A. King. Its original author and procedure

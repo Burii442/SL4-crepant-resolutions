@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Resumable exact verification of the SL4 catalogue. No network or AI calls.
 
-Default: the entire existing 77-step verification plus the current paper's
+Default: the 72 legacy checks used by the paper plus its
 additional exact checks. A completed Cox bundle retains binding, full Cox
 generation, exact Hilbert=Molien comparison and geometric endpoint together.
 """
@@ -88,8 +88,7 @@ def make_plan(profile, with_paper=False):
               dict(id='gachet-ages', kind='gachet')]
     for item in coverage['common_tasks']:
         tasks.append(dict(id='legacy-'+item['id'], kind='legacy',
-                          steps=[item['id']], scope=item['scope'],
-                          legacy_extra=item['legacy_extra']))
+                          steps=[item['id']], scope=item['scope']))
     tasks += [dict(id='abelian-lattice', kind='abelian'),
               dict(id='sieve-e', kind='sieve-e',
                    requires=['legacy-geometry-'+str(c) for c in (132, 234, 236)]),
@@ -102,8 +101,8 @@ def make_plan(profile, with_paper=False):
                           current_cases=item['current_cases']))
     selected = [s for t in tasks for s in t.get('steps', [])]
     legacy = load_module(REPO/'legacy245/run_verification.py', 'legacy_plan')
-    if len(selected) != 77 or set(selected) != set(legacy.registry()):
-        raise ValueError('The 77-step registry and the local coverage plan differ')
+    if len(selected) != 72 or set(selected) != set(legacy.registry()):
+        raise ValueError('The 72-step registry and the local coverage plan differ')
     return tasks
 
 
@@ -163,10 +162,9 @@ def prepare(args):
                                      ('sage', 'gap', 'singular', 'magma', 'cxx')},
                   scope=('Catalogue/reduction/sieve checks and CE03/CE07 arithmetic. '
                          if args.profile == 'portable' else
-                         'Fresh supplementary claims and the complete 77-step legacy suite. '
-                         'Five labelled legacy extras concern compact/Kummer calculations. ')+
+                         'Fresh manuscript claims and the 72 legacy checks used by the paper. ')+
                         'An external paper is checked only when supplied. '
-                        'The separate continuation note is not included. No AI/network calls.',
+                        'No AI/network calls.',
                   resume_policy='Only completed stages with matching frozen inputs, proof files and logs are reused. '
                                 'Interrupted stages restart in a new attempt directory. '
                                 'Cox stages are resumed as binding+generation+endpoint bundles.')

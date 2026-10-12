@@ -1,7 +1,6 @@
-# Cases 194–197: two explicitly distinguished Cox presentations
+# Manuscript case 75: legacy entries 194–197
 
-The final decision is **YES**. The proof in the subsection “Cases 194–197: six polynomial slices” uses the presentation
-identified as **paper83**:
+The final decision for [manuscript case 75](../../cases/075/README.md) is **YES**. The supported calculation uses the presentation identified as **paper83**:
 
 - `paper_invariants83.json`: the literal four matrix groups, the commutator
   eigenbasis, the ordered twelve invariant polynomials, three junior
@@ -15,17 +14,17 @@ identified as **paper83**:
 The older normalized files `model.json` and `invariants.json` are a second
 presentation, with **51 relations**. Its coordinate names denote different
 functions. The formulas for paper83 must be evaluated using the three
-`paper_*83.json` files. The subsection “Cases 194–197: six polynomial slices” identifies that presentation explicitly.
-Both presentations refer to the literal representation of Case 194, but no
+`paper_*83.json` files.
+Both presentations refer to the literal representation of legacy case 194, but no
 identity of their equally spelled coordinate names is asserted.
 
 ## Reproduce the full proof
 
-From any working directory, with SageMath 10.9 or a compatible version:
+From the repository root, with SageMath 10.9 or a compatible version:
 
 ```sh
-sage -python /path/to/computational_supplement/194/verify194.py \
-    --output-dir /path/to/new-194-certificates
+sage -python legacy245/194/verify194.py \
+    --output-dir ../sl4-results/legacy-194-paper83
 ```
 
 The program uses SageMath's exact number fields, polynomial rings, elimination
@@ -46,12 +45,12 @@ verification (ordinary kernel, all parameter saturations and all three full
 simultaneous initial-kernel tests):
 
 ```sh
-sage -python /path/to/computational_supplement/full_verification/verify_cox.py \
-    --case 194 --stage all --output-dir /path/to/new-194-model51-check
+sage -python legacy245/full_verification/verify_cox.py \
+    --case 194 --stage all --output-dir ../sl4-results/legacy-194-model51
 ```
 
 This command reads `model.json` and `invariants.json`. The dedicated
-`verify194.py` command above reads **paper83** and verifies its six printed
+`verify194.py` command above reads **paper83** and verifies its six specified
 slices. The two commands deliberately refer to their respective coordinate
 systems. Group invariance and the Molien comparison for the 51-relation
 model are supplied by `binding_verification/verify_binding.py --case 194`.
@@ -61,7 +60,7 @@ model are supplied by `binding_verification/verify_binding.py --case 194`.
 1. Exact closure of the literal group, its commutator and all conjugacy
    classes gives order 12, commutator order 3, and exactly three junior
    classes. Their conjugates generate the full group. Invertible matrices
-   intertwine this representation with each of Cases 195, 196 and 197.
+   intertwine this representation with each of legacy entries 195, 196 and 197.
 2. Over `QQ(zeta)`, with `zeta^2-zeta+1=0`, the substitution `x=P*y` gives
    commutator weights `(1,1,2,2)` modulo three. The twelve displayed
    polynomials form an invertible basis of the four mixed quadratics and
@@ -90,5 +89,4 @@ model are supplied by `binding_verification/verify_binding.py --case 194`.
    gcds are also recomputed as units. Thus the sufficient admissibility
    test in the manuscript applies.
 
-The dedicated verifier is the supported entry point for the subsection
-“Cases 194–197: six polynomial slices”.
+The dedicated verifier is the supported entry point for legacy entries 194–197, which represent manuscript case 75.

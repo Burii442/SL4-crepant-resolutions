@@ -1,15 +1,15 @@
 # Supported geometric proof calculations
 
-These packages accompany Sections 7–8 of the article and run independently of the authors' former directory layout. They require SageMath (including SymPy, Singular and GAP). No archived log, stored PASS flag or reviewer directory is an input.
+These packages provide the detailed Sieve E calculations for manuscript cases 42, 99 and 100 (legacy representatives 132, 234 and 236). They require SageMath (including SymPy, Singular and GAP). No archived log, stored PASS flag or reviewer directory is an input.
 
 The runner records its Sage cache path and ownership in the report. It inherits a whitespace-free `DOT_SAGE` from the unified runner when available; otherwise it chooses an output-local cache or a fresh temporary path without whitespace. It never deletes an inherited cache or removes a temporary cache while its process group remains alive.
 
-From the supplement directory:
+Case numbers in the commands and table below are legacy indices. From the repository root:
 
 ```sh
-sage -python geometry_proofs/run.py --case 132 --output-dir /tmp/geometry-132
-sage -python geometry_proofs/run.py --case 234 --output-dir /tmp/geometry-234
-sage -python geometry_proofs/run.py --case 236 --output-dir /tmp/geometry-236
+sage -python legacy245/geometry_proofs/run.py --case 132 --output-dir /tmp/geometry-132
+sage -python legacy245/geometry_proofs/run.py --case 234 --output-dir /tmp/geometry-234
+sage -python legacy245/geometry_proofs/run.py --case 236 --output-dir /tmp/geometry-236
 ```
 
 Each output directory must be new or empty. The wrapper copies the required inputs there, creates the GAP matrix list from the current `catalogue.json`, and performs every stage afresh. Optional `--singular` and `--gap` arguments select executables. There is no fixed short timeout. The wrappers propagate failed assertions and incomplete chart calculations as failures.
