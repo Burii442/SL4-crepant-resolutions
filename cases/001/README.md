@@ -31,18 +31,16 @@ The displayed numbers count conjugacy classes by age, as in the manuscript. [Def
 
 These ordered integral matrices define the displayed representation. The [matrix-transfer certificates](../../manuscript106/catalogue/conjugacy_certificates.json) identify all its legacy representatives.
 
-![Case 001: ordered generating matrices](../../assets/catalogue/001-generators.svg)
+The group is trivial; its identity matrix is
 
-<details>
-<summary>Copyable matrix notation</summary>
-
-The group is trivial; the displayed matrix is its identity.
-
-```latex
-I_4=\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&1&0\\0&0&0&1\end{pmatrix}
+```math
+I_4=\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix}
 ```
-
-</details>
 
 ## Verify this case
 

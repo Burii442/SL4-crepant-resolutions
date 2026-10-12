@@ -35,16 +35,14 @@ The scalar involution illustrates failures of proposed existence criteria (CE-09
 
 These ordered integral matrices define the displayed representation. The [matrix-transfer certificates](../../manuscript106/catalogue/conjugacy_certificates.json) identify all its legacy representatives.
 
-![Case 002: ordered generating matrices](../../assets/catalogue/002-generators.svg)
-
-<details>
-<summary>Copyable matrix notation</summary>
-
-```latex
-g_{1}=\begin{pmatrix}-1&0&0&0\\0&-1&0&0\\0&0&-1&0\\0&0&0&-1\end{pmatrix}
+```math
+g_{1}=\begin{pmatrix}
+-1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{pmatrix}
 ```
-
-</details>
 
 ## Verify this case
 

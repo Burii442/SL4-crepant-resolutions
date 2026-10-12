@@ -31,7 +31,7 @@ Their sum is the total number of conjugacy classes. The manuscript uses these ag
 
 ## Matrices and numbering
 
-Generators appear as exact integer matrices in vector diagrams, with at most two in each row. Every displayed entry is checked against the catalogue, and copyable LaTeX is available below each diagram. The trivial case shows $I_4$. No abstract-group label is substituted for the representation: different representations can have different resolution behavior.
+Generators appear as native LaTeX matrices, one per display, using GitHub’s `math` blocks. Every matrix entry and the generator ordering are checked against the catalogue. The trivial case shows $I_4$. No abstract-group label is substituted for the representation: different representations can have different resolution behavior.
 
 - **Case number:** the current manuscript number, 001–106.
 - **Legacy source:** the earlier entry whose ordered matrices are displayed.
@@ -65,4 +65,4 @@ python3 tools/verify_age_profiles.py
 python3 tools/verify_age_profiles.py --case 35
 ```
 
-The catalogue check compares every generated page, per-case JSON record and SVG with the exact distributed inputs, validates the SVG age entries, and checks relative links. It preserves the existing machine-index schema and does not execute the geometric proof calculations.
+The catalogue check compares every generated page, per-case JSON record and SVG with the exact distributed inputs, validates the age diagrams and native LaTeX matrix entries, and checks relative links. It preserves the existing machine-index schema and does not execute the geometric proof calculations.

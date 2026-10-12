@@ -238,7 +238,7 @@ def case_json(row):
 
 
 def matrix_tex(matrix):
-    return r'\begin{pmatrix}' + r'\\'.join('&'.join(map(str, line)) for line in matrix) + r'\end{pmatrix}'
+    return r'\begin{pmatrix}' + '\n' + (r' \\' + '\n').join(' & '.join(map(str, line)) for line in matrix) + '\n' + r'\end{pmatrix}'
 
 
 def navigation(i):
@@ -276,17 +276,14 @@ def case_readme(row):
         lines += ['## In the manuscript', '', HIGHLIGHTS[i], '']
     lines += ['## Exact generators', '',
               'These ordered integral matrices define the displayed representation. The [matrix-transfer certificates](../../manuscript106/catalogue/conjugacy_certificates.json) identify all its legacy representatives.', '']
-    lines += [f'![Case {i:03d}: ordered generating matrices](../../assets/catalogue/{i:03d}-generators.svg)', '',
-              '<details>', '<summary>Copyable matrix notation</summary>', '']
     generators = row['actual_generators']
     if not generators:
         require(i == 1 and row['order'] == 1, 'Only the trivial case may have no generators')
         identity = [[int(a == b) for b in range(4)] for a in range(4)]
-        lines += ['The group is trivial; the displayed matrix is its identity.', '', '```latex', 'I_4=' + matrix_tex(identity), '```', '']
+        lines += ['The group is trivial; its identity matrix is', '', '```math', 'I_4=' + matrix_tex(identity), '```', '']
     else:
         for j, matrix in enumerate(generators, 1):
-            lines += ['```latex', f'g_{{{j}}}=' + matrix_tex(matrix), '```', '']
-    lines += ['</details>', '']
+            lines += ['```math', f'g_{{{j}}}=' + matrix_tex(matrix), '```', '']
     lines += ['## Verify this case', '', 'Run from the repository root:', '', '```sh',
               f'python3 verify.py --case {i} --plan',
               f'python3 verify.py --case {i} --output-dir ../sl4-results/case-{i:03d}', '```', '',
@@ -308,41 +305,6 @@ def case_readme(row):
     lines += ['', '</details>', '', '---', '', navigation(i), '']
     return '\n'.join(lines)
 
-
-
-def generators_svg(row):
-    from html import escape
-    i = row['case']
-    generators = row['actual_generators']
-    trivial = not generators
-    require(not trivial or (i == 1 and row['order'] == 1), 'Invalid empty generating list')
-    matrices = generators or [[[int(a == b) for b in range(4)] for a in range(4)]]
-    height = 92 + 160 * ((len(matrices) + 1) // 2)
-    title = f'Case {i:03d} · ' + ('Identity matrix' if trivial else 'Ordered generators')
-    description = ('The trivial group; the identity matrix is displayed.' if trivial else
-                   f'{len(matrices)} ordered integral generators, acting on column vectors.')
-    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="720" height="{height}" viewBox="0 0 720 {height}" role="img" aria-labelledby="title desc" data-case="{i}" data-generators="{len(generators)}">',
-             f'<title id="title">{escape(title)}</title>', f'<desc id="desc">{escape(description)}</desc>',
-             f'<rect x="1" y="1" width="718" height="{height-2}" rx="16" fill="#fffefa" stroke="#dce2dd"/>',
-             f'<text x="28" y="38" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="24">{escape(title)}</text>',
-             f'<text x="29" y="60" fill="#68746e" font-family="Arial,sans-serif" font-size="12">{escape(description)}</text>']
-    subscripts = str.maketrans('0123456789', '₀₁₂₃₄₅₆₇₈₉')
-    for k, matrix in enumerate(matrices):
-        x = 354 * (k % 2)
-        y = 76 + 160 * (k // 2)
-        index = 0 if trivial else k + 1
-        label = 'I₄ =' if trivial else 'g' + str(index).translate(subscripts) + ' ='
-        parts += [f'<g data-matrix="{index}">',
-                  f'<rect x="{x+14}" y="{y}" width="338" height="145" rx="10" fill="#f3f6f2"/>',
-                  f'<text x="{x+33}" y="{y+79}" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">{label}</text>',
-                  f'<path d="M {x+109} {y+15} Q {x+92} {y+72} {x+109} {y+133}" fill="none" stroke="#344c3e" stroke-width="1.8"/>',
-                  f'<path d="M {x+274} {y+15} Q {x+291} {y+72} {x+274} {y+133}" fill="none" stroke="#344c3e" stroke-width="1.8"/>']
-        for r, values in enumerate(matrix):
-            for c, value in enumerate(values):
-                parts.append(f'<text data-generator="{index}" data-row="{r}" data-column="{c}" x="{x+129+41*c}" y="{y+37+28*r}" text-anchor="middle" fill="#243831" font-family="Georgia,Times New Roman,serif" font-size="23">{value}</text>')
-        parts.append('</g>')
-    parts.append('</svg>')
-    return '\n'.join(parts) + '\n'
 
 
 def profile_svg(row):
@@ -467,7 +429,7 @@ Their sum is the total number of conjugacy classes. The manuscript uses these ag
 
 ## Matrices and numbering
 
-Generators appear as exact integer matrices in vector diagrams, with at most two in each row. Every displayed entry is checked against the catalogue, and copyable LaTeX is available below each diagram. The trivial case shows $I_4$. No abstract-group label is substituted for the representation: different representations can have different resolution behavior.
+Generators appear as native LaTeX matrices, one per display, using GitHub’s `math` blocks. Every matrix entry and the generator ordering are checked against the catalogue. The trivial case shows $I_4$. No abstract-group label is substituted for the representation: different representations can have different resolution behavior.
 
 - **Case number:** the current manuscript number, 001–106.
 - **Legacy source:** the earlier entry whose ordered matrices are displayed.
@@ -501,7 +463,7 @@ python3 tools/verify_age_profiles.py
 python3 tools/verify_age_profiles.py --case 35
 ```
 
-The catalogue check compares every generated page, per-case JSON record and SVG with the exact distributed inputs, validates the SVG age entries, and checks relative links. It preserves the existing machine-index schema and does not execute the geometric proof calculations.
+The catalogue check compares every generated page, per-case JSON record and SVG with the exact distributed inputs, validates the age diagrams and native LaTeX matrix entries, and checks relative links. It preserves the existing machine-index schema and does not execute the geometric proof calculations.
 '''
 
 
@@ -534,7 +496,6 @@ def generated_files(data):
         i = row['case']
         files[f'cases/{i:03d}/README.md'] = case_readme(row)
         files[f'cases/{i:03d}/case.json'] = json.dumps(case_json(row), indent=2, ensure_ascii=False) + '\n'
-        files[f'assets/catalogue/{i:03d}-generators.svg'] = generators_svg(row)
         files[f'assets/catalogue/{i:03d}-age-profile.svg'] = profile_svg(row)
         files[f'assets/catalogue/{i:03d}-card.svg'] = tile_svg(row)
     files['cases/README.md'] = case_index(data['cases'])
@@ -555,17 +516,20 @@ def validate_generated(files, data):
         entries = {int(x.attrib['data-age']): int(x.text) for x in svg.iter() if 'data-age' in x.attrib}
         require(entries == dict(enumerate(age_profile(row))), f'{name}: SVG age entries differ')
         require(svg.attrib['data-decision'] == row['decision'], f'{name}: SVG decision differs')
-        matrix_name = f'assets/catalogue/{row["case"]:03d}-generators.svg'
-        matrix_svg = ET.fromstring(files[matrix_name])
+        page_name = f'cases/{row["case"]:03d}/README.md'
+        page = files[page_name]
+        blocks = re.findall(r'^```math\n(.*?)\n```$', page, re.M | re.S)
         generators = row['actual_generators']
-        require(int(matrix_svg.attrib['data-generators']) == len(generators), f'{matrix_name}: generator count differs')
-        expected = {(k+1, r, c): value for k, g in enumerate(generators)
-                    for r, line in enumerate(g) for c, value in enumerate(line)}
-        if not generators:
-            expected = {(0, r, c): int(r == c) for r in range(4) for c in range(4)}
-        cells = [x for x in matrix_svg.iter() if 'data-generator' in x.attrib]
-        actual = {(int(x.attrib['data-generator']), int(x.attrib['data-row']), int(x.attrib['data-column'])): int(x.text) for x in cells}
-        require(len(cells) == len(expected) and actual == expected, f'{matrix_name}: matrix cells differ')
+        expected = generators or [[[int(r == c) for c in range(4)] for r in range(4)]]
+        require(len(blocks) == len(expected), f'{page_name}: rendered matrix count differs')
+        for k, (block, matrix) in enumerate(zip(blocks, expected), 1):
+            label = f'g_{{{k}}}' if generators else 'I_4'
+            match = re.fullmatch(re.escape(label) + r'=\\begin\{pmatrix\}\n(.*?)\n\\end\{pmatrix\}', block, re.S)
+            require(match is not None, f'{page_name}: invalid matrix block or generator order')
+            decoded = [[int(x.strip()) for x in line.split('&')]
+                       for line in match.group(1).split(r'\\')]
+            require(decoded == matrix, f'{page_name}: native LaTeX matrix entries differ')
+        require('-generators.svg' not in page, f'{page_name}: obsolete generator image')
 
     for name,text in files.items():
         require(all(ord(c) >= 32 or ord(c) == 10 for c in text), f'{name}: unexpected control character')
